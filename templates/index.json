@@ -1,13 +1,24 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "hero": {
       "type": "pi-hero",
       "settings": {
+        "image_desktop": "shopify://shop_images/Hero_Desktop.jpg",
+        "image_mobile": "shopify://shop_images/Hero_Mobile.jpg",
         "accent_text": "Pawleys Island's local outfitter",
         "heading": "Your Next Adventure Starts Here",
         "body_text": "Hunting, fishing, and everything in between — family-owned and operated since 2006.",
         "button_label": "Shop Now",
-        "button_link": "shopify:\/\/collections\/all",
+        "button_link": "shopify://collections/all",
         "button_style": "primary",
         "text_alignment": "left",
         "min_height_desktop": "large",
@@ -22,6 +33,8 @@
         "fishing": {
           "type": "collection",
           "settings": {
+            "collection": "",
+            "custom_image": "shopify://shop_images/Homepage_Image_2.jpg",
             "custom_title": "Fishing",
             "overlay_opacity": 30
           }
@@ -29,6 +42,8 @@
         "hunting": {
           "type": "collection",
           "settings": {
+            "collection": "",
+            "custom_image": "shopify://shop_images/Homepage_Image_1.jpg",
             "custom_title": "Hunting",
             "overlay_opacity": 30
           }
@@ -36,6 +51,8 @@
         "boating": {
           "type": "collection",
           "settings": {
+            "collection": "",
+            "custom_image": "shopify://shop_images/Homepage_Image_4.jpg",
             "custom_title": "Boating",
             "overlay_opacity": 30
           }
@@ -43,12 +60,19 @@
         "clothing": {
           "type": "collection",
           "settings": {
+            "collection": "",
+            "custom_image": "shopify://shop_images/Homepage_Image_3.jpg",
             "custom_title": "Clothing",
             "overlay_opacity": 30
           }
         }
       },
-      "block_order": ["fishing", "hunting", "boating", "clothing"],
+      "block_order": [
+        "fishing",
+        "hunting",
+        "boating",
+        "clothing"
+      ],
       "settings": {
         "label": "Shop",
         "heading": "Explore Our Collections",
@@ -60,14 +84,15 @@
     "about_split": {
       "type": "pi-split-content",
       "settings": {
+        "image": "shopify://shop_images/Homepage_image_5.jpg",
         "image_position": "left",
-        "image_ratio": "portrait",
+        "image_ratio": "landscape",
         "label": "Our Story",
         "heading": "Lowcountry Roots, Local Knowledge",
         "accent_text": "Family-owned since 2006",
         "body_text": "<p>Pawleys Island Outdoors isn't just a store — it's where locals come for honest advice, the right gear, and a good conversation. We know the creeks, the tides, and the seasons because we live it every day.</p><p>Whether you're rigging up for redfish in the creek or gearing up for dove season, we're here to get you set up right.</p>",
         "button_label": "About Us",
-        "button_link": "shopify:\/\/pages\/about",
+        "button_link": "shopify://pages/about",
         "button_style": "primary",
         "background_color": "warm-white",
         "vertical_padding": "large"
@@ -81,9 +106,9 @@
         "label": "Boat Rentals",
         "heading": "Get Out on the Water",
         "accent_text": "14–15' aluminum jon boats",
-        "body_text": "<p>Explore Litchfield, Pawleys, and DeBordieu creeks at your own pace. Our fleet of jon boats with Yamaha outboards comes with all the safety equipment you need. Starting at $295\/day.</p>",
+        "body_text": "<p>Explore Litchfield, Pawleys, and DeBordieu creeks at your own pace. Our fleet of jon boats with Yamaha outboards comes with all the safety equipment you need. Starting at $295/day.</p>",
         "button_label": "View Rental Info",
-        "button_link": "shopify:\/\/pages\/boat-rentals",
+        "button_link": "shopify://pages/boat-rentals",
         "button_style": "green",
         "background_color": "cream",
         "vertical_padding": "large"
@@ -98,7 +123,7 @@
         "heading": "Hunting Equipment for Every Season",
         "body_text": "Deer, dove, duck, alligator, turkey — we carry top brands like Browning, Benelli, Winchester, and more. Plus a full ammunition selection from Federal, Hornady, and Fiocchi.",
         "button_label": "See What We Carry",
-        "button_link": "shopify:\/\/pages\/firearms",
+        "button_link": "shopify://pages/firearms",
         "button_style": "primary",
         "text_alignment": "center"
       }
@@ -106,16 +131,73 @@
     "brands": {
       "type": "pi-brand-banner",
       "blocks": {
-        "brand_1": { "type": "brand", "settings": { "brand_name": "Shimano" } },
-        "brand_2": { "type": "brand", "settings": { "brand_name": "Penn" } },
-        "brand_3": { "type": "brand", "settings": { "brand_name": "Daiwa" } },
-        "brand_4": { "type": "brand", "settings": { "brand_name": "G. Loomis" } },
-        "brand_5": { "type": "brand", "settings": { "brand_name": "St. Croix" } },
-        "brand_6": { "type": "brand", "settings": { "brand_name": "YETI" } },
-        "brand_7": { "type": "brand", "settings": { "brand_name": "Costa" } },
-        "brand_8": { "type": "brand", "settings": { "brand_name": "Browning" } }
+        "brand_1": {
+          "type": "brand",
+          "settings": {
+            "brand_name": "Shimano",
+            "link": ""
+          }
+        },
+        "brand_2": {
+          "type": "brand",
+          "settings": {
+            "brand_name": "Penn",
+            "link": ""
+          }
+        },
+        "brand_3": {
+          "type": "brand",
+          "settings": {
+            "brand_name": "Daiwa",
+            "link": ""
+          }
+        },
+        "brand_4": {
+          "type": "brand",
+          "settings": {
+            "brand_name": "G. Loomis",
+            "link": ""
+          }
+        },
+        "brand_5": {
+          "type": "brand",
+          "settings": {
+            "brand_name": "St. Croix",
+            "link": ""
+          }
+        },
+        "brand_6": {
+          "type": "brand",
+          "settings": {
+            "brand_name": "YETI",
+            "link": ""
+          }
+        },
+        "brand_7": {
+          "type": "brand",
+          "settings": {
+            "brand_name": "Costa",
+            "link": ""
+          }
+        },
+        "brand_8": {
+          "type": "brand",
+          "settings": {
+            "brand_name": "Browning",
+            "link": ""
+          }
+        }
       },
-      "block_order": ["brand_1", "brand_2", "brand_3", "brand_4", "brand_5", "brand_6", "brand_7", "brand_8"],
+      "block_order": [
+        "brand_1",
+        "brand_2",
+        "brand_3",
+        "brand_4",
+        "brand_5",
+        "brand_6",
+        "brand_7",
+        "brand_8"
+      ],
       "settings": {
         "heading": "Brands We Carry",
         "background_color": "white",
