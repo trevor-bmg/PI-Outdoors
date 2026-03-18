@@ -36,6 +36,7 @@
   inset: 0;
   z-index: 1;
   pointer-events: none;
+  opacity: calc(var(--hero-overlay-opacity, 40) / 100);
 }
 
 .pi-hero__overlay--dark {
@@ -66,6 +67,7 @@
   padding: var(--pi-space-xl) var(--pi-section-padding-x);
   padding-top: var(--pi-space-3xl);
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  opacity: 1 !important;
 }
 
 .pi-hero__content--left {

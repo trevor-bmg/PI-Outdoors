@@ -81,10 +81,10 @@
   </div>
 
   {%- comment -%} Overlay {%- endcomment -%}
-  <div class="pi-hero__overlay pi-hero__overlay--{{ color_scheme }}" style="opacity: {{ overlay_opacity | divided_by: 100.0 }};"></div>
+  <div class="pi-hero__overlay pi-hero__overlay--{{ color_scheme }}" style="--hero-overlay-opacity: {{ overlay_opacity }};"></div>
 
   {%- comment -%} Text Content {%- endcomment -%}
-  <div class="pi-hero__content pi-hero__content--{{ text_alignment }} pi-reveal">
+  <div class="pi-hero__content pi-hero__content--{{ text_alignment }}">
     {%- if section.settings.accent_text != blank -%}
       <span class="pi-hero__accent">{{ section.settings.accent_text }}</span>
     {%- endif -%}
