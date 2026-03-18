@@ -24,7 +24,7 @@
         "min_height_desktop": "large",
         "min_height_mobile": "medium",
         "color_scheme": "dark",
-        "overlay_opacity": 40
+        "overlay_opacity": 0
       }
     },
     "collections": {
