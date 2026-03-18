@@ -1,0 +1,109 @@
+{
+  "sections": {
+    "main": {
+      "type": "pi-main-product",
+      "blocks": {
+        "vendor": {
+          "type": "text",
+          "settings": {
+            "text": "{{ product.vendor }}"
+          }
+        },
+        "title": {
+          "type": "title",
+          "settings": {}
+        },
+        "price": {
+          "type": "price",
+          "settings": {}
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "circle"
+          }
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": true
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {}
+        },
+        "shipping_tab": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Shipping",
+            "content": "<p>We ship nationwide. Most orders ship within 1-3 business days. Free shipping on orders over $75.</p>"
+          }
+        },
+        "returns_tab": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Returns",
+            "content": "<p>We accept returns within 30 days of purchase. Items must be unused and in original packaging. Contact us to initiate a return.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "vendor",
+        "title",
+        "price",
+        "variant_picker",
+        "quantity_selector",
+        "buy_buttons",
+        "description",
+        "shipping_tab",
+        "returns_tab"
+      ],
+      "settings": {
+        "media_size": "large",
+        "media_position": "left",
+        "gallery_layout": "thumbnail_slider",
+        "media_fit": "contain",
+        "constrain_to_viewport": true,
+        "mobile_thumbnails": "hide",
+        "image_zoom": "lightbox",
+        "hide_variants": true,
+        "enable_video_looping": false,
+        "enable_sticky_info": true,
+        "padding_top": 36,
+        "padding_bottom": 12
+      }
+    },
+    "cta_banner": {
+      "type": "pi-cta-banner",
+      "settings": {
+        "background_style": "deep-blue",
+        "label": "",
+        "heading": "Need Help Choosing?",
+        "body_text": "Not sure which product is right for you? Give us a call or stop by the shop — our team is always happy to help.",
+        "button_label": "Contact Us",
+        "button_link": "shopify:///pages/contact",
+        "button_style": "primary",
+        "text_alignment": "center"
+      }
+    },
+    "newsletter": {
+      "type": "pi-newsletter",
+      "settings": {
+        "background_color": "deep-blue",
+        "layout": "stacked"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "cta_banner",
+    "newsletter"
+  ]
+}

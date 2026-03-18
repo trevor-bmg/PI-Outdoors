@@ -1,0 +1,331 @@
+{{ 'pi-base.css' | asset_url | stylesheet_tag }}
+{{ 'section-pi-footer.css' | asset_url | stylesheet_tag }}
+
+{%- liquid
+  assign has_social_icons = false
+  if settings.social_facebook_link != blank or settings.social_instagram_link != blank or settings.social_youtube_link != blank or settings.social_tiktok_link != blank or settings.social_twitter_link != blank or settings.social_pinterest_link != blank
+    assign has_social_icons = true
+  endif
+-%}
+
+<footer class="pi-footer" role="contentinfo">
+  {%- comment -%} ── Main Content ── {%- endcomment -%}
+  <div class="pi-footer__inner">
+    <div class="pi-footer__grid">
+
+      {%- comment -%} Column 1 — Brand {%- endcomment -%}
+      <div class="pi-footer__col pi-footer__col--brand">
+        {%- if section.settings.logo != blank -%}
+          <div class="pi-footer__logo" style="max-width: {{ section.settings.logo_width }}px;">
+            {{
+              section.settings.logo
+              | image_url: width: 400
+              | image_tag:
+                loading: 'lazy',
+                widths: '60, 120, 200, 400',
+                alt: shop.name
+            }}
+          </div>
+        {%- else -%}
+          <div class="pi-footer__logo-text">{{ shop.name }}</div>
+        {%- endif -%}
+
+        {%- if section.settings.tagline != blank -%}
+          <p class="pi-footer__tagline">{{ section.settings.tagline | escape }}</p>
+        {%- endif -%}
+      </div>
+
+      {%- comment -%} Column 2 — Menu 1 (Shop) {%- endcomment -%}
+      <div class="pi-footer__col pi-footer__col--menu">
+        <details class="pi-footer__accordion" open>
+          <summary class="pi-footer__heading">
+            {{ section.settings.menu_1_title | escape }}
+            <span class="pi-footer__accordion-icon" aria-hidden="true">
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M2 4.5L6 8.5L10 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+          </summary>
+          {%- if section.settings.menu_1 != blank -%}
+            <ul class="pi-footer__links" role="list">
+              {%- for link in section.settings.menu_1.links -%}
+                <li>
+                  <a href="{{ link.url }}" class="pi-footer__link">{{ link.title | escape }}</a>
+                </li>
+              {%- endfor -%}
+            </ul>
+          {%- endif -%}
+        </details>
+      </div>
+
+      {%- comment -%} Column 3 — Menu 2 (Visit) {%- endcomment -%}
+      <div class="pi-footer__col pi-footer__col--menu">
+        <details class="pi-footer__accordion" open>
+          <summary class="pi-footer__heading">
+            {{ section.settings.menu_2_title | escape }}
+            <span class="pi-footer__accordion-icon" aria-hidden="true">
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M2 4.5L6 8.5L10 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+          </summary>
+          {%- if section.settings.menu_2 != blank -%}
+            <ul class="pi-footer__links" role="list">
+              {%- for link in section.settings.menu_2.links -%}
+                <li>
+                  <a href="{{ link.url }}" class="pi-footer__link">{{ link.title | escape }}</a>
+                </li>
+              {%- endfor -%}
+            </ul>
+          {%- endif -%}
+        </details>
+      </div>
+
+      {%- comment -%} Column 4 — Newsletter + Social {%- endcomment -%}
+      <div class="pi-footer__col pi-footer__col--newsletter">
+        {%- if section.settings.show_newsletter -%}
+          <h2 class="pi-footer__heading pi-footer__heading--static">
+            {{ section.settings.newsletter_heading | escape }}
+          </h2>
+
+          <div class="pi-footer__form-wrap">
+            {% form 'customer', class: 'pi-footer__form' %}
+              <input type="hidden" name="contact[tags]" value="newsletter">
+
+              {%- if form.posted_successfully? -%}
+                <div class="pi-footer__form-success" role="status">
+                  <p>Thanks for subscribing!</p>
+                </div>
+              {%- else -%}
+                {%- if form.errors -%}
+                  <div class="pi-footer__form-error" role="alert">
+                    {%- if form.errors.messages['email'] -%}
+                      <p>{{ form.errors.messages['email'] }}</p>
+                    {%- else -%}
+                      <p>Something went wrong. Please try again.</p>
+                    {%- endif -%}
+                  </div>
+                {%- endif -%}
+
+                <div class="pi-footer__fields">
+                  <input
+                    type="email"
+                    name="contact[email]"
+                    class="pi-footer__input"
+                    placeholder="Your email address"
+                    autocomplete="email"
+                    required
+                    aria-label="Email address"
+                  >
+                  <button type="submit" class="pi-btn pi-btn--primary pi-footer__submit">
+                    Subscribe
+                  </button>
+                </div>
+              {%- endif -%}
+            {% endform %}
+          </div>
+        {%- endif -%}
+
+        {%- if section.settings.show_social and has_social_icons -%}
+          <nav class="pi-footer__social" aria-label="Social media">
+            <ul class="pi-footer__social-list" role="list">
+              {%- if settings.social_facebook_link != blank -%}
+                <li>
+                  <a href="{{ settings.social_facebook_link }}" class="pi-footer__social-link" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3V2z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </a>
+                </li>
+              {%- endif -%}
+              {%- if settings.social_instagram_link != blank -%}
+                <li>
+                  <a href="{{ settings.social_instagram_link }}" class="pi-footer__social-link" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="1.5"/>
+                      <circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="1.5"/>
+                      <circle cx="17.5" cy="6.5" r="1" fill="currentColor"/>
+                    </svg>
+                  </a>
+                </li>
+              {%- endif -%}
+              {%- if settings.social_youtube_link != blank -%}
+                <li>
+                  <a href="{{ settings.social_youtube_link }}" class="pi-footer__social-link" aria-label="YouTube" target="_blank" rel="noopener noreferrer">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M22.54 6.42a2.78 2.78 0 00-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 00-1.94 2A29 29 0 001 11.75a29 29 0 00.46 5.33 2.78 2.78 0 001.94 2c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 001.94-2 29 29 0 00.46-5.25 29 29 0 00-.46-5.41z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M9.75 15.02l5.75-3.27-5.75-3.27v6.54z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </a>
+                </li>
+              {%- endif -%}
+              {%- if settings.social_tiktok_link != blank -%}
+                <li>
+                  <a href="{{ settings.social_tiktok_link }}" class="pi-footer__social-link" aria-label="TikTok" target="_blank" rel="noopener noreferrer">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M9 12a4 4 0 104 4V4a5 5 0 005 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </a>
+                </li>
+              {%- endif -%}
+              {%- if settings.social_twitter_link != blank -%}
+                <li>
+                  <a href="{{ settings.social_twitter_link }}" class="pi-footer__social-link" aria-label="X (Twitter)" target="_blank" rel="noopener noreferrer">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M4 4l6.6 8.4M20 20l-6.6-8.4M4 4h4l12 16h-4M4 4l16 16M20 4L9.4 16.4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </a>
+                </li>
+              {%- endif -%}
+              {%- if settings.social_pinterest_link != blank -%}
+                <li>
+                  <a href="{{ settings.social_pinterest_link }}" class="pi-footer__social-link" aria-label="Pinterest" target="_blank" rel="noopener noreferrer">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M8 12a4 4 0 118 0c0 3-2 5-4 5s-2.5-1-2.5-1L8.5 20M12 2a10 10 0 100 20 10 10 0 000-20z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </a>
+                </li>
+              {%- endif -%}
+            </ul>
+          </nav>
+        {%- endif -%}
+      </div>
+
+    </div>
+  </div>
+
+  {%- comment -%} ── Divider ── {%- endcomment -%}
+  <div class="pi-footer__divider-wrap">
+    <hr class="pi-footer__divider">
+  </div>
+
+  {%- comment -%} ── Bottom Bar ── {%- endcomment -%}
+  <div class="pi-footer__bottom">
+    <div class="pi-footer__bottom-inner">
+      <p class="pi-footer__copyright">
+        &copy; {{ 'now' | date: '%Y' }} {{ section.settings.copyright_text | escape }}
+      </p>
+      {%- if section.settings.credit_text != blank -%}
+        <p class="pi-footer__credit">
+          {%- if section.settings.credit_link != blank -%}
+            <a href="{{ section.settings.credit_link }}" class="pi-footer__credit-link" target="_blank" rel="noopener noreferrer">
+              {{ section.settings.credit_text | escape }}
+            </a>
+          {%- else -%}
+            {{ section.settings.credit_text | escape }}
+          {%- endif -%}
+        </p>
+      {%- endif -%}
+    </div>
+  </div>
+</footer>
+
+{% schema %}
+{
+  "name": "PI — Footer",
+  "tag": "section",
+  "class": "pi-footer-section",
+  "disabled_on": {
+    "groups": ["header"]
+  },
+  "settings": [
+    {
+      "type": "header",
+      "content": "Brand"
+    },
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo"
+    },
+    {
+      "type": "range",
+      "id": "logo_width",
+      "min": 60,
+      "max": 200,
+      "step": 10,
+      "unit": "px",
+      "label": "Logo width",
+      "default": 120
+    },
+    {
+      "type": "textarea",
+      "id": "tagline",
+      "label": "Tagline",
+      "default": "Your local outfitter for hunting, fishing, and everything in between."
+    },
+    {
+      "type": "header",
+      "content": "Navigation"
+    },
+    {
+      "type": "text",
+      "id": "menu_1_title",
+      "label": "Menu 1 heading",
+      "default": "Shop"
+    },
+    {
+      "type": "link_list",
+      "id": "menu_1",
+      "label": "Menu 1",
+      "default": "footer-shop"
+    },
+    {
+      "type": "text",
+      "id": "menu_2_title",
+      "label": "Menu 2 heading",
+      "default": "Visit"
+    },
+    {
+      "type": "link_list",
+      "id": "menu_2",
+      "label": "Menu 2",
+      "default": "footer-visit"
+    },
+    {
+      "type": "header",
+      "content": "Newsletter & Social"
+    },
+    {
+      "type": "text",
+      "id": "newsletter_heading",
+      "label": "Newsletter heading",
+      "default": "Stay Connected"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_newsletter",
+      "label": "Show newsletter signup",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_social",
+      "label": "Show social media icons",
+      "info": "Configure social links in theme settings.",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Bottom bar"
+    },
+    {
+      "type": "text",
+      "id": "copyright_text",
+      "label": "Copyright text",
+      "default": "Pawleys Island Outdoors"
+    },
+    {
+      "type": "text",
+      "id": "credit_text",
+      "label": "Credit text",
+      "default": "Website by Paragon Agency"
+    },
+    {
+      "type": "url",
+      "id": "credit_link",
+      "label": "Credit link"
+    }
+  ]
+}
+{% endschema %}
