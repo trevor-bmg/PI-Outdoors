@@ -81,7 +81,18 @@
   </div>
 
   {%- comment -%} Overlay {%- endcomment -%}
-  <div class="pi-hero__overlay pi-hero__overlay--{{ color_scheme }}" style="--hero-overlay-opacity: {{ overlay_opacity }};"></div>
+  {%- assign ov_decimal = overlay_opacity | times: 1.0 | divided_by: 100.0 -%}
+  {%- if color_scheme == 'dark' -%}
+    {%- assign ov_a1 = 1.0 | times: ov_decimal -%}
+    {%- assign ov_a2 = 0.6 | times: ov_decimal -%}
+    {%- assign ov_a3 = 0.3 | times: ov_decimal -%}
+    <div class="pi-hero__overlay" style="background: linear-gradient(to top, rgba(21,45,56,{{ ov_a1 }}) 0%, rgba(21,45,56,{{ ov_a2 }}) 50%, rgba(21,45,56,{{ ov_a3 }}) 100%);"></div>
+  {%- else -%}
+    {%- assign ov_a1 = 0.9 | times: ov_decimal -%}
+    {%- assign ov_a2 = 0.4 | times: ov_decimal -%}
+    {%- assign ov_a3 = 0.1 | times: ov_decimal -%}
+    <div class="pi-hero__overlay" style="background: linear-gradient(to top, rgba(255,255,255,{{ ov_a1 }}) 0%, rgba(255,255,255,{{ ov_a2 }}) 50%, rgba(255,255,255,{{ ov_a3 }}) 100%);"></div>
+  {%- endif -%}
 
   {%- comment -%} Text Content {%- endcomment -%}
   <div class="pi-hero__content pi-hero__content--{{ text_alignment }}">
