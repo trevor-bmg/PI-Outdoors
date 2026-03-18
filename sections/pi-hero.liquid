@@ -14,27 +14,6 @@
   endif
 -%}
 
-{%- liquid
-  assign ov = overlay_opacity | divided_by: 100.0
--%}
-{%- style -%}
-  #Hero-{{ section.id }} .pi-hero__overlay--dark {
-    background: linear-gradient(
-      to top,
-      rgba(21, 45, 56, {{ 0.85 | times: ov }}) 0%,
-      rgba(21, 45, 56, {{ 0.4 | times: ov }}) 50%,
-      rgba(21, 45, 56, {{ 0.2 | times: ov }}) 100%
-    );
-  }
-  #Hero-{{ section.id }} .pi-hero__overlay--light {
-    background: linear-gradient(
-      to top,
-      rgba(255, 255, 255, {{ 0.7 | times: ov }}) 0%,
-      rgba(255, 255, 255, {{ 0.2 | times: ov }}) 50%,
-      rgba(255, 255, 255, {{ 0.0 | times: ov }}) 100%
-    );
-  }
-{%- endstyle -%}
 
 <section
   id="Hero-{{ section.id }}"
@@ -102,7 +81,7 @@
   </div>
 
   {%- comment -%} Overlay {%- endcomment -%}
-  <div class="pi-hero__overlay pi-hero__overlay--{{ color_scheme }}"></div>
+  <div class="pi-hero__overlay pi-hero__overlay--{{ color_scheme }}" style="opacity: {{ overlay_opacity | divided_by: 100.0 }};"></div>
 
   {%- comment -%} Text Content {%- endcomment -%}
   <div class="pi-hero__content pi-hero__content--{{ text_alignment }} pi-reveal">
