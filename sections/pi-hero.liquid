@@ -14,6 +14,34 @@
   endif
 -%}
 
+<style>
+  #Hero-{{ section.id }}::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    pointer-events: none;
+    {%- if color_scheme == 'dark' -%}
+      background: linear-gradient(
+        to top,
+        rgba(21, 45, 56, 0.9) 0%,
+        rgba(21, 45, 56, 0.5) 40%,
+        rgba(21, 45, 56, 0.2) 100%
+      );
+    {%- else -%}
+      background: linear-gradient(
+        to top,
+        rgba(255, 255, 255, 0.8) 0%,
+        rgba(255, 255, 255, 0.3) 40%,
+        rgba(255, 255, 255, 0.05) 100%
+      );
+    {%- endif -%}
+    opacity: {{ overlay_opacity | times: 1.0 | divided_by: 100.0 }};
+  }
+</style>
 
 <section
   id="Hero-{{ section.id }}"
@@ -79,20 +107,6 @@
       <div style="width:100%;height:100%;background:var(--pi-deep-blue);"></div>
     {%- endif -%}
   </div>
-
-  {%- comment -%} Overlay {%- endcomment -%}
-  {%- assign ov_decimal = overlay_opacity | times: 1.0 | divided_by: 100.0 -%}
-  {%- if color_scheme == 'dark' -%}
-    {%- assign ov_a1 = 1.0 | times: ov_decimal -%}
-    {%- assign ov_a2 = 0.6 | times: ov_decimal -%}
-    {%- assign ov_a3 = 0.3 | times: ov_decimal -%}
-    <div class="pi-hero__overlay" style="background: linear-gradient(to top, rgba(21,45,56,{{ ov_a1 }}) 0%, rgba(21,45,56,{{ ov_a2 }}) 50%, rgba(21,45,56,{{ ov_a3 }}) 100%);"></div>
-  {%- else -%}
-    {%- assign ov_a1 = 0.9 | times: ov_decimal -%}
-    {%- assign ov_a2 = 0.4 | times: ov_decimal -%}
-    {%- assign ov_a3 = 0.1 | times: ov_decimal -%}
-    <div class="pi-hero__overlay" style="background: linear-gradient(to top, rgba(255,255,255,{{ ov_a1 }}) 0%, rgba(255,255,255,{{ ov_a2 }}) 50%, rgba(255,255,255,{{ ov_a3 }}) 100%);"></div>
-  {%- endif -%}
 
   {%- comment -%} Text Content {%- endcomment -%}
   <div class="pi-hero__content pi-hero__content--{{ text_alignment }}">
