@@ -23,7 +23,7 @@
         "text_alignment": "left",
         "min_height_desktop": "large",
         "min_height_mobile": "medium",
-        "color_scheme": "light",
+        "color_scheme": "dark",
         "overlay_opacity": 0
       }
     },
