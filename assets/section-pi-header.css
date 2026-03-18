@@ -147,7 +147,7 @@
   text-transform: uppercase;
   text-decoration: none;
   color: var(--pi-cream);
-  padding: 0 1rem;
+  padding: 0 2rem;
   height: 100%;
   display: flex;
   align-items: center;
@@ -160,8 +160,8 @@
   content: '';
   position: absolute;
   bottom: 0;
-  left: 1rem;
-  right: 1rem;
+  left: 2rem;
+  right: 2rem;
   height: 2px;
   background: var(--pi-gold);
   transform: scaleX(0);
