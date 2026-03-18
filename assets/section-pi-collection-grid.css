@@ -9,6 +9,13 @@
 .pi-collection-grid--bg-deep-blue { background-color: var(--pi-deep-blue); }
 .pi-collection-grid--bg-midnight { background-color: var(--pi-midnight); }
 
+/* ─── Text Color Override ─── */
+.pi-collection-grid .pi-label,
+.pi-collection-grid .pi-heading,
+.pi-collection-grid .pi-body {
+  color: var(--pi-grid-text-color, revert);
+}
+
 /* ─── Section Header ─── */
 .pi-collection-grid__header {
   text-align: center;
