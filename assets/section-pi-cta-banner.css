@@ -65,7 +65,7 @@
 /* ─── Label ─── */
 .pi-cta-banner__label {
   font-family: var(--pi-font-body);
-  font-size: 0.7rem;
+  font-size: 0.8125rem;
   font-weight: 600;
   letter-spacing: 0.25em;
   text-transform: uppercase;

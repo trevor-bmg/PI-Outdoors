@@ -104,7 +104,7 @@
 /* ─── Section Label (e.g. "Our Story", "Shop") ─── */
 .pi-label {
   font-family: var(--pi-font-body);
-  font-size: 0.75rem;
+  font-size: 0.8125rem;
   font-weight: 600;
   letter-spacing: 0.2em;
   text-transform: uppercase;
@@ -163,7 +163,7 @@
 }
 
 .pi-body--large {
-  font-size: 1.125rem;
+  font-size: 1.1875rem;
 }
 
 .pi-body--small {
@@ -185,7 +185,7 @@
 /* ─── Buttons ─── */
 .pi-btn {
   font-family: var(--pi-font-body);
-  font-size: 0.8rem;
+  font-size: 0.875rem;
   font-weight: 600;
   letter-spacing: 0.15em;
   text-transform: uppercase;

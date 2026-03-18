@@ -7,7 +7,7 @@
   background: var(--pi-midnight);
   padding: 0.5rem var(--pi-section-padding-x);
   font-family: var(--pi-font-body);
-  font-size: 0.75rem;
+  font-size: 0.8125rem;
   letter-spacing: 0.05em;
   color: var(--pi-storm);
   display: none;
@@ -109,7 +109,7 @@
 
 .pi-header__logo-text {
   font-family: var(--pi-font-heading);
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   font-weight: 700;
   color: var(--pi-cream);
   text-decoration: none;
@@ -141,7 +141,7 @@
 
 .pi-header__nav-link {
   font-family: var(--pi-font-body);
-  font-size: 0.85rem;
+  font-size: 0.9375rem;
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -228,7 +228,7 @@
   display: block;
   padding: 0.6rem 1.5rem;
   font-family: var(--pi-font-body);
-  font-size: 0.875rem;
+  font-size: 0.9375rem;
   font-weight: 400;
   color: var(--pi-charcoal);
   text-decoration: none;
@@ -288,7 +288,7 @@
   background: var(--pi-gold);
   color: var(--pi-midnight);
   font-family: var(--pi-font-body);
-  font-size: 0.65rem;
+  font-size: 0.75rem;
   font-weight: 700;
   line-height: 18px;
   text-align: center;
@@ -496,7 +496,7 @@
   justify-content: space-between;
   padding: 0.9rem 1.25rem;
   font-family: var(--pi-font-body);
-  font-size: 0.95rem;
+  font-size: 1.0625rem;
   font-weight: 600;
   letter-spacing: 0.04em;
   color: var(--pi-cream);
@@ -559,7 +559,7 @@
   display: block;
   padding: 0.65rem 1.25rem 0.65rem 2.25rem;
   font-family: var(--pi-font-body);
-  font-size: 0.875rem;
+  font-size: 0.9375rem;
   font-weight: 400;
   color: var(--pi-sand);
   text-decoration: none;
@@ -590,7 +590,7 @@
   display: block;
   padding: 0.5rem 0;
   font-family: var(--pi-font-body);
-  font-size: 0.8rem;
+  font-size: 0.875rem;
   letter-spacing: 0.05em;
   color: var(--pi-storm);
   text-decoration: none;

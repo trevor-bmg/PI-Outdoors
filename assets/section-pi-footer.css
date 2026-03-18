@@ -57,7 +57,7 @@
 /* ─── Headings ─── */
 .pi-footer__heading {
   font-family: var(--pi-font-body);
-  font-size: 0.8rem;
+  font-size: 0.875rem;
   font-weight: 600;
   letter-spacing: 0.15em;
   text-transform: uppercase;
@@ -179,7 +179,7 @@
 .pi-footer__submit {
   flex-shrink: 0;
   padding: 0.75rem 1.25rem;
-  font-size: 0.75rem;
+  font-size: 0.875rem;
 }
 
 .pi-footer__form-success,
@@ -269,14 +269,14 @@
 
 .pi-footer__copyright {
   font-family: var(--pi-font-body);
-  font-size: 0.8rem;
+  font-size: 0.875rem;
   color: var(--pi-storm);
   margin: 0;
 }
 
 .pi-footer__credit {
   font-family: var(--pi-font-body);
-  font-size: 0.8rem;
+  font-size: 0.875rem;
   color: var(--pi-driftwood);
   margin: 0;
 }

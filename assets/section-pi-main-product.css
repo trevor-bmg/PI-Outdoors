@@ -64,7 +64,7 @@
 /* ─── Vendor ─── */
 .pi-product__vendor {
   font-family: var(--pi-font-body);
-  font-size: 0.75rem;
+  font-size: 0.875rem;
   font-weight: 600;
   letter-spacing: 0.15em;
   text-transform: uppercase;
@@ -114,7 +114,7 @@
   background: var(--pi-gold);
   color: var(--pi-midnight);
   font-family: var(--pi-font-body);
-  font-size: 0.7rem;
+  font-size: 0.9375rem;
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -126,7 +126,7 @@
   background: var(--pi-driftwood);
   color: var(--pi-white);
   font-family: var(--pi-font-body);
-  font-size: 0.7rem;
+  font-size: 0.9375rem;
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -137,7 +137,7 @@
 /* ─── Tax / Shipping Policy ─── */
 .pi-product__tax {
   font-family: var(--pi-font-body);
-  font-size: 0.8125rem;
+  font-size: 0.9375rem;
   color: var(--pi-driftwood);
   margin-top: var(--pi-space-xs);
 }
@@ -157,7 +157,7 @@
 .pi-product .product-form__input .form__label,
 .pi-product .product-form__input legend.form__label {
   font-family: var(--pi-font-body);
-  font-size: 0.8125rem;
+  font-size: 0.9375rem;
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -214,7 +214,7 @@
 /* ─── Quantity Selector ─── */
 .pi-product__quantity-block .quantity__label {
   font-family: var(--pi-font-body);
-  font-size: 0.8125rem;
+  font-size: 0.9375rem;
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -278,7 +278,7 @@
 
 .pi-product .quantity__rules {
   font-family: var(--pi-font-body);
-  font-size: 0.75rem;
+  font-size: 0.875rem;
   color: var(--pi-driftwood);
   margin-top: 0.375rem;
 }
@@ -292,7 +292,7 @@
 
 .pi-product .product-form__submit {
   font-family: var(--pi-font-body);
-  font-size: 0.8rem;
+  font-size: 0.875rem;
   font-weight: 600;
   letter-spacing: 0.15em;
   text-transform: uppercase;
@@ -365,7 +365,7 @@
 
 .pi-product .product-form__error-message {
   font-family: var(--pi-font-body);
-  font-size: 0.8125rem;
+  font-size: 0.9375rem;
   color: #dc2626;
 }
 
@@ -483,7 +483,7 @@
 
 .pi-product__share .share-button__button {
   font-family: var(--pi-font-body);
-  font-size: 0.8125rem;
+  font-size: 0.9375rem;
   font-weight: 600;
   color: var(--pi-deep-blue);
   display: inline-flex;
@@ -500,7 +500,7 @@
 /* ─── Installments ─── */
 .pi-product .installment {
   font-family: var(--pi-font-body);
-  font-size: 0.8125rem;
+  font-size: 0.9375rem;
   color: var(--pi-driftwood);
 }
 
@@ -577,7 +577,7 @@
 
 .pi-product .slider-counter {
   font-family: var(--pi-font-body);
-  font-size: 0.8125rem;
+  font-size: 0.9375rem;
   color: var(--pi-driftwood);
 }
 
