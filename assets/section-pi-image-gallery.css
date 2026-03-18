@@ -92,7 +92,7 @@
 
 .pi-gallery__caption {
   font-family: var(--pi-font-body);
-  font-size: 0.875rem;
+  font-size: 14px;
   font-weight: 600;
   color: var(--pi-cream);
   line-height: 1.4;

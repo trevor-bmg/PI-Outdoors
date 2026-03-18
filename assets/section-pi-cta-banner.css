@@ -65,7 +65,7 @@
 /* ─── Label ─── */
 .pi-cta-banner__label {
   font-family: var(--pi-font-body);
-  font-size: 0.8125rem;
+  font-size: 13px;
   font-weight: 600;
   letter-spacing: 0.25em;
   text-transform: uppercase;
@@ -79,7 +79,7 @@
   font-family: var(--pi-font-heading);
   font-weight: 700;
   line-height: 1.2;
-  font-size: clamp(1.6rem, 3.5vw, 2rem);
+  font-size: clamp(26px, 3.5vw, 32px);
   color: var(--pi-cream);
   margin-bottom: var(--pi-space-md);
 }
@@ -87,7 +87,7 @@
 /* ─── Body ─── */
 .pi-cta-banner__body {
   font-family: var(--pi-font-body);
-  font-size: 1.05rem;
+  font-size: 17px;
   font-weight: 400;
   line-height: 1.7;
   color: var(--pi-storm);

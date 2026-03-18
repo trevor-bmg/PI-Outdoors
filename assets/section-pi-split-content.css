@@ -113,7 +113,7 @@
 }
 
 .pi-split__accent {
-  font-size: clamp(1.1rem, 2vw, 1.35rem);
+  font-size: clamp(20px, 2.5vw, 24px);
   line-height: 1.4;
   margin-bottom: var(--pi-space-md);
 }

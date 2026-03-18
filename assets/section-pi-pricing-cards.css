@@ -94,7 +94,7 @@
 /* ─── Badge ─── */
 .pi-pricing__badge {
   font-family: var(--pi-font-body);
-  font-size: 0.75rem;
+  font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.2em;
   text-transform: uppercase;
@@ -114,7 +114,7 @@
 /* ─── Price ─── */
 .pi-pricing__price {
   font-family: var(--pi-font-heading);
-  font-size: clamp(2rem, 4.5vw, 2.625rem);
+  font-size: clamp(32px, 4.5vw, 42px);
   font-weight: 700;
   line-height: 1.2;
   color: var(--pi-gold);

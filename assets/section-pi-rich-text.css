@@ -48,7 +48,7 @@
 }
 
 .pi-rich-text__accent {
-  font-size: clamp(1.1rem, 2vw, 1.35rem);
+  font-size: clamp(18px, 2vw, 22px);
   line-height: 1.4;
   margin-bottom: var(--pi-space-md);
 }
