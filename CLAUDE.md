@@ -46,3 +46,50 @@ Shopify Dawn v15.4.1 — stock, unmodified. JSON-based Shopify 2.0 architecture.
 - Keep assets static — no transpilation or bundling.
 - Liquid files use 2-space indentation.
 - Section schemas define all customizer settings inline at bottom of file.
+
+## Brand Guidelines
+
+Reference: `brand-guidelines.html` for full visual spec.
+
+### Color Palette
+
+**Primary:**
+- Deep Blue: `#2B4C5C` — primary brand color, dark backgrounds
+- Dark Blue: `#1E3A48` — deeper variant for contrast
+- Antique Gold: `#C4A24E` — accent, highlights, CTAs
+- Cream: `#F2E8D5` — text on dark backgrounds
+
+**Secondary:**
+- Midnight: `#152D38` — darkest background tier
+- Marsh Green: `#5A7A5E` — earthy accent, CTA alternative
+- Sand: `#D6C9AA` — soft neutral
+- Driftwood: `#8B7D6B` — muted text, secondary info
+
+**Neutral:**
+- Charcoal: `#2C2C2C` — body text on light backgrounds
+- Storm: `#6B7F8C` — subdued text, metadata
+- Warm White: `#FAF7F2` — light backgrounds
+
+### Typography
+
+Three fonts, strict hierarchy:
+
+1. **Playfair Display** (serif) — Headlines, section titles, hero text. Weights: 700, 900. Fallback: Georgia, 'Times New Roman', serif.
+2. **Source Sans 3** (sans-serif) — Body copy, navigation, buttons, captions. Weights: 300, 400, 600. Fallback: 'Helvetica Neue', Arial, sans-serif.
+3. **Libre Baskerville** (serif, italic) — Accent only. Taglines, decorative phrases. Always italic, bold (600i or 700i). One instance per page max. Fallback: Georgia, serif.
+
+**Type Scale:** Hero 64px/900, H1 42px/700, H2 32px/700, H3 24px/700, Body 16–18px/400, Caption 13px/400.
+
+### Brand Voice
+
+Knowledgeable, welcoming, straightforward, proud but not loud. Speaks like a trusted local guide — experience-based, not salesy.
+
+- **Do:** Conversational, specific, local. "Stop in and we'll get you set up."
+- **Don't:** Corporate jargon, hype, generic retail language. No "premium experience" or "curated selection."
+
+### Design Principles
+
+- Deep Blue + Gold dominate. Cream for text on dark. Warm White for light backgrounds.
+- Marsh Green for secondary CTAs and earthy accents.
+- Source Sans 3 Semibold uppercase with wide letter-spacing for buttons/CTAs.
+- High contrast, clear hierarchy. Heritage feel without being stuffy.

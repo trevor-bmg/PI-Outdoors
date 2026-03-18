@@ -1,0 +1,181 @@
+/* ============================================
+   PI Outdoors — Rich Text Section
+   Centered text block for body content
+   ============================================ */
+
+/* ─── Content Width Variants ─── */
+.pi-rich-text__inner--narrow {
+  max-width: 600px;
+}
+
+.pi-rich-text__inner--medium {
+  max-width: 800px;
+}
+
+.pi-rich-text__inner--wide {
+  max-width: 1000px;
+}
+
+.pi-rich-text__inner {
+  margin: 0 auto;
+}
+
+/* ─── Alignment ─── */
+.pi-rich-text--center {
+  text-align: center;
+}
+
+.pi-rich-text--left {
+  text-align: left;
+}
+
+.pi-rich-text--center .pi-divider {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ─── Text Content ─── */
+.pi-rich-text__label {
+  margin-bottom: var(--pi-space-sm);
+}
+
+.pi-rich-text__heading {
+  margin-bottom: var(--pi-space-md);
+}
+
+.pi-rich-text__divider {
+  margin-bottom: var(--pi-space-md);
+}
+
+.pi-rich-text__accent {
+  font-size: clamp(1.1rem, 2vw, 1.35rem);
+  line-height: 1.4;
+  margin-bottom: var(--pi-space-md);
+}
+
+.pi-rich-text__body {
+  margin-bottom: var(--pi-space-lg);
+}
+
+.pi-rich-text__body:last-child {
+  margin-bottom: 0;
+}
+
+/* Richtext formatting inside body */
+.pi-rich-text__body p {
+  margin-bottom: var(--pi-space-sm);
+}
+
+.pi-rich-text__body p:last-child {
+  margin-bottom: 0;
+}
+
+.pi-rich-text__body ul,
+.pi-rich-text__body ol {
+  padding-left: 1.25rem;
+  margin-bottom: var(--pi-space-sm);
+}
+
+.pi-rich-text--center .pi-rich-text__body ul,
+.pi-rich-text--center .pi-rich-text__body ol {
+  text-align: left;
+  display: inline-block;
+}
+
+.pi-rich-text__body li {
+  margin-bottom: 0.35rem;
+}
+
+.pi-rich-text__body strong {
+  font-weight: 600;
+}
+
+.pi-rich-text__body em {
+  font-style: italic;
+}
+
+.pi-rich-text__body a {
+  color: var(--pi-gold);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color var(--pi-duration) var(--pi-ease);
+}
+
+.pi-rich-text__body a:hover {
+  color: var(--pi-gold-dark);
+}
+
+.pi-rich-text__button {
+  margin-top: var(--pi-space-xs);
+}
+
+/* ─── Section Padding Variants ─── */
+.pi-rich-text-section--padding-small {
+  padding-top: var(--pi-space-lg);
+  padding-bottom: var(--pi-space-lg);
+}
+
+.pi-rich-text-section--padding-medium {
+  padding-top: var(--pi-space-2xl);
+  padding-bottom: var(--pi-space-2xl);
+}
+
+.pi-rich-text-section--padding-large {
+  padding-top: var(--pi-space-3xl);
+  padding-bottom: var(--pi-space-3xl);
+}
+
+/* ─── Background Colors ─── */
+.pi-rich-text-section--bg-warm-white {
+  background-color: var(--pi-warm-white);
+}
+
+.pi-rich-text-section--bg-white {
+  background-color: var(--pi-white);
+}
+
+.pi-rich-text-section--bg-cream {
+  background-color: var(--pi-cream);
+}
+
+.pi-rich-text-section--bg-deep-blue {
+  background-color: var(--pi-deep-blue);
+}
+
+.pi-rich-text-section--bg-midnight {
+  background-color: var(--pi-midnight);
+}
+
+/* ─── Dark Background Text Overrides ─── */
+.pi-rich-text-section--dark .pi-rich-text__heading {
+  color: var(--pi-cream);
+}
+
+.pi-rich-text-section--dark .pi-rich-text__label {
+  color: var(--pi-gold-light);
+}
+
+.pi-rich-text-section--dark .pi-rich-text__body {
+  color: var(--pi-storm);
+}
+
+.pi-rich-text-section--dark .pi-rich-text__accent {
+  color: var(--pi-gold-light);
+}
+
+.pi-rich-text-section--dark .pi-rich-text__body a {
+  color: var(--pi-gold-light);
+}
+
+.pi-rich-text-section--dark .pi-rich-text__body a:hover {
+  color: var(--pi-gold);
+}
+
+/* ─── Staggered Reveal ─── */
+.pi-rich-text__inner .pi-reveal:nth-child(1) { transition-delay: 0s; }
+.pi-rich-text__inner .pi-reveal:nth-child(2) { transition-delay: 0.1s; }
+.pi-rich-text__inner .pi-reveal:nth-child(3) { transition-delay: 0.2s; }
+.pi-rich-text__inner .pi-reveal:nth-child(4) { transition-delay: 0.3s; }
+.pi-rich-text__inner .pi-reveal:nth-child(5) { transition-delay: 0.4s; }
+.pi-rich-text__inner .pi-reveal:nth-child(6) { transition-delay: 0.5s; }
+.pi-rich-text__inner .pi-reveal:nth-child(7) { transition-delay: 0.6s; }

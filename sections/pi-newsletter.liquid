@@ -1,0 +1,144 @@
+{{ 'pi-base.css' | asset_url | stylesheet_tag }}
+{{ 'section-pi-newsletter.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'pi-reveal.js' | asset_url }}" defer></script>
+
+{%- liquid
+  assign bg = section.settings.background_color
+  assign dark = false
+  if bg == 'deep-blue' or bg == 'midnight'
+    assign dark = true
+  endif
+  assign align = section.settings.text_alignment
+  assign layout = section.settings.layout
+-%}
+
+<section
+  class="pi-section pi-newsletter pi-newsletter--bg-{{ bg }} pi-newsletter--{{ layout }} pi-newsletter--align-{{ align }}{% if dark %} pi-section--dark{% endif %}"
+  id="section-{{ section.id }}"
+>
+  <div class="pi-section__inner pi-section__inner--narrow pi-newsletter__inner pi-reveal">
+
+    {%- comment -%} Text Block {%- endcomment -%}
+    <div class="pi-newsletter__text">
+      {%- if section.settings.label != blank -%}
+        <span class="pi-label">{{ section.settings.label | escape }}</span>
+      {%- endif -%}
+
+      {%- if section.settings.heading != blank -%}
+        <h2 class="pi-heading pi-heading--h2 pi-newsletter__heading">
+          {{ section.settings.heading | escape }}
+        </h2>
+      {%- endif -%}
+
+      {%- if section.settings.body_text != blank -%}
+        <p class="pi-body pi-body--large pi-newsletter__body">
+          {{ section.settings.body_text | escape }}
+        </p>
+      {%- endif -%}
+    </div>
+
+    {%- comment -%} Form Block {%- endcomment -%}
+    <div class="pi-newsletter__form-wrap">
+      {% form 'customer', class: 'pi-newsletter__form' %}
+        <input type="hidden" name="contact[tags]" value="newsletter">
+
+        {%- if form.posted_successfully? -%}
+          <div class="pi-newsletter__success" role="status">
+            <p class="pi-body">Thanks for subscribing! We'll be in touch.</p>
+          </div>
+        {%- else -%}
+          {%- if form.errors -%}
+            <div class="pi-newsletter__errors" role="alert">
+              {%- if form.errors.messages['email'] -%}
+                <p class="pi-body pi-body--small">{{ form.errors.messages['email'] }}</p>
+              {%- else -%}
+                <p class="pi-body pi-body--small">Something went wrong. Please try again.</p>
+              {%- endif -%}
+            </div>
+          {%- endif -%}
+
+          <div class="pi-newsletter__fields">
+            <input
+              type="email"
+              name="contact[email]"
+              class="pi-newsletter__input"
+              placeholder="Your email address"
+              autocomplete="email"
+              required
+              aria-label="Email address"
+            >
+            <button type="submit" class="pi-btn pi-btn--primary pi-newsletter__submit">
+              Subscribe
+            </button>
+          </div>
+        {%- endif -%}
+      {% endform %}
+    </div>
+
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "PI — Newsletter",
+  "tag": "section",
+  "class": "pi-newsletter-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "label",
+      "label": "Label",
+      "default": "Stay Connected"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Get the Latest from PI Outdoors"
+    },
+    {
+      "type": "textarea",
+      "id": "body_text",
+      "label": "Body text",
+      "default": "Sign up for fishing reports, new gear drops, and local events."
+    },
+    {
+      "type": "select",
+      "id": "background_color",
+      "label": "Background color",
+      "options": [
+        { "value": "deep-blue", "label": "Deep Blue" },
+        { "value": "midnight", "label": "Midnight" },
+        { "value": "warm-white", "label": "Warm White" },
+        { "value": "cream", "label": "Cream" }
+      ],
+      "default": "deep-blue"
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "Text alignment",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "select",
+      "id": "layout",
+      "label": "Layout",
+      "options": [
+        { "value": "stacked", "label": "Stacked" },
+        { "value": "inline", "label": "Inline (side by side)" }
+      ],
+      "default": "stacked"
+    }
+  ],
+  "presets": [
+    {
+      "name": "PI — Newsletter"
+    }
+  ]
+}
+{% endschema %}

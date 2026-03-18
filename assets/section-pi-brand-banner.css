@@ -1,0 +1,83 @@
+/* ============================================
+   PI Outdoors — Brand Banner
+   A lightweight logo strip for partner brands.
+   ============================================ */
+
+/* ─── Section Overrides ─── */
+.pi-brand-banner {
+  padding-top: var(--pi-space-lg);
+  padding-bottom: var(--pi-space-lg);
+}
+
+/* ─── Background Variants ─── */
+.pi-brand-banner--bg-warm-white { background-color: var(--pi-warm-white); }
+.pi-brand-banner--bg-white { background-color: var(--pi-white); }
+.pi-brand-banner--bg-cream { background-color: var(--pi-cream); }
+.pi-brand-banner--bg-deep-blue { background-color: var(--pi-deep-blue); }
+.pi-brand-banner--bg-midnight { background-color: var(--pi-midnight); }
+
+/* ─── Heading ─── */
+.pi-brand-banner__heading {
+  text-align: center;
+  margin-bottom: var(--pi-space-lg);
+}
+
+/* ─── Logo Row ─── */
+.pi-brand-banner__logos {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: var(--pi-space-md) var(--pi-space-lg);
+}
+
+/* ─── Individual Logo ─── */
+.pi-brand-banner__item {
+  flex-shrink: 0;
+}
+
+.pi-brand-banner__link {
+  display: block;
+  text-decoration: none;
+}
+
+.pi-brand-banner__logo {
+  display: block;
+  height: var(--pi-logo-height, 50px);
+  width: auto;
+  object-fit: contain;
+  transition: filter var(--pi-duration) var(--pi-ease),
+              opacity var(--pi-duration) var(--pi-ease),
+              transform var(--pi-duration) var(--pi-ease);
+}
+
+/* ─── Grayscale Mode ─── */
+.pi-brand-banner__logos--grayscale .pi-brand-banner__logo {
+  filter: grayscale(100%);
+  opacity: 0.6;
+}
+
+.pi-brand-banner__logos--grayscale .pi-brand-banner__item:hover .pi-brand-banner__logo {
+  filter: grayscale(0%);
+  opacity: 1;
+}
+
+/* ─── Mobile ─── */
+@media (max-width: 749px) {
+  .pi-brand-banner {
+    padding-top: var(--pi-space-md);
+    padding-bottom: var(--pi-space-md);
+  }
+
+  .pi-brand-banner__heading {
+    margin-bottom: var(--pi-space-md);
+  }
+
+  .pi-brand-banner__logos {
+    gap: var(--pi-space-sm) var(--pi-space-md);
+  }
+
+  .pi-brand-banner__logo {
+    height: calc(var(--pi-logo-height, 50px) * 0.75);
+  }
+}

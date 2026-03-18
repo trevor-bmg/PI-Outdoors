@@ -1,0 +1,199 @@
+/* ============================================
+   PI Outdoors — Newsletter Signup
+   Email capture section with stacked/inline layouts.
+   ============================================ */
+
+/* ─── Background Variants ─── */
+.pi-newsletter--bg-deep-blue { background-color: var(--pi-deep-blue); }
+.pi-newsletter--bg-midnight { background-color: var(--pi-midnight); }
+.pi-newsletter--bg-warm-white { background-color: var(--pi-warm-white); }
+.pi-newsletter--bg-cream { background-color: var(--pi-cream); }
+
+/* ─── Alignment ─── */
+.pi-newsletter--align-center .pi-newsletter__text {
+  text-align: center;
+}
+
+.pi-newsletter--align-center .pi-label {
+  justify-content: center;
+}
+
+.pi-newsletter--align-center .pi-newsletter__fields {
+  justify-content: center;
+}
+
+.pi-newsletter--align-left .pi-newsletter__text {
+  text-align: left;
+}
+
+/* ─── Stacked Layout ─── */
+.pi-newsletter--stacked .pi-newsletter__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pi-newsletter--stacked .pi-newsletter__text {
+  margin-bottom: var(--pi-space-lg);
+  max-width: 600px;
+}
+
+.pi-newsletter--stacked .pi-newsletter__form-wrap {
+  width: 100%;
+  max-width: 500px;
+}
+
+/* ─── Inline Layout (desktop) ─── */
+@media (min-width: 750px) {
+  .pi-newsletter--inline .pi-newsletter__inner {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: var(--pi-space-xl);
+  }
+
+  .pi-newsletter--inline .pi-newsletter__text {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .pi-newsletter--inline .pi-newsletter__form-wrap {
+    flex: 1;
+    min-width: 0;
+  }
+
+  /* Override center alignment for inline — text sits left */
+  .pi-newsletter--inline .pi-newsletter__text {
+    text-align: left;
+  }
+}
+
+/* ─── Inline Layout (mobile: stacks) ─── */
+@media (max-width: 749px) {
+  .pi-newsletter--inline .pi-newsletter__inner {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .pi-newsletter--inline .pi-newsletter__text {
+    margin-bottom: var(--pi-space-lg);
+  }
+
+  .pi-newsletter--inline .pi-newsletter__form-wrap {
+    width: 100%;
+  }
+}
+
+/* ─── Heading ─── */
+.pi-newsletter__heading {
+  margin-bottom: var(--pi-space-sm);
+}
+
+/* ─── Body ─── */
+.pi-newsletter__body {
+  margin-top: var(--pi-space-xs);
+}
+
+/* ─── Form Fields ─── */
+.pi-newsletter__fields {
+  display: flex;
+  gap: var(--pi-space-xs);
+}
+
+.pi-newsletter__input {
+  flex: 1;
+  min-width: 0;
+  font-family: var(--pi-font-body);
+  font-size: 1rem;
+  padding: 0.875rem 1.25rem;
+  border: 1px solid var(--pi-sand);
+  border-radius: var(--pi-radius-sm);
+  background: var(--pi-white);
+  color: var(--pi-charcoal);
+  transition: border-color var(--pi-duration) var(--pi-ease),
+              box-shadow var(--pi-duration) var(--pi-ease);
+  outline: none;
+  line-height: 1;
+}
+
+.pi-newsletter__input::placeholder {
+  color: var(--pi-driftwood);
+}
+
+.pi-newsletter__input:focus {
+  border-color: var(--pi-gold);
+  box-shadow: 0 0 0 2px rgba(196, 162, 78, 0.2);
+}
+
+/* ─── Input on Dark Backgrounds ─── */
+.pi-section--dark .pi-newsletter__input {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
+  color: var(--pi-cream);
+}
+
+.pi-section--dark .pi-newsletter__input::placeholder {
+  color: var(--pi-storm);
+}
+
+.pi-section--dark .pi-newsletter__input:focus {
+  border-color: var(--pi-gold);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* ─── Submit Button ─── */
+.pi-newsletter__submit {
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+/* ─── Success Message ─── */
+.pi-newsletter__success {
+  text-align: center;
+  padding: var(--pi-space-sm) var(--pi-space-md);
+  background: rgba(90, 122, 94, 0.12);
+  border: 1px solid rgba(90, 122, 94, 0.25);
+  border-radius: var(--pi-radius-sm);
+}
+
+.pi-newsletter__success .pi-body {
+  color: var(--pi-marsh-green);
+  font-weight: 600;
+}
+
+.pi-section--dark .pi-newsletter__success .pi-body {
+  color: var(--pi-gold-light);
+}
+
+/* ─── Error Message ─── */
+.pi-newsletter__errors {
+  margin-bottom: var(--pi-space-sm);
+  padding: var(--pi-space-xs) var(--pi-space-sm);
+  background: rgba(180, 60, 60, 0.08);
+  border: 1px solid rgba(180, 60, 60, 0.2);
+  border-radius: var(--pi-radius-sm);
+}
+
+.pi-newsletter__errors .pi-body {
+  color: #b43c3c;
+}
+
+.pi-section--dark .pi-newsletter__errors {
+  background: rgba(180, 60, 60, 0.15);
+  border-color: rgba(180, 60, 60, 0.3);
+}
+
+.pi-section--dark .pi-newsletter__errors .pi-body {
+  color: #e8a0a0;
+}
+
+/* ─── Mobile ─── */
+@media (max-width: 749px) {
+  .pi-newsletter__fields {
+    flex-direction: column;
+  }
+
+  .pi-newsletter__submit {
+    width: 100%;
+  }
+}

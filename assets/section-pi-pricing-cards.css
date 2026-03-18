@@ -1,0 +1,149 @@
+/* ============================================
+   PI Pricing Cards — Section Styles
+   ============================================ */
+
+/* ─── Header ─── */
+.pi-pricing__header {
+  text-align: center;
+  margin-bottom: var(--pi-space-lg);
+}
+
+.pi-pricing__intro {
+  max-width: var(--pi-max-width-narrow);
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: var(--pi-space-sm);
+}
+
+/* ─── Card Grid ─── */
+.pi-pricing__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--pi-space-md);
+}
+
+@media (min-width: 750px) {
+  .pi-pricing__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 990px) {
+  .pi-pricing__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* When there are exactly 4 tiers, use 2x2 on desktop */
+  .pi-pricing__grid[data-columns="4"] {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 860px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* When 5 or 6, keep 3-col */
+}
+
+/* ─── Card Base ─── */
+.pi-pricing__card {
+  border-radius: var(--pi-radius-lg);
+  padding: var(--pi-space-lg) var(--pi-space-md);
+  text-align: center;
+  position: relative;
+  transition: box-shadow var(--pi-duration) var(--pi-ease),
+              transform var(--pi-duration) var(--pi-ease);
+}
+
+/* Light background cards */
+.pi-pricing__card--light {
+  background: var(--pi-white);
+  box-shadow: var(--pi-shadow-md);
+}
+
+.pi-pricing__card--light:hover {
+  box-shadow: var(--pi-shadow-lg);
+  transform: translateY(-2px);
+}
+
+/* Dark background cards */
+.pi-pricing__card--dark {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.pi-pricing__card--dark:hover {
+  background: rgba(255, 255, 255, 0.09);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+}
+
+/* ─── Featured Card ─── */
+.pi-pricing__card--featured {
+  border-top: 4px solid var(--pi-gold);
+}
+
+.pi-pricing__card--featured.pi-pricing__card--light {
+  box-shadow: var(--pi-shadow-lg);
+}
+
+.pi-pricing__card--featured.pi-pricing__card--dark {
+  border-color: var(--pi-gold);
+  background: rgba(255, 255, 255, 0.09);
+}
+
+/* ─── Badge ─── */
+.pi-pricing__badge {
+  font-family: var(--pi-font-body);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--pi-midnight);
+  background: var(--pi-gold);
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--pi-radius-sm);
+  margin-bottom: var(--pi-space-sm);
+}
+
+/* ─── Card Title ─── */
+.pi-pricing__title {
+  margin-bottom: var(--pi-space-xs);
+}
+
+/* ─── Price ─── */
+.pi-pricing__price {
+  font-family: var(--pi-font-heading);
+  font-size: clamp(2rem, 4.5vw, 2.625rem);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--pi-gold);
+  margin-bottom: var(--pi-space-sm);
+}
+
+/* ─── Description ─── */
+.pi-pricing__desc {
+  color: var(--pi-driftwood);
+  line-height: 1.8;
+}
+
+.pi-section--dark .pi-pricing__desc {
+  color: var(--pi-storm);
+}
+
+/* ─── Footnote ─── */
+.pi-pricing__footnote {
+  text-align: center;
+  max-width: var(--pi-max-width-narrow);
+  margin: var(--pi-space-lg) auto 0;
+}
+
+.pi-section--dark .pi-pricing__footnote {
+  color: var(--pi-storm);
+}
+
+/* ─── CTA ─── */
+.pi-pricing__cta {
+  text-align: center;
+  margin-top: var(--pi-space-lg);
+}

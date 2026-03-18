@@ -1,0 +1,138 @@
+/* ============================================
+   PI Outdoors — CTA Banner Section
+   Full-width call-to-action with solid color
+   or image backgrounds.
+   ============================================ */
+
+.pi-cta-banner {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding: var(--pi-space-2xl) var(--pi-section-padding-x);
+}
+
+/* ─── Background Variants ─── */
+.pi-cta-banner--deep-blue   { background-color: var(--pi-deep-blue); }
+.pi-cta-banner--midnight    { background-color: var(--pi-midnight); }
+.pi-cta-banner--marsh-green { background-color: var(--pi-marsh-green); }
+.pi-cta-banner--gold        { background-color: var(--pi-gold); }
+
+/* ─── Background Image ─── */
+.pi-cta-banner__media {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.pi-cta-banner__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ─── Image Overlay ─── */
+.pi-cta-banner__overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    180deg,
+    rgba(21, 45, 56, 0.6) 0%,
+    rgba(21, 45, 56, 0.8) 100%
+  );
+  pointer-events: none;
+}
+
+/* ─── Content ─── */
+.pi-cta-banner__inner {
+  position: relative;
+  z-index: 2;
+  max-width: var(--pi-max-width-narrow);
+  margin: 0 auto;
+}
+
+.pi-cta-banner__inner--left {
+  text-align: left;
+}
+
+.pi-cta-banner__inner--center {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ─── Label ─── */
+.pi-cta-banner__label {
+  font-family: var(--pi-font-body);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--pi-gold-light);
+  margin-bottom: var(--pi-space-sm);
+  display: block;
+}
+
+/* ─── Heading ─── */
+.pi-cta-banner__heading {
+  font-family: var(--pi-font-heading);
+  font-weight: 700;
+  line-height: 1.2;
+  font-size: clamp(1.6rem, 3.5vw, 2rem);
+  color: var(--pi-cream);
+  margin-bottom: var(--pi-space-md);
+}
+
+/* ─── Body ─── */
+.pi-cta-banner__body {
+  font-family: var(--pi-font-body);
+  font-size: 1.05rem;
+  font-weight: 400;
+  line-height: 1.7;
+  color: var(--pi-storm);
+  max-width: 550px;
+  margin-bottom: var(--pi-space-lg);
+}
+
+.pi-cta-banner__inner--center .pi-cta-banner__body {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ─── Gold Background Overrides ─── */
+.pi-cta-banner--gold .pi-cta-banner__label {
+  color: var(--pi-midnight);
+  opacity: 0.7;
+}
+
+.pi-cta-banner--gold .pi-cta-banner__heading {
+  color: var(--pi-midnight);
+}
+
+.pi-cta-banner--gold .pi-cta-banner__body {
+  color: var(--pi-dark-blue);
+}
+
+/* On gold, secondary button needs adjustment */
+.pi-cta-banner--gold .pi-btn--secondary {
+  color: var(--pi-midnight);
+  border-color: var(--pi-midnight);
+}
+
+.pi-cta-banner--gold .pi-btn--secondary:hover {
+  background: var(--pi-midnight);
+  color: var(--pi-cream);
+}
+
+/* ─── CTA ─── */
+.pi-cta-banner__cta {
+  margin-top: var(--pi-space-xs);
+}
+
+/* ─── Responsive ─── */
+@media (min-width: 750px) {
+  .pi-cta-banner {
+    padding: var(--pi-space-3xl) var(--pi-section-padding-x);
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "sections": {
+    "banner": {
+      "type": "main-collection-banner",
+      "settings": {
+        "show_collection_description": true,
+        "show_collection_image": false,
+        "color_scheme": "scheme-1"
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "settings": {
+        "products_per_page": 16,
+        "columns_desktop": 4,
+        "color_scheme": "scheme-1",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "enable_filtering": true,
+        "filter_type": "horizontal",
+        "enable_sorting": true,
+        "columns_mobile": "2",
+        "padding_top": 28,
+        "padding_bottom": 36
+      }
+    },
+    "cta": {
+      "type": "pi-cta-banner",
+      "settings": {
+        "background_style": "deep-blue",
+        "heading": "Need Help Finding Something?",
+        "body_text": "Give us a call or stop by the shop. We're always happy to help you find the right gear.",
+        "button_label": "Contact Us",
+        "button_link": "shopify:\/\/pages\/contact",
+        "button_style": "primary",
+        "text_alignment": "center"
+      }
+    },
+    "newsletter": {
+      "type": "pi-newsletter",
+      "settings": {
+        "background_color": "deep-blue",
+        "text_alignment": "center",
+        "layout": "stacked"
+      }
+    }
+  },
+  "order": [
+    "banner",
+    "product-grid",
+    "cta",
+    "newsletter"
+  ]
+}

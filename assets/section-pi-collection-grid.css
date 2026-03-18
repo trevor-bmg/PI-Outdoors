@@ -1,0 +1,148 @@
+/* ============================================
+   PI Collection Grid — Section Styles
+   ============================================ */
+
+/* ─── Background Variants ─── */
+.pi-collection-grid--bg-warm-white { background-color: var(--pi-warm-white); }
+.pi-collection-grid--bg-white { background-color: var(--pi-white); }
+.pi-collection-grid--bg-cream { background-color: var(--pi-cream); }
+.pi-collection-grid--bg-deep-blue { background-color: var(--pi-deep-blue); }
+.pi-collection-grid--bg-midnight { background-color: var(--pi-midnight); }
+
+/* ─── Section Header ─── */
+.pi-collection-grid__header {
+  text-align: center;
+  margin-bottom: var(--pi-space-xl);
+}
+
+.pi-collection-grid__body {
+  max-width: var(--pi-max-width-narrow);
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: var(--pi-space-sm);
+}
+
+/* ─── Grid Layout ─── */
+.pi-collection-grid__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--pi-space-sm);
+}
+
+@media (min-width: 750px) {
+  .pi-collection-grid__grid {
+    grid-template-columns: repeat(
+      calc(var(--pi-grid-columns, 4) - 1),
+      1fr
+    );
+    gap: var(--pi-space-md);
+  }
+}
+
+@media (min-width: 990px) {
+  .pi-collection-grid__grid {
+    grid-template-columns: repeat(var(--pi-grid-columns, 4), 1fr);
+  }
+}
+
+/* ─── Card ─── */
+.pi-collection-grid__card {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--pi-radius-md);
+}
+
+.pi-collection-grid__link {
+  display: block;
+  position: relative;
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ─── Image Container ─── */
+.pi-collection-grid__image-wrap {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  background-color: var(--pi-charcoal);
+}
+
+.pi-collection-grid__image {
+  transition: transform var(--pi-duration-slow) var(--pi-ease);
+}
+
+/* ─── Hover: Scale Image ─── */
+.pi-collection-grid__card:hover .pi-collection-grid__image,
+.pi-collection-grid__link:focus .pi-collection-grid__image {
+  transform: scale(1.03);
+}
+
+/* ─── Dark Gradient Overlay ─── */
+.pi-collection-grid__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, calc(var(--pi-overlay-opacity, 0.3) + 0.35)) 0%,
+    rgba(0, 0, 0, calc(var(--pi-overlay-opacity, 0.3) * 0.5)) 40%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  pointer-events: none;
+  transition: opacity var(--pi-duration) var(--pi-ease);
+}
+
+/* Hover: lighten overlay */
+.pi-collection-grid__card:hover .pi-collection-grid__overlay,
+.pi-collection-grid__link:focus .pi-collection-grid__overlay {
+  opacity: 0.75;
+}
+
+/* ─── Title Overlay ─── */
+.pi-collection-grid__title-wrap {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: var(--pi-space-md);
+  z-index: 2;
+  pointer-events: none;
+}
+
+.pi-collection-grid__title {
+  color: var(--pi-cream);
+  margin: 0;
+  transition: transform var(--pi-duration) var(--pi-ease);
+}
+
+/* Hover: shift title up */
+.pi-collection-grid__card:hover .pi-collection-grid__title,
+.pi-collection-grid__link:focus .pi-collection-grid__title {
+  transform: translateY(-4px);
+}
+
+/* ─── Placeholder ─── */
+.pi-collection-grid__placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--pi-charcoal);
+}
+
+.pi-collection-grid__placeholder-svg {
+  width: 60%;
+  height: auto;
+  opacity: 0.3;
+}
+
+.pi-collection-grid__placeholder-svg path {
+  fill: var(--pi-storm);
+}
+
+/* ─── Focus Styles ─── */
+.pi-collection-grid__link:focus-visible {
+  outline: 2px solid var(--pi-gold);
+  outline-offset: 2px;
+  border-radius: var(--pi-radius-md);
+}

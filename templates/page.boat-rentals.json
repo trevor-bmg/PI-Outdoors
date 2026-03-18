@@ -1,0 +1,92 @@
+{
+  "sections": {
+    "hero": {
+      "type": "pi-hero",
+      "settings": {
+        "heading": "Jon Boat Rentals",
+        "accent_text": "Explore the Lowcountry",
+        "body_text": "Get out on the water with our fleet of well-maintained aluminum jon boats. All safety equipment included.",
+        "button_label": "",
+        "text_alignment": "left",
+        "min_height_desktop": "medium",
+        "min_height_mobile": "small",
+        "color_scheme": "dark",
+        "overlay_opacity": 45
+      }
+    },
+    "fleet": {
+      "type": "pi-split-content",
+      "settings": {
+        "label": "The Fleet",
+        "heading": "14–15' Aluminum Jon Boats",
+        "body_text": "<p>Each boat is equipped with a 15 or 20 hp Yamaha outboard and all USCG-required safety equipment. Perfect for exploring the tidal creeks of Litchfield, Pawleys Island, and DeBordieu.</p><p>Whether you're fishing the flats, scouting for redfish, or just cruising the marsh, our boats are ready to go.</p>",
+        "image_position": "left",
+        "image_ratio": "landscape",
+        "background_color": "warm-white",
+        "vertical_padding": "large"
+      }
+    },
+    "pricing": {
+      "type": "pi-pricing-cards",
+      "settings": {
+        "label": "Pricing",
+        "heading": "Rental Rates",
+        "body_text": "<p>Reservations are recommended. Each additional day beyond your rental period is $100.</p>",
+        "footnote": "Prices subject to change. Completion of contract with refundable deposit and rental payment due at time of possession. Reservations are recommended.",
+        "button_label": "Contact Us to Reserve",
+        "button_link": "shopify:\/\/pages\/contact",
+        "button_style": "green",
+        "background_color": "cream"
+      },
+      "blocks": {
+        "tier_1": {
+          "type": "tier",
+          "settings": {
+            "title": "1 Day",
+            "price": "$295",
+            "description": "Renter must pick up boat\nCompletion of contract required\nRefundable deposit due at pickup\nAll safety equipment included",
+            "featured": false
+          }
+        },
+        "tier_2": {
+          "type": "tier",
+          "settings": {
+            "title": "3 Days",
+            "price": "$495",
+            "description": "Delivery available (3-day minimum)\nCustomers welcome to pick up & trailer\nCompletion of contract required\nRefundable deposit due at pickup",
+            "featured": true
+          }
+        },
+        "tier_3": {
+          "type": "tier",
+          "settings": {
+            "title": "5 Days",
+            "price": "$695",
+            "description": "Delivery available\nCustomers welcome to pick up & trailer\nCompletion of contract required\nRefundable deposit due at pickup",
+            "featured": false
+          }
+        }
+      },
+      "block_order": ["tier_1", "tier_2", "tier_3"]
+    },
+    "cta": {
+      "type": "pi-cta-banner",
+      "settings": {
+        "background_style": "deep-blue",
+        "label": "Ready to Book?",
+        "heading": "Give Us a Call or Stop By",
+        "body_text": "We'll get you set up with a boat, a map of the local creeks, and some tips on where the fish are biting.",
+        "button_label": "Contact Us",
+        "button_link": "shopify:\/\/pages\/contact",
+        "button_style": "primary",
+        "text_alignment": "center"
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "fleet",
+    "pricing",
+    "cta"
+  ]
+}

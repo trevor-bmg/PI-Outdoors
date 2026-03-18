@@ -1,75 +1,147 @@
 {
   "sections": {
-    "image_banner": {
-      "type": "image-banner",
+    "hero": {
+      "type": "pi-hero",
+      "settings": {
+        "accent_text": "Pawleys Island's local outfitter",
+        "heading": "Your Next Adventure Starts Here",
+        "body_text": "Hunting, fishing, and everything in between — family-owned and operated since 2006.",
+        "button_label": "Shop Now",
+        "button_link": "shopify:\/\/collections\/all",
+        "button_style": "primary",
+        "text_alignment": "left",
+        "min_height_desktop": "large",
+        "min_height_mobile": "medium",
+        "color_scheme": "dark",
+        "overlay_opacity": 40
+      }
+    },
+    "collections": {
+      "type": "pi-collection-grid",
       "blocks": {
-        "heading": {
-          "type": "heading",
+        "fishing": {
+          "type": "collection",
           "settings": {
-            "heading": "Browse our latest products",
-            "heading_size": "h0"
+            "custom_title": "Fishing",
+            "overlay_opacity": 30
           }
         },
-        "button": {
-          "type": "buttons",
+        "hunting": {
+          "type": "collection",
           "settings": {
-            "button_label_1": "Shop all",
-            "button_link_1": "shopify://collections/all",
-            "button_style_secondary_1": true,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
+            "custom_title": "Hunting",
+            "overlay_opacity": 30
+          }
+        },
+        "boating": {
+          "type": "collection",
+          "settings": {
+            "custom_title": "Boating",
+            "overlay_opacity": 30
+          }
+        },
+        "clothing": {
+          "type": "collection",
+          "settings": {
+            "custom_title": "Clothing",
+            "overlay_opacity": 30
           }
         }
       },
-      "block_order": [
-        "heading",
-        "button"
-      ],
+      "block_order": ["fishing", "hunting", "boating", "clothing"],
       "settings": {
-        "image_overlay_opacity": 40,
-        "image_height": "large",
-        "desktop_content_position": "bottom-center",
-        "show_text_box": false,
-        "image_behavior": "none",
-        "desktop_content_alignment": "center",
-        "color_scheme": "scheme-3",
-        "mobile_content_alignment": "center",
-        "stack_images_on_mobile": false,
-        "show_text_below": false
+        "label": "Shop",
+        "heading": "Explore Our Collections",
+        "body_text": "Everything you need for your next trip — on the water, in the field, or around town.",
+        "columns_desktop": 4,
+        "background_color": "warm-white"
       }
     },
-    "featured_collection": {
-      "type": "featured-collection",
+    "about_split": {
+      "type": "pi-split-content",
       "settings": {
-        "title": "Featured products",
-        "heading_size": "h2",
-        "description": "",
-        "show_description": false,
-        "description_style": "body",
-        "collection": "all",
-        "products_to_show": 8,
-        "columns_desktop": 4,
-        "color_scheme": "scheme-1",
-        "full_width": false,
-        "show_view_all": true,
-        "view_all_style": "solid",
-        "enable_desktop_slider": false,
-        "swipe_on_mobile": false,
-        "image_ratio": "adapt",
-        "image_shape": "default",
-        "show_secondary_image": true,
-        "show_vendor": false,
-        "show_rating": false,
-        "quick_add": "none",
-        "columns_mobile": "2",
-        "padding_top": 44,
-        "padding_bottom": 36
+        "image_position": "left",
+        "image_ratio": "portrait",
+        "label": "Our Story",
+        "heading": "Lowcountry Roots, Local Knowledge",
+        "accent_text": "Family-owned since 2006",
+        "body_text": "<p>Pawleys Island Outdoors isn't just a store — it's where locals come for honest advice, the right gear, and a good conversation. We know the creeks, the tides, and the seasons because we live it every day.</p><p>Whether you're rigging up for redfish in the creek or gearing up for dove season, we're here to get you set up right.</p>",
+        "button_label": "About Us",
+        "button_link": "shopify:\/\/pages\/about",
+        "button_style": "primary",
+        "background_color": "warm-white",
+        "vertical_padding": "large"
+      }
+    },
+    "boat_rentals_cta": {
+      "type": "pi-split-content",
+      "settings": {
+        "image_position": "right",
+        "image_ratio": "portrait",
+        "label": "Boat Rentals",
+        "heading": "Get Out on the Water",
+        "accent_text": "14–15' aluminum jon boats",
+        "body_text": "<p>Explore Litchfield, Pawleys, and DeBordieu creeks at your own pace. Our fleet of jon boats with Yamaha outboards comes with all the safety equipment you need. Starting at $295\/day.</p>",
+        "button_label": "View Rental Info",
+        "button_link": "shopify:\/\/pages\/boat-rentals",
+        "button_style": "green",
+        "background_color": "cream",
+        "vertical_padding": "large"
+      }
+    },
+    "firearms_cta": {
+      "type": "pi-cta-banner",
+      "settings": {
+        "background_style": "midnight",
+        "overlay_opacity": 50,
+        "label": "Firearms & Ammunition",
+        "heading": "Hunting Equipment for Every Season",
+        "body_text": "Deer, dove, duck, alligator, turkey — we carry top brands like Browning, Benelli, Winchester, and more. Plus a full ammunition selection from Federal, Hornady, and Fiocchi.",
+        "button_label": "See What We Carry",
+        "button_link": "shopify:\/\/pages\/firearms",
+        "button_style": "primary",
+        "text_alignment": "center"
+      }
+    },
+    "brands": {
+      "type": "pi-brand-banner",
+      "blocks": {
+        "brand_1": { "type": "brand", "settings": { "brand_name": "Shimano" } },
+        "brand_2": { "type": "brand", "settings": { "brand_name": "Penn" } },
+        "brand_3": { "type": "brand", "settings": { "brand_name": "Daiwa" } },
+        "brand_4": { "type": "brand", "settings": { "brand_name": "G. Loomis" } },
+        "brand_5": { "type": "brand", "settings": { "brand_name": "St. Croix" } },
+        "brand_6": { "type": "brand", "settings": { "brand_name": "YETI" } },
+        "brand_7": { "type": "brand", "settings": { "brand_name": "Costa" } },
+        "brand_8": { "type": "brand", "settings": { "brand_name": "Browning" } }
+      },
+      "block_order": ["brand_1", "brand_2", "brand_3", "brand_4", "brand_5", "brand_6", "brand_7", "brand_8"],
+      "settings": {
+        "heading": "Brands We Carry",
+        "background_color": "white",
+        "logo_height": 50,
+        "grayscale": true
+      }
+    },
+    "newsletter": {
+      "type": "pi-newsletter",
+      "settings": {
+        "label": "Stay Connected",
+        "heading": "Get the Latest from PI Outdoors",
+        "body_text": "Fishing reports, new gear drops, local events, and the occasional tall tale. Sign up and stay in the loop.",
+        "background_color": "deep-blue",
+        "text_alignment": "center",
+        "layout": "stacked"
       }
     }
   },
   "order": [
-    "image_banner",
-    "featured_collection"
+    "hero",
+    "collections",
+    "about_split",
+    "boat_rentals_cta",
+    "firearms_cta",
+    "brands",
+    "newsletter"
   ]
 }

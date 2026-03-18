@@ -1,0 +1,175 @@
+/* ============================================
+   PI Multi-Column — Section Styles
+   ============================================ */
+
+/* ─── Background Variants ─── */
+.pi-multi-column--bg-warm-white { background-color: var(--pi-warm-white); }
+.pi-multi-column--bg-white { background-color: var(--pi-white); }
+.pi-multi-column--bg-cream { background-color: var(--pi-cream); }
+.pi-multi-column--bg-deep-blue { background-color: var(--pi-deep-blue); }
+.pi-multi-column--bg-midnight { background-color: var(--pi-midnight); }
+
+/* ─── Section Header ─── */
+.pi-multi-column__header {
+  text-align: center;
+  margin-bottom: var(--pi-space-xl);
+}
+
+.pi-multi-column__body {
+  max-width: var(--pi-max-width-narrow);
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: var(--pi-space-sm);
+}
+
+/* ─── Grid Layout ─── */
+.pi-multi-column__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--pi-space-lg);
+}
+
+@media (min-width: 750px) {
+  .pi-multi-column__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--pi-space-md);
+  }
+}
+
+@media (min-width: 990px) {
+  .pi-multi-column__grid {
+    grid-template-columns: repeat(var(--pi-grid-columns, 3), 1fr);
+  }
+}
+
+/* ─── Card Base ─── */
+.pi-multi-column__card {
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow var(--pi-duration) var(--pi-ease),
+              transform var(--pi-duration) var(--pi-ease);
+}
+
+/* ─── Card Style: Flat ─── */
+.pi-multi-column__card--flat {
+  background: transparent;
+}
+
+/* ─── Card Style: Bordered ─── */
+.pi-multi-column__card--bordered {
+  border: 1px solid var(--pi-sand);
+  border-radius: var(--pi-radius-md);
+  overflow: hidden;
+}
+
+.pi-multi-column__card--bordered.pi-multi-column__card--dark {
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.pi-multi-column__card--bordered:hover {
+  box-shadow: var(--pi-shadow-md);
+  transform: translateY(-2px);
+}
+
+/* ─── Card Style: Filled ─── */
+.pi-multi-column__card--filled {
+  background: var(--pi-white);
+  border-radius: var(--pi-radius-md);
+  overflow: hidden;
+  box-shadow: var(--pi-shadow-sm);
+}
+
+.pi-multi-column__card--filled.pi-multi-column__card--dark {
+  background: rgba(255, 255, 255, 0.06);
+  box-shadow: none;
+}
+
+.pi-multi-column__card--filled:hover {
+  box-shadow: var(--pi-shadow-lg);
+  transform: translateY(-2px);
+}
+
+.pi-multi-column__card--filled.pi-multi-column__card--dark:hover {
+  background: rgba(255, 255, 255, 0.09);
+  box-shadow: none;
+}
+
+/* ─── Image Container ─── */
+.pi-multi-column__image-wrap {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+/* Aspect ratios */
+.pi-multi-column__image-wrap--1-1 {
+  aspect-ratio: 1 / 1;
+}
+
+.pi-multi-column__image-wrap--4-5 {
+  aspect-ratio: 4 / 5;
+}
+
+.pi-multi-column__image-wrap--16-9 {
+  aspect-ratio: 16 / 9;
+}
+
+/* Flat cards get rounded images */
+.pi-multi-column__card--flat .pi-multi-column__image-wrap {
+  border-radius: var(--pi-radius-md);
+}
+
+.pi-multi-column__image {
+  transition: transform var(--pi-duration-slow) var(--pi-ease);
+}
+
+.pi-multi-column__card:hover .pi-multi-column__image {
+  transform: scale(1.03);
+}
+
+/* ─── Content Area ─── */
+.pi-multi-column__content {
+  padding: var(--pi-space-md) 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Bordered and filled cards get horizontal padding */
+.pi-multi-column__card--bordered .pi-multi-column__content,
+.pi-multi-column__card--filled .pi-multi-column__content {
+  padding: var(--pi-space-md);
+}
+
+.pi-multi-column__heading {
+  margin-bottom: var(--pi-space-xs);
+}
+
+.pi-multi-column__text {
+  margin-bottom: var(--pi-space-md);
+  flex: 1;
+}
+
+/* ─── Button ─── */
+.pi-multi-column__btn {
+  align-self: flex-start;
+  margin-top: auto;
+}
+
+/* On dark filled cards, swap button to secondary style */
+.pi-multi-column__card--dark .pi-multi-column__btn {
+  background: transparent;
+  color: var(--pi-cream);
+  border-color: var(--pi-cream);
+}
+
+.pi-multi-column__card--dark .pi-multi-column__btn:hover {
+  background: var(--pi-cream);
+  color: var(--pi-dark-blue);
+}
+
+/* ─── Focus Styles ─── */
+.pi-multi-column__btn:focus-visible {
+  outline: 2px solid var(--pi-gold);
+  outline-offset: 2px;
+}

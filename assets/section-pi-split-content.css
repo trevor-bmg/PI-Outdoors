@@ -1,0 +1,252 @@
+/* ============================================
+   PI Outdoors — Split Content Section
+   Two-column image + text layout
+   ============================================ */
+
+.pi-split {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+  align-items: stretch;
+}
+
+@media (min-width: 750px) {
+  .pi-split {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* ─── Image Column ─── */
+.pi-split__image {
+  position: relative;
+  overflow: hidden;
+  min-height: 300px;
+}
+
+@media (min-width: 750px) {
+  .pi-split__image {
+    min-height: 400px;
+  }
+}
+
+.pi-split__image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  inset: 0;
+}
+
+.pi-split__image svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  inset: 0;
+}
+
+/* Aspect ratios — applied on mobile only since desktop stretches to match text */
+.pi-split__image--square {
+  aspect-ratio: 1 / 1;
+}
+
+.pi-split__image--portrait {
+  aspect-ratio: 4 / 5;
+}
+
+.pi-split__image--landscape {
+  aspect-ratio: 16 / 9;
+}
+
+@media (min-width: 750px) {
+  .pi-split__image--square,
+  .pi-split__image--portrait,
+  .pi-split__image--landscape {
+    aspect-ratio: auto;
+  }
+}
+
+/* ─── Reversed Layout (image right) ─── */
+@media (min-width: 750px) {
+  .pi-split--reversed .pi-split__image {
+    order: 2;
+  }
+
+  .pi-split--reversed .pi-split__text {
+    order: 1;
+  }
+}
+
+/* ─── Text Column ─── */
+.pi-split__text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: var(--pi-space-lg) var(--pi-section-padding-x);
+}
+
+@media (min-width: 750px) {
+  .pi-split__text {
+    padding: var(--pi-space-xl);
+  }
+}
+
+@media (min-width: 990px) {
+  .pi-split__text {
+    padding: var(--pi-space-2xl) var(--pi-space-xl);
+  }
+}
+
+/* ─── Text Content ─── */
+.pi-split__label {
+  margin-bottom: var(--pi-space-sm);
+}
+
+.pi-split__heading {
+  margin-bottom: var(--pi-space-md);
+}
+
+.pi-split__divider {
+  margin-bottom: var(--pi-space-md);
+}
+
+.pi-split__accent {
+  font-size: clamp(1.1rem, 2vw, 1.35rem);
+  line-height: 1.4;
+  margin-bottom: var(--pi-space-md);
+}
+
+.pi-split__body {
+  margin-bottom: var(--pi-space-lg);
+}
+
+.pi-split__body:last-child {
+  margin-bottom: 0;
+}
+
+/* Richtext formatting inside body */
+.pi-split__body p {
+  margin-bottom: var(--pi-space-sm);
+}
+
+.pi-split__body p:last-child {
+  margin-bottom: 0;
+}
+
+.pi-split__body ul,
+.pi-split__body ol {
+  padding-left: 1.25rem;
+  margin-bottom: var(--pi-space-sm);
+}
+
+.pi-split__body li {
+  margin-bottom: 0.35rem;
+}
+
+.pi-split__body a {
+  color: var(--pi-gold);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color var(--pi-duration) var(--pi-ease);
+}
+
+.pi-split__body a:hover {
+  color: var(--pi-gold-dark);
+}
+
+.pi-split__button {
+  margin-top: var(--pi-space-xs);
+}
+
+/* ─── Section Padding Variants ─── */
+.pi-split-section--padding-small {
+  padding-top: var(--pi-space-lg);
+  padding-bottom: var(--pi-space-lg);
+}
+
+.pi-split-section--padding-medium {
+  padding-top: var(--pi-space-2xl);
+  padding-bottom: var(--pi-space-2xl);
+}
+
+.pi-split-section--padding-large {
+  padding-top: var(--pi-space-3xl);
+  padding-bottom: var(--pi-space-3xl);
+}
+
+/* ─── Background Colors ─── */
+.pi-split-section--bg-warm-white {
+  background-color: var(--pi-warm-white);
+}
+
+.pi-split-section--bg-white {
+  background-color: var(--pi-white);
+}
+
+.pi-split-section--bg-cream {
+  background-color: var(--pi-cream);
+}
+
+.pi-split-section--bg-deep-blue {
+  background-color: var(--pi-deep-blue);
+}
+
+.pi-split-section--bg-midnight {
+  background-color: var(--pi-midnight);
+}
+
+/* ─── Dark Background Text Overrides ─── */
+.pi-split-section--dark .pi-split__heading {
+  color: var(--pi-cream);
+}
+
+.pi-split-section--dark .pi-split__label {
+  color: var(--pi-gold-light);
+}
+
+.pi-split-section--dark .pi-split__body {
+  color: var(--pi-storm);
+}
+
+.pi-split-section--dark .pi-split__accent {
+  color: var(--pi-gold-light);
+}
+
+.pi-split-section--dark .pi-split__body a {
+  color: var(--pi-gold-light);
+}
+
+.pi-split-section--dark .pi-split__body a:hover {
+  color: var(--pi-gold);
+}
+
+/* ─── Staggered Reveal ─── */
+.pi-split__text .pi-reveal:nth-child(1) { transition-delay: 0.15s; }
+.pi-split__text .pi-reveal:nth-child(2) { transition-delay: 0.25s; }
+.pi-split__text .pi-reveal:nth-child(3) { transition-delay: 0.35s; }
+.pi-split__text .pi-reveal:nth-child(4) { transition-delay: 0.45s; }
+.pi-split__text .pi-reveal:nth-child(5) { transition-delay: 0.55s; }
+.pi-split__text .pi-reveal:nth-child(6) { transition-delay: 0.65s; }
+.pi-split__text .pi-reveal:nth-child(7) { transition-delay: 0.75s; }
+
+/* ─── Placeholder ─── */
+.pi-split__placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--pi-cream);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0;
+}
+
+.pi-split__placeholder svg {
+  position: static;
+  width: 60%;
+  height: auto;
+  max-width: 300px;
+  opacity: 0.3;
+}

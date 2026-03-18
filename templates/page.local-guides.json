@@ -1,0 +1,86 @@
+{
+  "sections": {
+    "hero": {
+      "type": "pi-hero",
+      "settings": {
+        "heading": "Local Guides & Charters",
+        "accent_text": "Trusted by locals",
+        "body_text": "Looking for a guide who knows the water? Here are some of the best in the Lowcountry — recommended by the team at Pawleys Island Outdoors.",
+        "button_label": "",
+        "text_alignment": "left",
+        "min_height_desktop": "small",
+        "min_height_mobile": "small",
+        "color_scheme": "dark",
+        "overlay_opacity": 45
+      }
+    },
+    "intro": {
+      "type": "pi-rich-text",
+      "settings": {
+        "label": "Recommended",
+        "heading": "Guides We Trust",
+        "body_text": "<p>We get asked all the time — who should I fish with? These are the captains and guides we send our own friends and family to. They know the Lowcountry waters inside and out.<\/p><p>Want to be listed here? Stop by the shop or give us a call.<\/p>",
+        "text_alignment": "center",
+        "content_width": "medium",
+        "background_color": "warm-white",
+        "vertical_padding": "medium"
+      }
+    },
+    "guides": {
+      "type": "pi-multi-column",
+      "settings": {
+        "label": "Local Guides",
+        "heading": "Fishing & Hunting Guides",
+        "columns_desktop": 3,
+        "background_color": "warm-white",
+        "card_style": "bordered"
+      },
+      "blocks": {
+        "guide_1": {
+          "type": "column",
+          "settings": {
+            "heading": "Captain [Name]",
+            "body_text": "Inshore fishing charters — redfish, flounder, trout. Departing from Pawleys Island.",
+            "button_label": "Learn More"
+          }
+        },
+        "guide_2": {
+          "type": "column",
+          "settings": {
+            "heading": "Captain [Name]",
+            "body_text": "Offshore and nearshore charters — king mackerel, cobia, sharks. Georgetown area.",
+            "button_label": "Learn More"
+          }
+        },
+        "guide_3": {
+          "type": "column",
+          "settings": {
+            "heading": "[Name] Guide Service",
+            "body_text": "Duck and deer hunting guides. Lowcountry waterfowl and whitetail specialists.",
+            "button_label": "Learn More"
+          }
+        }
+      },
+      "block_order": ["guide_1", "guide_2", "guide_3"]
+    },
+    "cta": {
+      "type": "pi-cta-banner",
+      "settings": {
+        "background_style": "deep-blue",
+        "label": "Need Gear?",
+        "heading": "We'll Get You Set Up Before Your Trip",
+        "body_text": "Stop by Pawleys Island Outdoors before you head out. We'll make sure you have everything you need.",
+        "button_label": "Shop Fishing",
+        "button_link": "shopify:\/\/collections\/fishing",
+        "button_style": "primary",
+        "text_alignment": "center"
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "intro",
+    "guides",
+    "cta"
+  ]
+}

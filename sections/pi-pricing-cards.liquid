@@ -1,0 +1,261 @@
+{{ 'pi-base.css' | asset_url | stylesheet_tag }}
+{{ 'section-pi-pricing-cards.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'pi-reveal.js' | asset_url }}" defer="defer"></script>
+
+{%- liquid
+  assign bg = section.settings.background_color | default: 'warm-white'
+  assign is_dark = false
+  if bg == 'deep-blue' or bg == 'midnight'
+    assign is_dark = true
+  endif
+-%}
+
+{%- style -%}
+  #PricingCards-{{ section.id }} {
+    {%- case bg -%}
+      {%- when 'warm-white' -%} background-color: var(--pi-warm-white);
+      {%- when 'white' -%}      background-color: var(--pi-white);
+      {%- when 'cream' -%}      background-color: var(--pi-cream);
+      {%- when 'deep-blue' -%}  background-color: var(--pi-deep-blue);
+      {%- when 'midnight' -%}   background-color: var(--pi-midnight);
+    {%- endcase -%}
+  }
+{%- endstyle -%}
+
+<section
+  id="PricingCards-{{ section.id }}"
+  class="pi-section pi-pricing{% if is_dark %} pi-section--dark{% endif %}"
+>
+  <div class="pi-section__inner">
+
+    {%- comment -%} Section header {%- endcomment -%}
+    <div class="pi-pricing__header pi-reveal">
+      {%- if section.settings.label != blank -%}
+        <span class="pi-label">{{ section.settings.label }}</span>
+      {%- endif -%}
+
+      {%- if section.settings.heading != blank -%}
+        <h2 class="pi-heading pi-heading--h2">{{ section.settings.heading }}</h2>
+      {%- endif -%}
+
+      {%- if section.settings.body_text != blank -%}
+        <div class="pi-body pi-body--large pi-pricing__intro">
+          {{ section.settings.body_text }}
+        </div>
+      {%- endif -%}
+    </div>
+
+    {%- comment -%} Pricing tier cards {%- endcomment -%}
+    {%- if section.blocks.size > 0 -%}
+      <div class="pi-pricing__grid pi-stagger" data-columns="{{ section.blocks.size }}">
+        {%- for block in section.blocks -%}
+          <div
+            class="pi-pricing__card pi-reveal{% if block.settings.featured %} pi-pricing__card--featured{% endif %}{% if is_dark %} pi-pricing__card--dark{% else %} pi-pricing__card--light{% endif %}"
+            {{ block.shopify_attributes }}
+          >
+            {%- if block.settings.featured -%}
+              <div class="pi-pricing__badge">Best Value</div>
+            {%- endif -%}
+
+            {%- if block.settings.title != blank -%}
+              <h3 class="pi-heading pi-heading--h3 pi-pricing__title">
+                {{ block.settings.title }}
+              </h3>
+            {%- endif -%}
+
+            {%- if block.settings.price != blank -%}
+              <div class="pi-pricing__price">
+                {{ block.settings.price }}
+              </div>
+            {%- endif -%}
+
+            {%- if block.settings.description != blank -%}
+              <div class="pi-body pi-body--small pi-pricing__desc">
+                {{ block.settings.description | newline_to_br }}
+              </div>
+            {%- endif -%}
+          </div>
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+
+    {%- comment -%} Footnote {%- endcomment -%}
+    {%- if section.settings.footnote != blank -%}
+      <div class="pi-body pi-body--small pi-body--muted pi-pricing__footnote pi-reveal">
+        {{ section.settings.footnote | newline_to_br }}
+      </div>
+    {%- endif -%}
+
+    {%- comment -%} CTA button {%- endcomment -%}
+    {%- if section.settings.button_label != blank -%}
+      <div class="pi-pricing__cta pi-reveal">
+        <a
+          href="{{ section.settings.button_link | default: '#' }}"
+          class="pi-btn pi-btn--{{ section.settings.button_style | default: 'primary' }}"
+        >
+          {{ section.settings.button_label }}
+        </a>
+      </div>
+    {%- endif -%}
+
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "PI Pricing Cards",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "text",
+      "id": "label",
+      "label": "Label",
+      "default": "Boat Rentals"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Jon Boat Fleet"
+    },
+    {
+      "type": "richtext",
+      "id": "body_text",
+      "label": "Body text",
+      "default": "<p>Explore the Lowcountry waterways at your own pace with our well-maintained jon boat fleet.</p>"
+    },
+    {
+      "type": "textarea",
+      "id": "footnote",
+      "label": "Footnote",
+      "info": "Policies or fine print displayed below the pricing cards.",
+      "default": "All rentals include life jackets and safety equipment. A valid ID and signed waiver are required."
+    },
+    {
+      "type": "header",
+      "content": "Button"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label",
+      "default": "Reserve Now"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "select",
+      "id": "button_style",
+      "label": "Button style",
+      "default": "primary",
+      "options": [
+        { "value": "primary", "label": "Primary (Gold)" },
+        { "value": "secondary", "label": "Secondary (Outline)" },
+        { "value": "green", "label": "Green" }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "select",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "warm-white",
+      "options": [
+        { "value": "warm-white", "label": "Warm White" },
+        { "value": "white", "label": "White" },
+        { "value": "cream", "label": "Cream" },
+        { "value": "deep-blue", "label": "Deep Blue" },
+        { "value": "midnight", "label": "Midnight" }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "type": "tier",
+      "name": "Pricing Tier",
+      "limit": 6,
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "1 Day"
+        },
+        {
+          "type": "text",
+          "id": "price",
+          "label": "Price",
+          "default": "$295"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description",
+          "default": "Full-day rental\nIncludes fuel & safety gear\n6:00 AM – 6:00 PM"
+        },
+        {
+          "type": "checkbox",
+          "id": "featured",
+          "label": "Featured (Best Value)",
+          "default": false
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "PI Pricing Cards",
+      "settings": {
+        "label": "Boat Rentals",
+        "heading": "Jon Boat Fleet",
+        "button_label": "Reserve Now",
+        "button_style": "primary",
+        "background_color": "warm-white"
+      },
+      "blocks": [
+        {
+          "type": "tier",
+          "settings": {
+            "title": "Half Day",
+            "price": "$175",
+            "description": "4-hour rental\nIncludes fuel & safety gear\nMorning or afternoon slot",
+            "featured": false
+          }
+        },
+        {
+          "type": "tier",
+          "settings": {
+            "title": "Full Day",
+            "price": "$295",
+            "description": "Full-day rental\nIncludes fuel & safety gear\n6:00 AM – 6:00 PM",
+            "featured": true
+          }
+        },
+        {
+          "type": "tier",
+          "settings": {
+            "title": "Weekend",
+            "price": "$525",
+            "description": "Friday PM – Sunday PM\nIncludes fuel & safety gear\nBest for multi-day trips",
+            "featured": false
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

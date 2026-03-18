@@ -1,0 +1,99 @@
+/* ============================================
+   PI Image Gallery — Section Styles
+   ============================================ */
+
+/* ─── Header ─── */
+.pi-gallery__header {
+  text-align: center;
+  margin-bottom: var(--pi-space-lg);
+}
+
+.pi-gallery__intro {
+  max-width: var(--pi-max-width-narrow);
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: var(--pi-space-sm);
+}
+
+/* ─── Grid ─── */
+.pi-gallery__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--pi-gallery-gap, 16px);
+}
+
+@media (min-width: 750px) {
+  .pi-gallery__grid {
+    grid-template-columns: repeat(var(--pi-gallery-cols, 3), 1fr);
+  }
+}
+
+/* ─── Item ─── */
+.pi-gallery__item {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--pi-radius-md);
+}
+
+/* ─── Image ─── */
+.pi-gallery__img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--pi-duration-slow) var(--pi-ease);
+}
+
+.pi-gallery__item:hover .pi-gallery__img {
+  transform: scale(1.03);
+}
+
+/* ─── Placeholder ─── */
+.pi-gallery__placeholder {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background: var(--pi-sand);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pi-gallery__placeholder-svg {
+  width: 50%;
+  height: 50%;
+  opacity: 0.3;
+}
+
+.pi-section--dark .pi-gallery__placeholder {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+/* ─── Caption Overlay ─── */
+.pi-gallery__overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  padding: var(--pi-space-sm);
+  background: linear-gradient(
+    to top,
+    rgba(21, 45, 56, 0.75) 0%,
+    rgba(21, 45, 56, 0.2) 40%,
+    transparent 100%
+  );
+  opacity: 0;
+  transition: opacity var(--pi-duration) var(--pi-ease);
+  pointer-events: none;
+}
+
+.pi-gallery__item:hover .pi-gallery__overlay {
+  opacity: 1;
+}
+
+.pi-gallery__caption {
+  font-family: var(--pi-font-body);
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--pi-cream);
+  line-height: 1.4;
+}

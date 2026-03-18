@@ -1,0 +1,273 @@
+/* ============================================
+   PI Outdoors — Base Design System
+   Shared variables, typography, animations,
+   and utilities for all custom sections.
+   ============================================ */
+
+/* ─── Brand Tokens ─── */
+:root {
+  /* Primary */
+  --pi-deep-blue: #2B4C5C;
+  --pi-dark-blue: #1E3A48;
+  --pi-gold: #C4A24E;
+  --pi-gold-light: #D4B86A;
+  --pi-gold-dark: #A8893E;
+  --pi-cream: #F2E8D5;
+
+  /* Secondary */
+  --pi-midnight: #152D38;
+  --pi-marsh-green: #5A7A5E;
+  --pi-sand: #D6C9AA;
+  --pi-driftwood: #8B7D6B;
+
+  /* Neutral */
+  --pi-charcoal: #2C2C2C;
+  --pi-storm: #6B7F8C;
+  --pi-warm-white: #FAF7F2;
+  --pi-white: #FFFFFF;
+
+  /* Typography */
+  --pi-font-heading: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --pi-font-body: 'Source Sans 3', 'Helvetica Neue', Arial, sans-serif;
+  --pi-font-accent: 'Libre Baskerville', Georgia, serif;
+
+  /* Spacing scale (8px base) */
+  --pi-space-xs: 0.5rem;    /* 8px */
+  --pi-space-sm: 1rem;      /* 16px */
+  --pi-space-md: 1.5rem;    /* 24px */
+  --pi-space-lg: 2.5rem;    /* 40px */
+  --pi-space-xl: 4rem;      /* 64px */
+  --pi-space-2xl: 6rem;     /* 96px */
+  --pi-space-3xl: 8rem;     /* 128px */
+
+  /* Section padding */
+  --pi-section-padding-y: var(--pi-space-2xl);
+  --pi-section-padding-x: var(--pi-space-sm);
+
+  /* Max content width */
+  --pi-max-width: 1200px;
+  --pi-max-width-narrow: 800px;
+
+  /* Border radius */
+  --pi-radius-sm: 4px;
+  --pi-radius-md: 8px;
+  --pi-radius-lg: 12px;
+
+  /* Shadows */
+  --pi-shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06);
+  --pi-shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --pi-shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.1);
+
+  /* Transitions */
+  --pi-ease: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --pi-duration: 0.3s;
+  --pi-duration-slow: 0.6s;
+}
+
+/* ─── Scroll Fade-In Animation ─── */
+.pi-reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity var(--pi-duration-slow) var(--pi-ease),
+              transform var(--pi-duration-slow) var(--pi-ease);
+}
+
+.pi-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger children */
+.pi-stagger > .pi-reveal:nth-child(1) { transition-delay: 0s; }
+.pi-stagger > .pi-reveal:nth-child(2) { transition-delay: 0.1s; }
+.pi-stagger > .pi-reveal:nth-child(3) { transition-delay: 0.2s; }
+.pi-stagger > .pi-reveal:nth-child(4) { transition-delay: 0.3s; }
+.pi-stagger > .pi-reveal:nth-child(5) { transition-delay: 0.4s; }
+.pi-stagger > .pi-reveal:nth-child(6) { transition-delay: 0.5s; }
+.pi-stagger > .pi-reveal:nth-child(7) { transition-delay: 0.6s; }
+.pi-stagger > .pi-reveal:nth-child(8) { transition-delay: 0.7s; }
+
+/* ─── Shared Section Layout ─── */
+.pi-section {
+  padding: var(--pi-section-padding-y) var(--pi-section-padding-x);
+}
+
+.pi-section__inner {
+  max-width: var(--pi-max-width);
+  margin: 0 auto;
+}
+
+.pi-section__inner--narrow {
+  max-width: var(--pi-max-width-narrow);
+}
+
+/* ─── Section Label (e.g. "Our Story", "Shop") ─── */
+.pi-label {
+  font-family: var(--pi-font-body);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--pi-gold);
+  margin-bottom: var(--pi-space-sm);
+  display: block;
+}
+
+/* ─── Headings ─── */
+.pi-heading {
+  font-family: var(--pi-font-heading);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--pi-dark-blue);
+}
+
+.pi-heading--hero {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 900;
+}
+
+.pi-heading--h1 {
+  font-size: clamp(2rem, 4.5vw, 2.625rem);
+}
+
+.pi-heading--h2 {
+  font-size: clamp(1.6rem, 3.5vw, 2rem);
+}
+
+.pi-heading--h3 {
+  font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+}
+
+/* On dark backgrounds */
+.pi-section--dark .pi-heading,
+.pi-section--dark .pi-label,
+.pi-section--dark .pi-body {
+  color: var(--pi-cream);
+}
+
+.pi-section--dark .pi-label {
+  color: var(--pi-gold-light);
+}
+
+.pi-section--dark .pi-body {
+  color: var(--pi-storm);
+}
+
+/* ─── Body Text ─── */
+.pi-body {
+  font-family: var(--pi-font-body);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.7;
+  color: var(--pi-charcoal);
+}
+
+.pi-body--large {
+  font-size: 1.125rem;
+}
+
+.pi-body--small {
+  font-size: 0.875rem;
+}
+
+.pi-body--muted {
+  color: var(--pi-driftwood);
+}
+
+/* ─── Accent Text ─── */
+.pi-accent {
+  font-family: var(--pi-font-accent);
+  font-style: italic;
+  font-weight: 700;
+  color: var(--pi-gold);
+}
+
+/* ─── Buttons ─── */
+.pi-btn {
+  font-family: var(--pi-font-body);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.875rem 2rem;
+  border: 2px solid transparent;
+  border-radius: var(--pi-radius-sm);
+  cursor: pointer;
+  transition: all var(--pi-duration) var(--pi-ease);
+  line-height: 1;
+}
+
+.pi-btn--primary {
+  background: var(--pi-gold);
+  color: var(--pi-midnight);
+  border-color: var(--pi-gold);
+}
+
+.pi-btn--primary:hover {
+  background: var(--pi-gold-dark);
+  border-color: var(--pi-gold-dark);
+}
+
+.pi-btn--secondary {
+  background: transparent;
+  color: var(--pi-cream);
+  border-color: var(--pi-cream);
+}
+
+.pi-btn--secondary:hover {
+  background: var(--pi-cream);
+  color: var(--pi-dark-blue);
+}
+
+.pi-btn--green {
+  background: var(--pi-marsh-green);
+  color: var(--pi-white);
+  border-color: var(--pi-marsh-green);
+}
+
+.pi-btn--green:hover {
+  background: #4a6a4e;
+  border-color: #4a6a4e;
+}
+
+/* ─── Image Utilities ─── */
+.pi-img-cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.pi-img-hover {
+  transition: transform var(--pi-duration-slow) var(--pi-ease);
+}
+
+.pi-img-hover:hover {
+  transform: scale(1.03);
+}
+
+/* ─── Divider ─── */
+.pi-divider {
+  width: 60px;
+  height: 2px;
+  background: var(--pi-gold);
+  border: none;
+  margin: var(--pi-space-md) 0;
+}
+
+/* ─── Responsive ─── */
+@media (min-width: 750px) {
+  :root {
+    --pi-section-padding-x: var(--pi-space-lg);
+  }
+}
+
+@media (min-width: 990px) {
+  :root {
+    --pi-section-padding-x: var(--pi-space-xl);
+  }
+}

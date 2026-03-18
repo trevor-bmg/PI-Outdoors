@@ -1,0 +1,112 @@
+{
+  "wrapper": "div",
+  "sections": {
+    "hero": {
+      "type": "pi-hero",
+      "settings": {
+        "accent_text": "Family-owned since 2006",
+        "heading": "We Know the Water, the Land, and the Gear",
+        "body_text": "Pawleys Island Outdoors is your local outfitter for the Lowcountry — built on honest advice, real experience, and a love for the outdoors.",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "primary",
+        "text_alignment": "left",
+        "min_height_desktop": "medium",
+        "min_height_mobile": "medium",
+        "color_scheme": "dark",
+        "overlay_opacity": 45
+      }
+    },
+    "our_story": {
+      "type": "pi-split-content",
+      "settings": {
+        "image_position": "left",
+        "image_ratio": "portrait",
+        "label": "Our Story",
+        "heading": "From the Creek to the Counter",
+        "accent_text": "",
+        "body_text": "<p>Pawleys Island Outdoors has been a fixture of the Lowcountry since 2006. What started as a family passion for fishing and hunting turned into a full-service outfitter built to serve the people who love this land and water as much as we do. We grew up on these creeks, marshes, and pine stands — and that's the foundation everything here is built on.</p><p>When you walk through our doors, you're not getting a sales pitch. You're getting advice from people who've fished the same inlets, hunted the same fields, and tested the gear we carry firsthand. We stock what works because we use it ourselves — from inshore tackle to duck blinds, we know what holds up when it counts.</p><p>Whether you're a local who's been stopping in for years or a visitor hitting the Lowcountry for the first time, we're here to help you find the right gear and get on the water. Families, seasoned anglers, first-time hunters — everyone's welcome here. That's how it's been since day one, and that's how it'll stay.</p>",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "primary",
+        "background_color": "warm-white",
+        "vertical_padding": "large"
+      }
+    },
+    "what_we_offer": {
+      "type": "pi-multi-column",
+      "settings": {
+        "label": "What We Do",
+        "heading": "More Than a Store",
+        "body_text": "",
+        "columns_desktop": 3,
+        "background_color": "warm-white",
+        "card_style": "bordered"
+      },
+      "blocks": {
+        "col_fishing": {
+          "type": "column",
+          "settings": {
+            "heading": "Fishing Tackle & Gear",
+            "body_text": "Rods, reels, lures, line, and terminal tackle from the brands that perform — whether you're chasing redfish in the creek or trolling offshore. We carry what works for Lowcountry waters.",
+            "button_label": "Shop Fishing",
+            "button_link": "shopify:///collections/fishing",
+            "image_ratio": "4-5"
+          }
+        },
+        "col_hunting": {
+          "type": "column",
+          "settings": {
+            "heading": "Hunting Equipment",
+            "body_text": "From dove season to deer season, we stock the gear you need — firearms, ammo, camo, calls, and accessories. Come in for expert advice on what's working this time of year.",
+            "button_label": "Shop Hunting",
+            "button_link": "shopify:///collections/hunting",
+            "image_ratio": "4-5"
+          }
+        },
+        "col_boats": {
+          "type": "column",
+          "settings": {
+            "heading": "Jon Boat Rentals",
+            "body_text": "Explore the local creeks and waterways in one of our 14–15' aluminum jon boats. Perfect for fishing, crabbing, or just getting out on the water for the day.",
+            "button_label": "View Rentals",
+            "button_link": "shopify:///pages/boat-rentals",
+            "image_ratio": "4-5"
+          }
+        }
+      },
+      "block_order": ["col_fishing", "col_hunting", "col_boats"]
+    },
+    "recycling": {
+      "type": "pi-rich-text",
+      "settings": {
+        "label": "",
+        "heading": "Don't Leave Your Line Behind",
+        "accent_text": "",
+        "body_text": "<p>We care about the Lowcountry — it's our backyard, our livelihood, and the reason this shop exists. That's why we run a fishing line recycling program right here in the store. Discarded monofilament is one of the most harmful types of litter in our waterways, tangling wildlife and breaking down into microplastics. Bring your used line to us and we'll make sure it gets recycled properly. Keeping these creeks and marshes clean is everyone's job.</p>",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "primary",
+        "text_alignment": "center",
+        "content_width": "narrow",
+        "background_color": "cream",
+        "vertical_padding": "medium"
+      }
+    },
+    "visit_cta": {
+      "type": "pi-cta-banner",
+      "settings": {
+        "background_style": "deep-blue",
+        "overlay_opacity": 50,
+        "label": "Come See Us",
+        "heading": "Stop In and Say Hey",
+        "body_text": "Whether you're local or just passing through, we're here to help you find the right gear and get on the water.",
+        "button_label": "Get Directions",
+        "button_link": "",
+        "button_style": "primary",
+        "text_alignment": "center"
+      }
+    }
+  },
+  "order": ["hero", "our_story", "what_we_offer", "recycling", "visit_cta"]
+}

@@ -1,25 +1,62 @@
 {
+  "wrapper": "div",
   "sections": {
-    "main": {
-      "type": "main-page",
+    "contact_header": {
+      "type": "pi-rich-text",
       "settings": {
-        "padding_top": 36,
-        "padding_bottom": 36
+        "label": "Contact Us",
+        "heading": "Get in Touch",
+        "accent_text": "We're always happy to help",
+        "body_text": "<p>Whether you have a question about gear, want to check rental availability, or just need to know what's biting — we'd love to hear from you.</p>",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "primary",
+        "text_alignment": "center",
+        "content_width": "medium",
+        "background_color": "warm-white",
+        "vertical_padding": "medium"
       }
     },
-    "form": {
+    "store_info": {
+      "type": "pi-split-content",
+      "settings": {
+        "image_position": "right",
+        "image_ratio": "square",
+        "label": "Visit Us",
+        "heading": "Pawleys Island Outdoors",
+        "accent_text": "",
+        "body_text": "<p><strong>Address</strong><br>The store is located in Pawleys Island, SC. Drop by anytime during business hours.</p><p><strong>Phone</strong><br>Call us — we're happy to help over the phone too.</p><p><strong>Hours</strong><br>Monday – Saturday: Open<br>Sunday: Closed</p>",
+        "button_label": "Get Directions",
+        "button_link": "",
+        "button_style": "primary",
+        "background_color": "white",
+        "vertical_padding": "large"
+      }
+    },
+    "contact_form": {
       "type": "contact-form",
       "settings": {
-        "heading": "",
-        "heading_size": "h1",
+        "heading": "Send Us a Message",
+        "heading_size": "h2",
         "color_scheme": "scheme-1",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "boat_cta": {
+      "type": "pi-cta-banner",
+      "settings": {
+        "background_style": "marsh-green",
+        "overlay_opacity": 50,
+        "label": "Boat Rentals",
+        "heading": "Want to Reserve a Jon Boat?",
+        "body_text": "Give us a call or stop by the shop to check availability and book your rental.",
+        "button_label": "View Rental Info",
+        "button_link": "shopify:///pages/boat-rentals",
+        "button_style": "primary",
+        "text_alignment": "center"
       }
     }
   },
-  "order": [
-    "main",
-    "form"
-  ]
+  "order": ["contact_header", "store_info", "contact_form", "boat_cta"]
 }

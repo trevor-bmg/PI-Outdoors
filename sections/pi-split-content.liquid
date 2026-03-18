@@ -1,0 +1,217 @@
+{{ 'pi-base.css' | asset_url | stylesheet_tag }}
+{{ 'section-pi-split-content.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'pi-reveal.js' | asset_url }}" defer="defer"></script>
+
+{%- liquid
+  assign bg = section.settings.background_color
+  assign is_dark = false
+  if bg == 'deep-blue' or bg == 'midnight'
+    assign is_dark = true
+  endif
+  assign image_pos = section.settings.image_position
+  assign image_ratio = section.settings.image_ratio
+  assign padding = section.settings.vertical_padding
+-%}
+
+<section
+  class="pi-split-section pi-split-section--bg-{{ bg }} pi-split-section--padding-{{ padding }}{% if is_dark %} pi-split-section--dark{% endif %}"
+  id="section-{{ section.id }}"
+>
+  <div class="pi-split{% if image_pos == 'right' %} pi-split--reversed{% endif %}">
+
+    {%- comment -%} Image Column {%- endcomment -%}
+    <div class="pi-split__image pi-split__image--{{ image_ratio }} pi-reveal">
+      {%- if section.settings.image != blank -%}
+        {%- assign widths = '375, 550, 750, 1000, 1200, 1500' -%}
+        {%- capture sizes -%}
+          (min-width: 750px) 50vw, 100vw
+        {%- endcapture -%}
+        {{
+          section.settings.image
+          | image_url: width: 1500
+          | image_tag:
+            sizes: sizes,
+            widths: widths,
+            loading: 'lazy',
+            class: 'pi-img-cover'
+        }}
+      {%- else -%}
+        <div class="pi-split__placeholder">
+          {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+        </div>
+      {%- endif -%}
+    </div>
+
+    {%- comment -%} Text Column {%- endcomment -%}
+    <div class="pi-split__text">
+
+      {%- if section.settings.label != blank -%}
+        <span class="pi-label pi-split__label pi-reveal">
+          {{ section.settings.label }}
+        </span>
+      {%- endif -%}
+
+      {%- if section.settings.heading != blank -%}
+        <h2 class="pi-heading pi-heading--h2 pi-split__heading pi-reveal">
+          {{ section.settings.heading }}
+        </h2>
+      {%- endif -%}
+
+      {%- if section.settings.heading != blank or section.settings.label != blank -%}
+        <hr class="pi-divider pi-split__divider pi-reveal">
+      {%- endif -%}
+
+      {%- if section.settings.accent_text != blank -%}
+        <p class="pi-accent pi-split__accent pi-reveal">
+          {{ section.settings.accent_text }}
+        </p>
+      {%- endif -%}
+
+      {%- if section.settings.body_text != blank -%}
+        <div class="pi-body pi-split__body pi-reveal">
+          {{ section.settings.body_text }}
+        </div>
+      {%- endif -%}
+
+      {%- if section.settings.button_label != blank -%}
+        <div class="pi-split__button pi-reveal">
+          <a
+            href="{{ section.settings.button_link }}"
+            class="pi-btn pi-btn--{{ section.settings.button_style }}"
+          >
+            {{ section.settings.button_label }}
+          </a>
+        </div>
+      {%- endif -%}
+
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "PI Split Content",
+  "tag": "section",
+  "class": "pi-split-content-section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "select",
+      "id": "image_position",
+      "label": "Image position",
+      "default": "left",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "right", "label": "Right" }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "image_ratio",
+      "label": "Image ratio (mobile)",
+      "default": "portrait",
+      "options": [
+        { "value": "square", "label": "Square (1:1)" },
+        { "value": "portrait", "label": "Portrait (4:5)" },
+        { "value": "landscape", "label": "Landscape (16:9)" }
+      ],
+      "info": "On desktop, the image stretches to match the text column height."
+    },
+    {
+      "type": "header",
+      "content": "Text"
+    },
+    {
+      "type": "text",
+      "id": "label",
+      "label": "Label",
+      "default": "Our Story"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Locally Owned & Operated"
+    },
+    {
+      "type": "text",
+      "id": "accent_text",
+      "label": "Accent text",
+      "info": "Displayed in Libre Baskerville italic."
+    },
+    {
+      "type": "richtext",
+      "id": "body_text",
+      "label": "Body text",
+      "default": "<p>Share your brand story, describe a service, or highlight what makes your business unique.</p>"
+    },
+    {
+      "type": "header",
+      "content": "Button"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "select",
+      "id": "button_style",
+      "label": "Button style",
+      "default": "primary",
+      "options": [
+        { "value": "primary", "label": "Primary (Gold)" },
+        { "value": "secondary", "label": "Secondary (Outline)" },
+        { "value": "green", "label": "Green" }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "Section"
+    },
+    {
+      "type": "select",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "warm-white",
+      "options": [
+        { "value": "warm-white", "label": "Warm White" },
+        { "value": "white", "label": "White" },
+        { "value": "cream", "label": "Cream" },
+        { "value": "deep-blue", "label": "Deep Blue" },
+        { "value": "midnight", "label": "Midnight" }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "vertical_padding",
+      "label": "Vertical padding",
+      "default": "medium",
+      "options": [
+        { "value": "small", "label": "Small" },
+        { "value": "medium", "label": "Medium" },
+        { "value": "large", "label": "Large" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "PI Split Content",
+      "category": "PI Outdoors"
+    }
+  ]
+}
+{% endschema %}
