@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pawleys Island Outdoors — Brand Guidelines</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700&family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --deep-blue: #2B4C5C;
+    --dark-blue: #1E3A48;
+    --midnight: #152D38;
+    --cream: #F2E8D5;
+    --warm-white: #FAF7F2;
+    --antique-gold: #C4A24E;
+    --gold-light: #D4B86A;
+    --gold-dark: #A8893E;
+    --marsh-green: #5A7A5E;
+    --sand: #D6C9AA;
+    --driftwood: #8B7D6B;
+    --charcoal: #2C2C2C;
+    --storm: #6B7F8C;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--warm-white);
+    color: var(--charcoal);
+    font-family: 'Source Sans 3', sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ─── COVER ─── */
+  .cover {
+    min-height: 100vh;
+    background: var(--deep-blue);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    padding: 4rem 2rem;
+  }
+
+  .cover::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 30% 20%, rgba(196,162,78,0.06) 0%, transparent 60%),
+      radial-gradient(ellipse at 70% 80%, rgba(90,122,94,0.08) 0%, transparent 50%);
+    pointer-events: none;
+  }
+
+  .cover::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.015'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    pointer-events: none;
+  }
+
+  .cover-logo {
+    width: min(500px, 85vw);
+    margin-bottom: 3rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .cover-divider {
+    width: 80px;
+    height: 1px;
+    background: var(--antique-gold);
+    margin-bottom: 2rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .cover-title {
+    font-family: 'Playfair Display', serif;
+    color: var(--cream);
+    font-size: clamp(1rem, 2vw, 1.3rem);
+    font-weight: 400;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    position: relative;
+    z-index: 1;
+  }
+
+  .cover-sub {
+    font-family: 'Source Sans 3', sans-serif;
+    color: var(--storm);
+    font-size: 0.8rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-top: 1rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* ─── LAYOUT ─── */
+  .section {
+    padding: 5rem 2rem;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .section-dark {
+    background: var(--deep-blue);
+    max-width: 100%;
+    padding: 5rem 2rem;
+  }
+
+  .section-dark .section-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .section-accent {
+    background: var(--midnight);
+    max-width: 100%;
+    padding: 5rem 2rem;
+  }
+
+  .section-accent .section-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .section-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.75rem;
+    color: var(--antique-gold);
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    margin-bottom: 0.75rem;
+    display: block;
+  }
+
+  .section-dark .section-number,
+  .section-accent .section-number {
+    color: var(--gold-light);
+  }
+
+  h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    font-weight: 700;
+    color: var(--dark-blue);
+    margin-bottom: 1rem;
+    line-height: 1.2;
+  }
+
+  .section-dark h2,
+  .section-accent h2 {
+    color: var(--cream);
+  }
+
+  .section-intro {
+    font-size: 1.05rem;
+    color: var(--driftwood);
+    max-width: 650px;
+    margin-bottom: 3rem;
+    line-height: 1.8;
+  }
+
+  .section-dark .section-intro {
+    color: var(--storm);
+  }
+
+  /* ─── COLOR PALETTE ─── */
+  .palette-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .swatch {
+    border-radius: 8px;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+  }
+
+  .swatch-color {
+    height: 120px;
+    display: flex;
+    align-items: flex-end;
+    padding: 0.75rem;
+  }
+
+  .swatch-info {
+    padding: 1rem;
+  }
+
+  .swatch-name {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: var(--charcoal);
+    margin-bottom: 0.25rem;
+  }
+
+  .swatch-hex {
+    font-family: 'Source Sans 3', monospace;
+    font-size: 0.8rem;
+    color: var(--driftwood);
+    letter-spacing: 0.05em;
+  }
+
+  .palette-label {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--dark-blue);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+  }
+
+  /* ─── TYPOGRAPHY ─── */
+  .type-specimen {
+    margin-bottom: 3rem;
+    padding: 2.5rem;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  }
+
+  .type-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--antique-gold);
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+
+  .type-display {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 900;
+    color: var(--dark-blue);
+    line-height: 1.15;
+    margin-bottom: 0.5rem;
+  }
+
+  .type-body-demo {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 1.1rem;
+    color: var(--charcoal);
+    line-height: 1.8;
+  }
+
+  .type-script-demo {
+    font-family: 'Dancing Script', cursive;
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    color: var(--antique-gold);
+    line-height: 1.3;
+  }
+
+  .type-meta {
+    font-size: 0.85rem;
+    color: var(--driftwood);
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(0,0,0,0.06);
+  }
+
+  .type-meta strong {
+    color: var(--charcoal);
+  }
+
+  .type-scale {
+    display: grid;
+    gap: 1.25rem;
+    margin-top: 2rem;
+  }
+
+  .type-scale-item {
+    display: flex;
+    align-items: baseline;
+    gap: 1.5rem;
+    padding-bottom: 1.25rem;
+    border-bottom: 1px solid rgba(0,0,0,0.04);
+  }
+
+  .type-scale-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--storm);
+    min-width: 80px;
+    flex-shrink: 0;
+  }
+
+  .type-scale-sample {
+    font-family: 'Playfair Display', serif;
+    color: var(--dark-blue);
+  }
+
+  /* ─── VOICE ─── */
+  .voice-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .voice-card {
+    padding: 2rem;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(196,162,78,0.15);
+    border-radius: 8px;
+  }
+
+  .voice-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.15rem;
+    color: var(--cream);
+    margin-bottom: 0.75rem;
+  }
+
+  .voice-card p {
+    font-size: 0.95rem;
+    color: var(--storm);
+    line-height: 1.7;
+  }
+
+  .do-dont {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-top: 2.5rem;
+  }
+
+  @media (max-width: 600px) {
+    .do-dont { grid-template-columns: 1fr; }
+  }
+
+  .do-col, .dont-col {
+    padding: 1.5rem;
+    border-radius: 8px;
+  }
+
+  .do-col {
+    background: rgba(90,122,94,0.1);
+    border: 1px solid rgba(90,122,94,0.2);
+  }
+
+  .dont-col {
+    background: rgba(196,162,78,0.06);
+    border: 1px solid rgba(196,162,78,0.12);
+  }
+
+  .do-col h4, .dont-col h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+  }
+
+  .do-col h4 { color: var(--marsh-green); }
+  .dont-col h4 { color: var(--gold-dark); }
+
+  .do-col li, .dont-col li {
+    font-size: 0.9rem;
+    color: var(--cream);
+    line-height: 1.7;
+    margin-bottom: 0.35rem;
+    list-style: none;
+    padding-left: 1.2rem;
+    position: relative;
+  }
+
+  .do-col li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--marsh-green);
+    font-weight: 700;
+  }
+
+  .dont-col li::before {
+    content: '✗';
+    position: absolute;
+    left: 0;
+    color: var(--gold-dark);
+    font-weight: 700;
+  }
+
+  /* ─── USAGE EXAMPLES ─── */
+  .usage-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+
+  .usage-card {
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+  }
+
+  .usage-header {
+    padding: 2rem;
+    background: var(--deep-blue);
+    min-height: 160px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+
+  .usage-header h3 {
+    font-family: 'Playfair Display', serif;
+    color: var(--cream);
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  .usage-header .accent {
+    font-family: 'Dancing Script', cursive;
+    color: var(--antique-gold);
+    font-size: 1.3rem;
+  }
+
+  .usage-body {
+    padding: 1.5rem 2rem;
+  }
+
+  .usage-body p {
+    font-size: 0.9rem;
+    color: var(--driftwood);
+    line-height: 1.7;
+  }
+
+  .usage-tag {
+    display: inline-block;
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--antique-gold);
+    background: rgba(196,162,78,0.08);
+    padding: 0.3rem 0.75rem;
+    border-radius: 3px;
+    margin-bottom: 0.75rem;
+  }
+
+  /* ─── LOGO RULES ─── */
+  .logo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+
+  .logo-box {
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 200px;
+    padding: 2.5rem;
+    position: relative;
+  }
+
+  .logo-box img {
+    width: 280px;
+    max-width: 100%;
+  }
+
+  .logo-box-label {
+    position: absolute;
+    bottom: 0.75rem;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+
+  .logo-dark {
+    background: var(--deep-blue);
+  }
+
+  .logo-dark .logo-box-label { color: var(--storm); }
+
+  .logo-light {
+    background: var(--cream);
+    border: 1px solid rgba(0,0,0,0.06);
+  }
+
+  .logo-light .logo-box-label { color: var(--driftwood); }
+
+  .logo-white {
+    background: #fff;
+    border: 1px solid rgba(0,0,0,0.06);
+  }
+
+  .logo-white .logo-box-label { color: var(--driftwood); }
+
+  /* ─── SPACING RULES ─── */
+  .spacing-demo {
+    margin-top: 2rem;
+    background: #fff;
+    border-radius: 8px;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  }
+
+  .spacing-demo img {
+    width: 250px;
+  }
+
+  .spacing-note {
+    font-size: 0.85rem;
+    color: var(--driftwood);
+    text-align: center;
+    max-width: 500px;
+    line-height: 1.7;
+  }
+
+  /* ─── FOOTER ─── */
+  .footer {
+    background: var(--midnight);
+    text-align: center;
+    padding: 3rem 2rem;
+  }
+
+  .footer-line {
+    width: 40px;
+    height: 1px;
+    background: var(--antique-gold);
+    margin: 0 auto 1.5rem;
+  }
+
+  .footer p {
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--storm);
+  }
+
+  .footer .brand {
+    color: var(--cream);
+    font-family: 'Playfair Display', serif;
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════ COVER ═══════════════════ -->
+<section class="cover">
+  <img src="PI outdoors transparent.png" alt="Pawleys Island Outdoors logo" class="cover-logo">
+  <div class="cover-divider"></div>
+  <div class="cover-title">Brand Guidelines</div>
+  <div class="cover-sub">Prepared by Paragon Agency — 2026</div>
+</section>
+
+<!-- ═══════════════════ 01 — COLOR PALETTE ═══════════════════ -->
+<section class="section">
+  <span class="section-number">01 — Color Palette</span>
+  <h2>Built from the Lowcountry</h2>
+  <p class="section-intro">Every color is pulled from the land, water, and light of Pawleys Island. The deep blues ground the brand in coastal authority. Gold brings warmth and a sense of heritage. Naturals round out the system for versatility.</p>
+
+  <div class="palette-label">Primary</div>
+  <div class="palette-grid">
+    <div class="swatch">
+      <div class="swatch-color" style="background: var(--deep-blue);"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Deep Blue</div>
+        <div class="swatch-hex">#2B4C5C</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background: var(--dark-blue);"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Dark Blue</div>
+        <div class="swatch-hex">#1E3A48</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background: var(--antique-gold);"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Antique Gold</div>
+        <div class="swatch-hex">#C4A24E</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background: var(--cream);"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Cream</div>
+        <div class="swatch-hex">#F2E8D5</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="palette-label">Secondary</div>
+  <div class="palette-grid">
+    <div class="swatch">
+      <div class="swatch-color" style="background: var(--midnight);"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Midnight</div>
+        <div class="swatch-hex">#152D38</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background: var(--marsh-green);"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Marsh Green</div>
+        <div class="swatch-hex">#5A7A5E</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background: var(--sand);"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Sand</div>
+        <div class="swatch-hex">#D6C9AA</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background: var(--driftwood);"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Driftwood</div>
+        <div class="swatch-hex">#8B7D6B</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="palette-label">Neutral</div>
+  <div class="palette-grid">
+    <div class="swatch">
+      <div class="swatch-color" style="background: var(--charcoal);"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Charcoal</div>
+        <div class="swatch-hex">#2C2C2C</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background: var(--storm);"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Storm</div>
+        <div class="swatch-hex">#6B7F8C</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background: var(--warm-white);"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Warm White</div>
+        <div class="swatch-hex">#FAF7F2</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ 02 — TYPOGRAPHY ═══════════════════ -->
+<section class="section-dark">
+  <div class="section-inner">
+    <span class="section-number">02 — Typography</span>
+    <h2>Three Voices, One System</h2>
+    <p class="section-intro">A traditional serif for authority. A clean sans for readability. A script accent for warmth and character — used sparingly, just like in the logo.</p>
+
+    <div class="type-specimen" style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.06);">
+      <div class="type-label">Display — Playfair Display</div>
+      <div class="type-display" style="color: var(--cream);">Your Next Adventure<br>Starts Here</div>
+      <div class="type-meta" style="color: var(--storm); border-color: rgba(255,255,255,0.08);">
+        <strong style="color: var(--cream);">Use for:</strong> Headlines, section titles, hero text, feature callouts<br>
+        <strong style="color: var(--cream);">Weights:</strong> Bold (700) and Black (900)<br>
+        <strong style="color: var(--cream);">Fallback:</strong> Georgia, 'Times New Roman', serif
+      </div>
+    </div>
+
+    <div class="type-specimen" style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.06);">
+      <div class="type-label">Body — Source Sans 3</div>
+      <div class="type-body-demo" style="color: var(--cream);">Pawleys Island Outdoors is your local outfitter for hunting, fishing, and everything in between. Family-owned and operated since 2006, we know the Lowcountry waterways, the best local spots, and the gear that actually holds up.</div>
+      <div class="type-meta" style="color: var(--storm); border-color: rgba(255,255,255,0.08);">
+        <strong style="color: var(--cream);">Use for:</strong> Body copy, navigation, buttons, captions, metadata<br>
+        <strong style="color: var(--cream);">Weights:</strong> Light (300), Regular (400), Semibold (600)<br>
+        <strong style="color: var(--cream);">Fallback:</strong> 'Helvetica Neue', Arial, sans-serif
+      </div>
+    </div>
+
+    <div class="type-specimen" style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.06);">
+      <div class="type-label">Accent — Dancing Script</div>
+      <div class="type-script-demo">Locally owned & operated</div>
+      <div class="type-meta" style="color: var(--storm); border-color: rgba(255,255,255,0.08);">
+        <strong style="color: var(--cream);">Use for:</strong> Taglines, accents, decorative phrases — never body copy<br>
+        <strong style="color: var(--cream);">Weights:</strong> Regular (400), Bold (700)<br>
+        <strong style="color: var(--cream);">Note:</strong> Mirrors the script style in the logo. Use sparingly — one instance per page max.
+      </div>
+    </div>
+
+    <div class="type-specimen" style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.06);">
+      <div class="type-label">Type Scale</div>
+      <div class="type-scale">
+        <div class="type-scale-item" style="border-color: rgba(255,255,255,0.06);">
+          <span class="type-scale-label">Hero</span>
+          <span class="type-scale-sample" style="font-size: 3rem; font-weight: 900; color: var(--cream);">64px / 900</span>
+        </div>
+        <div class="type-scale-item" style="border-color: rgba(255,255,255,0.06);">
+          <span class="type-scale-label">H1</span>
+          <span class="type-scale-sample" style="font-size: 2.25rem; font-weight: 700; color: var(--cream);">42px / 700</span>
+        </div>
+        <div class="type-scale-item" style="border-color: rgba(255,255,255,0.06);">
+          <span class="type-scale-label">H2</span>
+          <span class="type-scale-sample" style="font-size: 1.75rem; font-weight: 700; color: var(--cream);">32px / 700</span>
+        </div>
+        <div class="type-scale-item" style="border-color: rgba(255,255,255,0.06);">
+          <span class="type-scale-label">H3</span>
+          <span class="type-scale-sample" style="font-size: 1.35rem; font-weight: 700; color: var(--cream);">24px / 700</span>
+        </div>
+        <div class="type-scale-item" style="border-color: rgba(255,255,255,0.06);">
+          <span class="type-scale-label">Body</span>
+          <span class="type-scale-sample" style="font-size: 1rem; font-weight: 400; color: var(--cream); font-family: 'Source Sans 3', sans-serif;">16–18px / 400</span>
+        </div>
+        <div class="type-scale-item" style="border-color: rgba(255,255,255,0.06);">
+          <span class="type-scale-label">Caption</span>
+          <span class="type-scale-sample" style="font-size: 0.8rem; font-weight: 400; color: var(--storm); font-family: 'Source Sans 3', sans-serif;">13px / 400</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ 03 — BRAND VOICE ═══════════════════ -->
+<section class="section-accent">
+  <div class="section-inner">
+    <span class="section-number">03 — Brand Voice</span>
+    <h2>How We Sound</h2>
+    <p class="section-intro" style="color: var(--storm);">Pawleys Island Outdoors speaks like a trusted local guide — knowledgeable without being preachy, welcoming without being generic, and proud of the Lowcountry without being a tourist brochure.</p>
+
+    <div class="voice-grid">
+      <div class="voice-card">
+        <h3>Knowledgeable & Grounded</h3>
+        <p>We know the waters, the land, and the gear. We speak from experience, not a catalog. We recommend what works because we've used it ourselves.</p>
+      </div>
+      <div class="voice-card">
+        <h3>Welcoming & Neighborly</h3>
+        <p>Whether you're local or visiting, you're walking into a conversation, not a sales pitch. We're the friend who tells you where the fish are actually biting.</p>
+      </div>
+      <div class="voice-card">
+        <h3>Straightforward & Honest</h3>
+        <p>No fluff, no hype. If something's the best tool for the job, we'll say so. If it's not right for you, we'll say that too. Trust is earned out here.</p>
+      </div>
+      <div class="voice-card">
+        <h3>Proud but Not Loud</h3>
+        <p>We love this place and what we do. That comes through naturally — we don't need to force it. The Lowcountry speaks for itself.</p>
+      </div>
+    </div>
+
+    <div class="do-dont">
+      <div class="do-col">
+        <h4>We Say</h4>
+        <ul>
+          <li>"Stop in and we'll get you set up."</li>
+          <li>"The reds are running in the creek this week."</li>
+          <li>"We've been here since 2006 — we know the water."</li>
+          <li>"Your family's next adventure starts here."</li>
+        </ul>
+      </div>
+      <div class="dont-col">
+        <h4>We Don't Say</h4>
+        <ul>
+          <li>"Premium outdoor retail experience."</li>
+          <li>"Curated selection of artisanal goods."</li>
+          <li>"Unlock your outdoor potential today!"</li>
+          <li>"As industry leaders in outdoor retail…"</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ 04 — USAGE EXAMPLES ═══════════════════ -->
+<section class="section">
+  <span class="section-number">04 — In Practice</span>
+  <h2>Palette + Type in Action</h2>
+  <p class="section-intro">How these elements come together across common touchpoints.</p>
+
+  <div class="usage-grid">
+    <div class="usage-card">
+      <div class="usage-header">
+        <span class="accent">one fish, two fish</span>
+        <h3>Boats, Rods, Reels<br>& More</h3>
+      </div>
+      <div class="usage-body">
+        <span class="usage-tag">Section Header</span>
+        <p>Playfair Display for the headline. Dancing Script for the tagline accent. Deep Blue background with Cream and Gold type. High contrast, immediate hierarchy.</p>
+      </div>
+    </div>
+
+    <div class="usage-card">
+      <div class="usage-header" style="background: var(--warm-white);">
+        <h3 style="color: var(--dark-blue); font-size: 1.3rem;">Whether you're local or just passing through, we're here to get you on the water.</h3>
+      </div>
+      <div class="usage-body">
+        <span class="usage-tag">Body Section</span>
+        <p>Warm White background with Dark Blue text. Playfair Display at a conversational size. Clean and open — good for about sections and service descriptions.</p>
+      </div>
+    </div>
+
+    <div class="usage-card">
+      <div class="usage-header" style="background: var(--marsh-green); justify-content: center; align-items: center;">
+        <h3 style="font-family: 'Source Sans 3', sans-serif; font-weight: 600; font-size: 0.85rem; letter-spacing: 0.2em; text-transform: uppercase; text-align: center;">Plan Your Next Trip →</h3>
+      </div>
+      <div class="usage-body">
+        <span class="usage-tag">CTA Button</span>
+        <p>Source Sans 3 in Semibold. Uppercase with wide tracking. Marsh Green background — an earthy alternative to the primary blues for action states.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ 05 — QUICK REFERENCE ═══════════════════ -->
+<section class="section">
+  <span class="section-number">05 — Quick Reference</span>
+  <h2>At a Glance</h2>
+
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 2rem;">
+    <div style="padding: 2rem; background: #fff; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.04);">
+      <div class="type-label">Primary Palette</div>
+      <div style="display: flex; gap: 0.5rem; margin-bottom: 1rem;">
+        <div style="width: 40px; height: 40px; border-radius: 50%; background: var(--deep-blue);"></div>
+        <div style="width: 40px; height: 40px; border-radius: 50%; background: var(--dark-blue);"></div>
+        <div style="width: 40px; height: 40px; border-radius: 50%; background: var(--antique-gold);"></div>
+        <div style="width: 40px; height: 40px; border-radius: 50%; background: var(--cream);"></div>
+      </div>
+      <p style="font-size: 0.85rem; color: var(--driftwood); line-height: 1.7;">Deep Blue + Gold dominate. Cream for text on dark. Warm White for light backgrounds.</p>
+    </div>
+
+    <div style="padding: 2rem; background: #fff; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.04);">
+      <div class="type-label">Fonts</div>
+      <p style="font-family: 'Playfair Display', serif; font-size: 1.1rem; color: var(--dark-blue); font-weight: 700;">Playfair Display</p>
+      <p style="font-family: 'Source Sans 3', sans-serif; font-size: 1rem; color: var(--charcoal); margin: 0.25rem 0;">Source Sans 3</p>
+      <p style="font-family: 'Dancing Script', cursive; font-size: 1.1rem; color: var(--antique-gold);">Dancing Script</p>
+    </div>
+
+    <div style="padding: 2rem; background: #fff; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.04);">
+      <div class="type-label">Voice Keywords</div>
+      <p style="font-size: 0.95rem; color: var(--charcoal); line-height: 1.8;">Knowledgeable · Welcoming · Straightforward · Proud · Local · Trustworthy</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ FOOTER ═══════════════════ -->
+<footer class="footer">
+  <div class="footer-line"></div>
+  <p><span class="brand">Pawleys Island Outdoors</span> — Brand Guidelines</p>
+  <p style="margin-top: 0.5rem; color: var(--driftwood);">Paragon Agency · 2026</p>
+</footer>
+
+</body>
+</html>
