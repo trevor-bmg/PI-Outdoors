@@ -269,6 +269,9 @@
         "heading": "Brands We Carry",
         "background_color": "white",
         "logo_height": 80,
+        "scroll_speed": 30,
+        "scroll_direction": "left",
+        "pause_on_hover": true,
         "grayscale": false
       }
     },
@@ -292,6 +295,7 @@
         "fb_shimano": {
           "type": "brand",
           "settings": {
+            "logo": "shopify://shop_images/Shimano___Pawleys_Island_Outdoors.avif",
             "brand_name": "Shimano",
             "link": ""
           }
@@ -299,6 +303,7 @@
         "fb_penn": {
           "type": "brand",
           "settings": {
+            "logo": "shopify://shop_images/Penn___Pawleys_Island_Outdoors.avif",
             "brand_name": "Penn",
             "link": ""
           }
@@ -306,6 +311,7 @@
         "fb_daiwa": {
           "type": "brand",
           "settings": {
+            "logo": "shopify://shop_images/Daiwa___Pawleys_Island_Outdoors.avif",
             "brand_name": "Daiwa",
             "link": ""
           }
@@ -313,6 +319,7 @@
         "fb_gloomis": {
           "type": "brand",
           "settings": {
+            "logo": "shopify://shop_images/Gloomis___Pawleys_Island_Outdoors.avif",
             "brand_name": "G. Loomis",
             "link": ""
           }
@@ -320,6 +327,7 @@
         "fb_stcroix": {
           "type": "brand",
           "settings": {
+            "logo": "shopify://shop_images/St__Croix___pawleys_island_outdoors.avif",
             "brand_name": "St. Croix",
             "link": ""
           }
@@ -327,6 +335,7 @@
         "fb_crowder": {
           "type": "brand",
           "settings": {
+            "logo": "shopify://shop_images/Crowder___Pawleys_Island_Outdoors.avif",
             "brand_name": "Crowder",
             "link": ""
           }
@@ -334,6 +343,7 @@
         "fb_lindgren_pittman": {
           "type": "brand",
           "settings": {
+            "logo": "shopify://shop_images/Lingren_Pittman___Pawleys_Island_Outdoor.avif",
             "brand_name": "Lindgren Pittman",
             "link": ""
           }
@@ -341,6 +351,7 @@
         "fb_berkley": {
           "type": "brand",
           "settings": {
+            "logo": "shopify://shop_images/Berkley___pawleys_island_outdoors.avif",
             "brand_name": "Berkley",
             "link": ""
           }
@@ -348,6 +359,7 @@
         "fb_billy_bay": {
           "type": "brand",
           "settings": {
+            "logo": "shopify://shop_images/Billy_Bay___pawleys_island_outdoors.avif",
             "brand_name": "Billy Bay",
             "link": ""
           }
@@ -355,6 +367,7 @@
         "fb_bluewater_candy": {
           "type": "brand",
           "settings": {
+            "logo": "shopify://shop_images/Blue_water_candy___pawleys_island_outdoo.avif",
             "brand_name": "Blue Water Candy",
             "link": ""
           }
@@ -362,6 +375,7 @@
         "fb_doa": {
           "type": "brand",
           "settings": {
+            "logo": "shopify://shop_images/DOA___pawleys_island_outoors.avif",
             "brand_name": "DOA",
             "link": ""
           }
@@ -369,6 +383,7 @@
         "fb_fathom": {
           "type": "brand",
           "settings": {
+            "logo": "shopify://shop_images/Fathom___pawleys_island_outdoors.avif",
             "brand_name": "Fathom",
             "link": ""
           }
@@ -376,6 +391,7 @@
         "fb_iland": {
           "type": "brand",
           "settings": {
+            "logo": "shopify://shop_images/Iland_Lures___pawleys_island_outdoors_pn.avif",
             "brand_name": "Iland Lures",
             "link": ""
           }
@@ -383,6 +399,7 @@
         "fb_vudu": {
           "type": "brand",
           "settings": {
+            "logo": "shopify://shop_images/Vudu.avif",
             "brand_name": "Vudu",
             "link": ""
           }
@@ -390,6 +407,7 @@
         "fb_zman": {
           "type": "brand",
           "settings": {
+            "logo": "shopify://shop_images/Zman___pawleys_Island_outdoors.avif",
             "brand_name": "Z-Man",
             "link": ""
           }
@@ -416,6 +434,9 @@
         "heading": "Brands We Carry",
         "background_color": "white",
         "logo_height": 50,
+        "scroll_speed": 30,
+        "scroll_direction": "left",
+        "pause_on_hover": true,
         "grayscale": true
       }
     },
