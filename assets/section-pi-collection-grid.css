@@ -9,11 +9,17 @@
 .pi-collection-grid--bg-deep-blue { background-color: var(--pi-deep-blue); }
 .pi-collection-grid--bg-midnight { background-color: var(--pi-midnight); }
 
-/* ─── Text Color Override ─── */
-.pi-collection-grid .pi-label,
-.pi-collection-grid .pi-heading,
-.pi-collection-grid .pi-body {
-  color: var(--pi-grid-text-color, revert);
+/* ─── Text Color Overrides ─── */
+.pi-collection-grid__header .pi-label {
+  color: var(--pi-label-color, var(--pi-gold));
+}
+
+.pi-collection-grid__header .pi-heading {
+  color: var(--pi-heading-color, var(--pi-deep-blue));
+}
+
+.pi-collection-grid__header .pi-body {
+  color: var(--pi-body-color, var(--pi-charcoal));
 }
 
 /* ─── Section Header ─── */
@@ -116,7 +122,7 @@
 }
 
 .pi-collection-grid__title {
-  color: var(--pi-cream);
+  color: var(--pi-card-text-color, var(--pi-cream));
   margin: 0;
   transition: transform var(--pi-duration) var(--pi-ease);
 }

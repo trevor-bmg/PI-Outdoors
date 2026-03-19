@@ -13,7 +13,7 @@
 <div
   class="pi-section pi-collection-grid{% if is_dark %} pi-section--dark{% endif %} pi-collection-grid--bg-{{ bg }}"
   id="Section-{{ section.id }}"
-  {% if section.settings.text_color != blank %}style="--pi-grid-text-color: {{ section.settings.text_color }};"{% endif %}
+  style="{% if section.settings.label_color != blank %}--pi-label-color: {{ section.settings.label_color }};{% endif %}{% if section.settings.heading_color != blank %}--pi-heading-color: {{ section.settings.heading_color }};{% endif %}{% if section.settings.body_color != blank %}--pi-body-color: {{ section.settings.body_color }};{% endif %}{% if section.settings.card_title_color != blank %}--pi-card-text-color: {{ section.settings.card_title_color }};{% endif %}"
 >
   <div class="pi-section__inner">
     {%- if section.settings.label != blank or section.settings.heading != blank or section.settings.body_text != blank -%}
@@ -142,9 +142,27 @@
     },
     {
       "type": "color",
-      "id": "text_color",
-      "label": "Text color",
-      "info": "Overrides heading, label, and body text color."
+      "id": "label_color",
+      "label": "Label color",
+      "default": "#C4A24E"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading color",
+      "default": "#2B4C5C"
+    },
+    {
+      "type": "color",
+      "id": "body_color",
+      "label": "Body text color",
+      "default": "#2C2C2C"
+    },
+    {
+      "type": "color",
+      "id": "card_title_color",
+      "label": "Card title color",
+      "default": "#F2E8D5"
     },
     {
       "type": "select",
