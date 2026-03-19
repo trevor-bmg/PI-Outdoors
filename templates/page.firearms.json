@@ -1,17 +1,30 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "hero": {
       "type": "pi-hero",
       "settings": {
-        "heading": "Firearms & Ammunition",
+        "image_desktop": "shopify://shop_images/Hero_Desktop_1144ed76-e316-4615-bdc9-7c85a8075500.jpg",
+        "image_mobile": "shopify://shop_images/Hero_Mobile_2ff90f62-5cab-4ea2-ac4c-24a471c6d7f6.jpg",
         "accent_text": "In-store only",
+        "heading": "Firearms & Ammunition",
         "body_text": "We carry a full selection of firearms and ammunition from the brands you trust. Stop by the shop to see our current inventory.",
         "button_label": "",
+        "button_link": "",
+        "button_style": "primary",
         "text_alignment": "left",
         "min_height_desktop": "medium",
         "min_height_mobile": "medium",
         "color_scheme": "dark",
-        "overlay_opacity": 50
+        "overlay_opacity": 100
       }
     },
     "intro": {
@@ -21,6 +34,9 @@
         "heading": "Top Brands, Expert Advice",
         "accent_text": "Available in store only",
         "body_text": "<p>Pawleys Island Outdoors carries a carefully selected inventory of firearms and ammunition for hunting, sport shooting, and personal protection. Our team can help you find exactly what you need — whether you're looking for your first shotgun or your next rifle.</p>",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "primary",
         "text_alignment": "center",
         "content_width": "wide",
         "background_color": "warm-white",
@@ -29,136 +45,200 @@
     },
     "firearm_brands": {
       "type": "pi-multi-column",
-      "settings": {
-        "label": "Firearms",
-        "heading": "Brands We Carry",
-        "columns_desktop": 4,
-        "card_style": "flat",
-        "background_color": "white"
-      },
       "blocks": {
         "brand_1": {
           "type": "column",
           "settings": {
+            "image": "shopify://shop_images/Browning_Logo___Pawleys_Island_Outdoor_j.avif",
+            "image_ratio": "16-9",
             "heading": "Browning",
-            "body_text": "Shotguns, rifles, and accessories"
+            "body_text": "Shotguns, rifles, and accessories",
+            "button_label": "",
+            "button_link": ""
           }
         },
         "brand_2": {
           "type": "column",
           "settings": {
+            "image": "shopify://shop_images/Smith_Wesson___Pawleys_Island_Outdoors.avif",
+            "image_ratio": "16-9",
             "heading": "Smith & Wesson",
-            "body_text": "Handguns and revolvers"
+            "body_text": "Handguns and revolvers",
+            "button_label": "",
+            "button_link": ""
           }
         },
         "brand_3": {
           "type": "column",
           "settings": {
+            "image_ratio": "4-5",
             "heading": "Stoeger",
-            "body_text": "Shotguns built for the field"
+            "body_text": "Shotguns built for the field",
+            "button_label": "",
+            "button_link": ""
           }
         },
         "brand_4": {
           "type": "column",
           "settings": {
+            "image_ratio": "4-5",
             "heading": "Winchester",
-            "body_text": "Rifles, shotguns, and ammunition"
+            "body_text": "Rifles, shotguns, and ammunition",
+            "button_label": "",
+            "button_link": ""
           }
         },
         "brand_5": {
           "type": "column",
           "settings": {
+            "image_ratio": "4-5",
             "heading": "Ruger",
-            "body_text": "Handguns, rifles, and rimfire"
+            "body_text": "Handguns, rifles, and rimfire",
+            "button_label": "",
+            "button_link": ""
           }
         },
         "brand_6": {
           "type": "column",
           "settings": {
+            "image_ratio": "4-5",
             "heading": "Benelli",
-            "body_text": "Semi-auto shotguns"
+            "body_text": "Semi-auto shotguns",
+            "button_label": "",
+            "button_link": ""
           }
         },
         "brand_7": {
           "type": "column",
           "settings": {
+            "image_ratio": "4-5",
             "heading": "Glock",
-            "body_text": "Blue Label Program available"
+            "body_text": "Blue Label Program available",
+            "button_label": "",
+            "button_link": ""
           }
         },
         "brand_8": {
           "type": "column",
           "settings": {
+            "image_ratio": "4-5",
             "heading": "Franchi",
-            "body_text": "Lightweight shotguns for upland and waterfowl"
+            "body_text": "Lightweight shotguns for upland and waterfowl",
+            "button_label": "",
+            "button_link": ""
           }
         }
       },
-      "block_order": ["brand_1", "brand_2", "brand_3", "brand_4", "brand_5", "brand_6", "brand_7", "brand_8"]
+      "block_order": [
+        "brand_1",
+        "brand_2",
+        "brand_3",
+        "brand_4",
+        "brand_5",
+        "brand_6",
+        "brand_7",
+        "brand_8"
+      ],
+      "settings": {
+        "label": "Firearms",
+        "heading": "Brands We Carry",
+        "body_text": "",
+        "columns_desktop": 4,
+        "background_color": "white",
+        "card_style": "flat"
+      }
     },
     "ammo_brands": {
       "type": "pi-multi-column",
-      "settings": {
-        "label": "Ammunition",
-        "heading": "Ammunition Brands",
-        "columns_desktop": 3,
-        "card_style": "bordered",
-        "background_color": "cream"
-      },
       "blocks": {
         "ammo_1": {
           "type": "column",
           "settings": {
+            "image_ratio": "4-5",
             "heading": "Fiocchi",
-            "body_text": "Shotshell and centerfire"
+            "body_text": "Shotshell and centerfire",
+            "button_label": "",
+            "button_link": ""
           }
         },
         "ammo_2": {
           "type": "column",
           "settings": {
+            "image_ratio": "4-5",
             "heading": "Hornady",
-            "body_text": "Premium hunting and match ammunition"
+            "body_text": "Premium hunting and match ammunition",
+            "button_label": "",
+            "button_link": ""
           }
         },
         "ammo_3": {
           "type": "column",
           "settings": {
+            "image_ratio": "4-5",
             "heading": "Federal",
-            "body_text": "Full line — shotshell, rifle, handgun"
+            "body_text": "Full line — shotshell, rifle, handgun",
+            "button_label": "",
+            "button_link": ""
           }
         },
         "ammo_4": {
           "type": "column",
           "settings": {
+            "image_ratio": "4-5",
             "heading": "CCI",
-            "body_text": "Rimfire and handgun ammunition"
+            "body_text": "Rimfire and handgun ammunition",
+            "button_label": "",
+            "button_link": ""
           }
         },
         "ammo_5": {
           "type": "column",
           "settings": {
+            "image_ratio": "4-5",
             "heading": "Hevi-Shot",
-            "body_text": "Non-toxic waterfowl loads"
+            "body_text": "Non-toxic waterfowl loads",
+            "button_label": "",
+            "button_link": ""
           }
         },
         "ammo_6": {
           "type": "column",
           "settings": {
+            "image_ratio": "4-5",
             "heading": "Rio",
-            "body_text": "Shotshell ammunition"
+            "body_text": "Shotshell ammunition",
+            "button_label": "",
+            "button_link": ""
           }
         }
       },
-      "block_order": ["ammo_1", "ammo_2", "ammo_3", "ammo_4", "ammo_5", "ammo_6"]
+      "block_order": [
+        "ammo_1",
+        "ammo_2",
+        "ammo_3",
+        "ammo_4",
+        "ammo_5",
+        "ammo_6"
+      ],
+      "settings": {
+        "label": "Ammunition",
+        "heading": "Ammunition Brands",
+        "body_text": "",
+        "columns_desktop": 3,
+        "background_color": "cream",
+        "card_style": "bordered"
+      }
     },
     "cta_hunting": {
       "type": "pi-cta-banner",
       "settings": {
         "background_style": "midnight",
+        "overlay_opacity": 50,
         "label": "Hunting",
         "heading": "Hunting Equipment for Every Season",
         "body_text": "Deer, dove, duck, alligator, turkey — we stock gear and supplies for every season in the Lowcountry. Need help finding what you need? Our experts are here to help.",
         "button_label": "Visit Us In Store",
+        "button_link": "",
         "button_style": "primary",
         "text_alignment": "center"
       }
@@ -167,9 +247,12 @@
       "type": "pi-cta-banner",
       "settings": {
         "background_style": "marsh-green",
+        "overlay_opacity": 50,
+        "label": "Visit Us",
         "heading": "Come See Our Full Selection",
         "body_text": "Firearms, ammo, and expert advice — all under one roof. Stop in and we'll get you set up.",
         "button_label": "Get Directions",
+        "button_link": "",
         "button_style": "secondary",
         "text_alignment": "center"
       }
