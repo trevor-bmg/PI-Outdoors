@@ -1,12 +1,13 @@
 /* ============================================
-   PI Outdoors — Brand Banner
-   A lightweight logo strip for partner brands.
+   PI Outdoors — Brand Banner (Marquee)
+   Infinite scrolling logo strip.
    ============================================ */
 
-/* ─── Section Overrides ─── */
+/* ─── Section ─── */
 .pi-brand-banner {
   padding-top: var(--pi-space-lg);
   padding-bottom: var(--pi-space-lg);
+  overflow: hidden;
 }
 
 /* ─── Background Variants ─── */
@@ -22,52 +23,84 @@
   margin-bottom: var(--pi-space-lg);
 }
 
-/* ─── Logo Row ─── */
-.pi-brand-banner__logos {
+/* ─── Marquee Container ─── */
+.pi-brand-marquee {
   display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  gap: var(--pi-space-md) var(--pi-space-lg);
+  width: 100%;
+  overflow: hidden;
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 8%,
+    black 92%,
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 8%,
+    black 92%,
+    transparent 100%
+  );
 }
 
-/* ─── Individual Logo ─── */
-.pi-brand-banner__item {
-  flex: 0 1 auto;
-  max-width: 140px;
+/* ─── Marquee Track (duplicated for seamless loop) ─── */
+.pi-brand-marquee__track {
+  display: flex;
+  align-items: center;
+  gap: var(--pi-space-xl);
+  flex-shrink: 0;
+  padding-right: var(--pi-space-xl);
+  animation: pi-marquee-scroll var(--pi-marquee-speed, 30s) linear infinite;
+  animation-direction: var(--pi-marquee-direction, normal);
+}
+
+@keyframes pi-marquee-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* ─── Pause on Hover ─── */
+.pi-brand-marquee--pause-hover:hover .pi-brand-marquee__track {
+  animation-play-state: paused;
+}
+
+/* ─── Individual Logo Item ─── */
+.pi-brand-marquee__item {
+  flex-shrink: 0;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.pi-brand-banner__link {
+.pi-brand-marquee__link {
   display: flex;
   align-items: center;
   justify-content: center;
   text-decoration: none;
-  width: 100%;
-  height: 100%;
 }
 
-.pi-brand-banner__logo {
+.pi-brand-marquee__logo {
   display: block;
-  max-height: var(--pi-logo-height, 50px);
-  max-width: 100%;
+  height: var(--pi-logo-height, 50px);
   width: auto;
-  height: auto;
+  max-width: 160px;
   object-fit: contain;
   transition: filter var(--pi-duration) var(--pi-ease),
-              opacity var(--pi-duration) var(--pi-ease),
-              transform var(--pi-duration) var(--pi-ease);
+              opacity var(--pi-duration) var(--pi-ease);
 }
 
 /* ─── Grayscale Mode ─── */
-.pi-brand-banner__logos--grayscale .pi-brand-banner__logo {
+.pi-brand-marquee--grayscale .pi-brand-marquee__logo {
   filter: grayscale(100%);
-  opacity: 0.6;
+  opacity: 0.5;
 }
 
-.pi-brand-banner__logos--grayscale .pi-brand-banner__item:hover .pi-brand-banner__logo {
+.pi-brand-marquee--grayscale .pi-brand-marquee__item:hover .pi-brand-marquee__logo {
   filter: grayscale(0%);
   opacity: 1;
 }
@@ -83,15 +116,37 @@
     margin-bottom: var(--pi-space-md);
   }
 
-  .pi-brand-banner__logos {
-    gap: var(--pi-space-sm) var(--pi-space-md);
+  .pi-brand-marquee__track {
+    gap: var(--pi-space-lg);
+    padding-right: var(--pi-space-lg);
   }
 
-  .pi-brand-banner__item {
-    max-width: 100px;
+  .pi-brand-marquee__logo {
+    height: calc(var(--pi-logo-height, 50px) * 0.75);
+    max-width: 120px;
+  }
+}
+
+/* ─── Reduced Motion ─── */
+@media (prefers-reduced-motion: reduce) {
+  .pi-brand-marquee__track {
+    animation: none;
   }
 
-  .pi-brand-banner__logo {
-    max-height: calc(var(--pi-logo-height, 50px) * 0.75);
+  .pi-brand-marquee {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--pi-space-md) var(--pi-space-lg);
+    mask-image: none;
+    -webkit-mask-image: none;
+  }
+
+  .pi-brand-marquee__track:nth-child(2) {
+    display: none;
+  }
+
+  .pi-brand-marquee__track {
+    flex-wrap: wrap;
+    justify-content: center;
   }
 }

@@ -1,6 +1,5 @@
 {{ 'pi-base.css' | asset_url | stylesheet_tag }}
 {{ 'section-pi-brand-banner.css' | asset_url | stylesheet_tag }}
-<script src="{{ 'pi-reveal.js' | asset_url }}" defer></script>
 
 {%- liquid
   assign bg = section.settings.background_color
@@ -8,6 +7,9 @@
   if bg == 'deep-blue' or bg == 'midnight'
     assign dark = true
   endif
+  assign speed = section.settings.scroll_speed
+  assign pause = section.settings.pause_on_hover
+  assign direction = section.settings.scroll_direction
 -%}
 
 <section
@@ -23,30 +25,36 @@
 
     {%- if section.blocks.size > 0 -%}
       <div
-        class="pi-brand-banner__logos pi-reveal{% if section.settings.grayscale %} pi-brand-banner__logos--grayscale{% endif %}"
-        style="--pi-logo-height: {{ section.settings.logo_height }}px;"
+        class="pi-brand-marquee{% if section.settings.grayscale %} pi-brand-marquee--grayscale{% endif %}{% if pause %} pi-brand-marquee--pause-hover{% endif %}"
+        style="--pi-logo-height: {{ section.settings.logo_height }}px; --pi-marquee-speed: {{ speed }}s; --pi-marquee-direction: {% if direction == 'right' %}reverse{% else %}normal{% endif %};"
+        aria-label="Brand logos"
       >
-        {%- for block in section.blocks -%}
-          {%- if block.settings.logo != blank -%}
-            <div class="pi-brand-banner__item" {{ block.shopify_attributes }}>
-              {%- if block.settings.link != blank -%}
-                <a href="{{ block.settings.link }}" class="pi-brand-banner__link" aria-label="{{ block.settings.brand_name | default: 'Brand' }}">
-              {%- endif -%}
+        {%- comment -%}Duplicate the track for seamless loop{%- endcomment -%}
+        {%- for i in (1..2) -%}
+          <div class="pi-brand-marquee__track" aria-hidden="{% if i == 2 %}true{% else %}false{% endif %}">
+            {%- for block in section.blocks -%}
+              {%- if block.settings.logo != blank -%}
+                <div class="pi-brand-marquee__item" {{ block.shopify_attributes }}>
+                  {%- if block.settings.link != blank -%}
+                    <a href="{{ block.settings.link }}" class="pi-brand-marquee__link" aria-label="{{ block.settings.brand_name | default: 'Brand' }}"{% if i == 2 %} tabindex="-1"{% endif %}>
+                  {%- endif -%}
 
-              <img
-                src="{{ block.settings.logo | image_url: height: 160 }}"
-                alt="{{ block.settings.brand_name | default: 'Brand logo' | escape }}"
-                class="pi-brand-banner__logo"
-                width="{{ block.settings.logo.width }}"
-                height="{{ block.settings.logo.height }}"
-                loading="lazy"
-              >
+                  <img
+                    src="{{ block.settings.logo | image_url: height: 160 }}"
+                    alt="{{ block.settings.brand_name | default: 'Brand logo' | escape }}"
+                    class="pi-brand-marquee__logo"
+                    width="{{ block.settings.logo.width }}"
+                    height="{{ block.settings.logo.height }}"
+                    loading="lazy"
+                  >
 
-              {%- if block.settings.link != blank -%}
-                </a>
+                  {%- if block.settings.link != blank -%}
+                    </a>
+                  {%- endif -%}
+                </div>
               {%- endif -%}
-            </div>
-          {%- endif -%}
+            {%- endfor -%}
+          </div>
         {%- endfor -%}
       </div>
     {%- endif -%}
@@ -87,6 +95,33 @@
       "step": 5,
       "default": 50,
       "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "scroll_speed",
+      "label": "Scroll speed (seconds per cycle)",
+      "min": 10,
+      "max": 60,
+      "step": 5,
+      "default": 30,
+      "unit": "s",
+      "info": "Lower = faster. One full cycle across the page."
+    },
+    {
+      "type": "select",
+      "id": "scroll_direction",
+      "label": "Scroll direction",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "checkbox",
+      "id": "pause_on_hover",
+      "label": "Pause on hover",
+      "default": true
     },
     {
       "type": "checkbox",
