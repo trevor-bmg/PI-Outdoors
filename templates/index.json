@@ -14,7 +14,7 @@
       "settings": {
         "image_desktop": "shopify://shop_images/Hero_Desktop.jpg",
         "image_mobile": "shopify://shop_images/Hero_Mobile.jpg",
-        "accent_text": "Pawleys Island's local outfitter",
+        "accent_text": "",
         "heading": "Your Next Adventure Starts Here",
         "body_text": "Hunting, fishing, and everything in between — family-owned and operated since 2006.",
         "button_label": "Shop Now",
