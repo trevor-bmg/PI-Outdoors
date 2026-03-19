@@ -437,7 +437,7 @@
         "scroll_speed": 30,
         "scroll_direction": "left",
         "pause_on_hover": true,
-        "grayscale": true
+        "grayscale": false
       }
     },
     "newsletter": {
