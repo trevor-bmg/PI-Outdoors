@@ -203,6 +203,7 @@
         "hb_federal": {
           "type": "brand",
           "settings": {
+            "logo": "shopify://shop_images/Federal___Pawleys_Island_Outdoors.avif",
             "brand_name": "Federal",
             "link": ""
           }
@@ -210,6 +211,7 @@
         "hb_hornady": {
           "type": "brand",
           "settings": {
+            "logo": "shopify://shop_images/Hornady___Pawleys_Island_Outdoors.avif",
             "brand_name": "Hornady",
             "link": ""
           }
@@ -217,6 +219,7 @@
         "hb_fiocchi": {
           "type": "brand",
           "settings": {
+            "logo": "shopify://shop_images/Fiocchi___Pawleys_Island_Outdoors.avif",
             "brand_name": "Fiocchi",
             "link": ""
           }
@@ -224,6 +227,7 @@
         "hb_cci": {
           "type": "brand",
           "settings": {
+            "logo": "shopify://shop_images/CCI___Pawleys_Island_Outdoors.avif",
             "brand_name": "CCI",
             "link": ""
           }
@@ -231,6 +235,7 @@
         "hb_hevishot": {
           "type": "brand",
           "settings": {
+            "logo": "shopify://shop_images/Hevishot___Pawleys_Island_Outdoors.avif",
             "brand_name": "Hevi-Shot",
             "link": ""
           }
@@ -238,6 +243,7 @@
         "hb_rio": {
           "type": "brand",
           "settings": {
+            "logo": "shopify://shop_images/Rio___Pawleys_Island_Outdoors.avif",
             "brand_name": "Rio",
             "link": ""
           }
@@ -262,8 +268,8 @@
       "settings": {
         "heading": "Brands We Carry",
         "background_color": "white",
-        "logo_height": 50,
-        "grayscale": true
+        "logo_height": 80,
+        "grayscale": false
       }
     },
     "fishing_cta": {
