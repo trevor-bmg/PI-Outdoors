@@ -193,7 +193,7 @@
       ],
       "settings": {
         "heading": "Ammunition Brands",
-        "background_color": "cream",
+        "background_color": "white",
         "logo_height": 80,
         "scroll_speed": 30,
         "scroll_direction": "left",
