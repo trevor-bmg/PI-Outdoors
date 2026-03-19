@@ -121,15 +121,15 @@
   pointer-events: none;
 }
 
-.pi-collection-grid__title {
+.pi-collection-grid .pi-collection-grid__title {
   color: var(--pi-card-text-color, var(--pi-cream));
   margin: 0;
   transition: transform var(--pi-duration) var(--pi-ease);
 }
 
 /* Hover: shift title up */
-.pi-collection-grid__card:hover .pi-collection-grid__title,
-.pi-collection-grid__link:focus .pi-collection-grid__title {
+.pi-collection-grid .pi-collection-grid__card:hover .pi-collection-grid__title,
+.pi-collection-grid .pi-collection-grid__link:focus .pi-collection-grid__title {
   transform: translateY(-4px);
 }
 
