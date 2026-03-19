@@ -125,6 +125,9 @@
         "heading": "Firearm Brands We Carry",
         "background_color": "white",
         "logo_height": 80,
+        "scroll_speed": 30,
+        "scroll_direction": "left",
+        "pause_on_hover": true,
         "grayscale": false
       }
     },
@@ -134,6 +137,7 @@
         "ammo_fiocchi": {
           "type": "brand",
           "settings": {
+            "logo": "shopify://shop_images/Fiocchi___Pawleys_Island_Outdoors.avif",
             "brand_name": "Fiocchi",
             "link": ""
           }
@@ -141,6 +145,7 @@
         "ammo_hornady": {
           "type": "brand",
           "settings": {
+            "logo": "shopify://shop_images/Hornady___Pawleys_Island_Outdoors.avif",
             "brand_name": "Hornady",
             "link": ""
           }
@@ -148,6 +153,7 @@
         "ammo_federal": {
           "type": "brand",
           "settings": {
+            "logo": "shopify://shop_images/Federal___Pawleys_Island_Outdoors.avif",
             "brand_name": "Federal",
             "link": ""
           }
@@ -155,6 +161,7 @@
         "ammo_cci": {
           "type": "brand",
           "settings": {
+            "logo": "shopify://shop_images/CCI___Pawleys_Island_Outdoors.avif",
             "brand_name": "CCI",
             "link": ""
           }
@@ -162,6 +169,7 @@
         "ammo_hevishot": {
           "type": "brand",
           "settings": {
+            "logo": "shopify://shop_images/Hevishot___Pawleys_Island_Outdoors.avif",
             "brand_name": "Hevi-Shot",
             "link": ""
           }
@@ -169,6 +177,7 @@
         "ammo_rio": {
           "type": "brand",
           "settings": {
+            "logo": "shopify://shop_images/Rio___Pawleys_Island_Outdoors.avif",
             "brand_name": "Rio",
             "link": ""
           }
@@ -186,6 +195,9 @@
         "heading": "Ammunition Brands",
         "background_color": "cream",
         "logo_height": 50,
+        "scroll_speed": 30,
+        "scroll_direction": "left",
+        "pause_on_hover": true,
         "grayscale": true
       }
     },
