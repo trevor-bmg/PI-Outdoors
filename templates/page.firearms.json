@@ -65,6 +65,7 @@
         "brand_stoeger": {
           "type": "brand",
           "settings": {
+            "logo": "shopify://shop_images/Stoeger___Pawleys_Island_Outdoor.avif",
             "brand_name": "Stoeger",
             "link": ""
           }
@@ -72,6 +73,7 @@
         "brand_winchester": {
           "type": "brand",
           "settings": {
+            "logo": "shopify://shop_images/Winchester___Pawleys_Island_Outdoor.avif",
             "brand_name": "Winchester",
             "link": ""
           }
@@ -79,6 +81,7 @@
         "brand_ruger": {
           "type": "brand",
           "settings": {
+            "logo": "shopify://shop_images/Ruger___Pawleys_Island_Outdoors.avif",
             "brand_name": "Ruger",
             "link": ""
           }
@@ -86,21 +89,24 @@
         "brand_benelli": {
           "type": "brand",
           "settings": {
+            "logo": "shopify://shop_images/Benelli___Pawleys_Island_Outdoor.avif",
             "brand_name": "Benelli",
+            "link": ""
+          }
+        },
+        "brand_Cxz8Cr": {
+          "type": "brand",
+          "settings": {
+            "logo": "shopify://shop_images/Franchi___Pawleys_Island_Outdoor.avif",
+            "brand_name": "Franchi",
             "link": ""
           }
         },
         "brand_glock": {
           "type": "brand",
           "settings": {
+            "logo": "shopify://shop_images/Glock_Blue_Label___Pawleys_Island_Outdoo.avif",
             "brand_name": "Glock",
-            "link": ""
-          }
-        },
-        "brand_franchi": {
-          "type": "brand",
-          "settings": {
-            "brand_name": "Franchi",
             "link": ""
           }
         }
@@ -112,14 +118,14 @@
         "brand_winchester",
         "brand_ruger",
         "brand_benelli",
-        "brand_glock",
-        "brand_franchi"
+        "brand_Cxz8Cr",
+        "brand_glock"
       ],
       "settings": {
         "heading": "Firearm Brands We Carry",
         "background_color": "white",
-        "logo_height": 50,
-        "grayscale": true
+        "logo_height": 80,
+        "grayscale": false
       }
     },
     "ammo_brands": {
