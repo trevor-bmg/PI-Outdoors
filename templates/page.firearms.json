@@ -44,189 +44,143 @@
       }
     },
     "firearm_brands": {
-      "type": "pi-multi-column",
+      "type": "pi-brand-banner",
       "blocks": {
-        "brand_1": {
-          "type": "column",
+        "brand_browning": {
+          "type": "brand",
           "settings": {
-            "image": "shopify://shop_images/Browning_Logo___Pawleys_Island_Outdoor_j.avif",
-            "image_ratio": "16-9",
-            "heading": "Browning",
-            "body_text": "Shotguns, rifles, and accessories",
-            "button_label": "",
-            "button_link": ""
+            "logo": "shopify://shop_images/Browning_Logo___Pawleys_Island_Outdoor_j.avif",
+            "brand_name": "Browning",
+            "link": ""
           }
         },
-        "brand_2": {
-          "type": "column",
+        "brand_smith_wesson": {
+          "type": "brand",
           "settings": {
-            "image": "shopify://shop_images/Smith_Wesson___Pawleys_Island_Outdoors.avif",
-            "image_ratio": "16-9",
-            "heading": "Smith & Wesson",
-            "body_text": "Handguns and revolvers",
-            "button_label": "",
-            "button_link": ""
+            "logo": "shopify://shop_images/Smith_Wesson___Pawleys_Island_Outdoors.avif",
+            "brand_name": "Smith & Wesson",
+            "link": ""
           }
         },
-        "brand_3": {
-          "type": "column",
+        "brand_stoeger": {
+          "type": "brand",
           "settings": {
-            "image_ratio": "4-5",
-            "heading": "Stoeger",
-            "body_text": "Shotguns built for the field",
-            "button_label": "",
-            "button_link": ""
+            "brand_name": "Stoeger",
+            "link": ""
           }
         },
-        "brand_4": {
-          "type": "column",
+        "brand_winchester": {
+          "type": "brand",
           "settings": {
-            "image_ratio": "4-5",
-            "heading": "Winchester",
-            "body_text": "Rifles, shotguns, and ammunition",
-            "button_label": "",
-            "button_link": ""
+            "brand_name": "Winchester",
+            "link": ""
           }
         },
-        "brand_5": {
-          "type": "column",
+        "brand_ruger": {
+          "type": "brand",
           "settings": {
-            "image_ratio": "4-5",
-            "heading": "Ruger",
-            "body_text": "Handguns, rifles, and rimfire",
-            "button_label": "",
-            "button_link": ""
+            "brand_name": "Ruger",
+            "link": ""
           }
         },
-        "brand_6": {
-          "type": "column",
+        "brand_benelli": {
+          "type": "brand",
           "settings": {
-            "image_ratio": "4-5",
-            "heading": "Benelli",
-            "body_text": "Semi-auto shotguns",
-            "button_label": "",
-            "button_link": ""
+            "brand_name": "Benelli",
+            "link": ""
           }
         },
-        "brand_7": {
-          "type": "column",
+        "brand_glock": {
+          "type": "brand",
           "settings": {
-            "image_ratio": "4-5",
-            "heading": "Glock",
-            "body_text": "Blue Label Program available",
-            "button_label": "",
-            "button_link": ""
+            "brand_name": "Glock",
+            "link": ""
           }
         },
-        "brand_8": {
-          "type": "column",
+        "brand_franchi": {
+          "type": "brand",
           "settings": {
-            "image_ratio": "4-5",
-            "heading": "Franchi",
-            "body_text": "Lightweight shotguns for upland and waterfowl",
-            "button_label": "",
-            "button_link": ""
+            "brand_name": "Franchi",
+            "link": ""
           }
         }
       },
       "block_order": [
-        "brand_1",
-        "brand_2",
-        "brand_3",
-        "brand_4",
-        "brand_5",
-        "brand_6",
-        "brand_7",
-        "brand_8"
+        "brand_browning",
+        "brand_smith_wesson",
+        "brand_stoeger",
+        "brand_winchester",
+        "brand_ruger",
+        "brand_benelli",
+        "brand_glock",
+        "brand_franchi"
       ],
       "settings": {
-        "label": "Firearms",
-        "heading": "Brands We Carry",
-        "body_text": "",
-        "columns_desktop": 4,
+        "heading": "Firearm Brands We Carry",
         "background_color": "white",
-        "card_style": "flat"
+        "logo_height": 50,
+        "grayscale": true
       }
     },
     "ammo_brands": {
-      "type": "pi-multi-column",
+      "type": "pi-brand-banner",
       "blocks": {
-        "ammo_1": {
-          "type": "column",
+        "ammo_fiocchi": {
+          "type": "brand",
           "settings": {
-            "image_ratio": "4-5",
-            "heading": "Fiocchi",
-            "body_text": "Shotshell and centerfire",
-            "button_label": "",
-            "button_link": ""
+            "brand_name": "Fiocchi",
+            "link": ""
           }
         },
-        "ammo_2": {
-          "type": "column",
+        "ammo_hornady": {
+          "type": "brand",
           "settings": {
-            "image_ratio": "4-5",
-            "heading": "Hornady",
-            "body_text": "Premium hunting and match ammunition",
-            "button_label": "",
-            "button_link": ""
+            "brand_name": "Hornady",
+            "link": ""
           }
         },
-        "ammo_3": {
-          "type": "column",
+        "ammo_federal": {
+          "type": "brand",
           "settings": {
-            "image_ratio": "4-5",
-            "heading": "Federal",
-            "body_text": "Full line — shotshell, rifle, handgun",
-            "button_label": "",
-            "button_link": ""
+            "brand_name": "Federal",
+            "link": ""
           }
         },
-        "ammo_4": {
-          "type": "column",
+        "ammo_cci": {
+          "type": "brand",
           "settings": {
-            "image_ratio": "4-5",
-            "heading": "CCI",
-            "body_text": "Rimfire and handgun ammunition",
-            "button_label": "",
-            "button_link": ""
+            "brand_name": "CCI",
+            "link": ""
           }
         },
-        "ammo_5": {
-          "type": "column",
+        "ammo_hevishot": {
+          "type": "brand",
           "settings": {
-            "image_ratio": "4-5",
-            "heading": "Hevi-Shot",
-            "body_text": "Non-toxic waterfowl loads",
-            "button_label": "",
-            "button_link": ""
+            "brand_name": "Hevi-Shot",
+            "link": ""
           }
         },
-        "ammo_6": {
-          "type": "column",
+        "ammo_rio": {
+          "type": "brand",
           "settings": {
-            "image_ratio": "4-5",
-            "heading": "Rio",
-            "body_text": "Shotshell ammunition",
-            "button_label": "",
-            "button_link": ""
+            "brand_name": "Rio",
+            "link": ""
           }
         }
       },
       "block_order": [
-        "ammo_1",
-        "ammo_2",
-        "ammo_3",
-        "ammo_4",
-        "ammo_5",
-        "ammo_6"
+        "ammo_fiocchi",
+        "ammo_hornady",
+        "ammo_federal",
+        "ammo_cci",
+        "ammo_hevishot",
+        "ammo_rio"
       ],
       "settings": {
-        "label": "Ammunition",
         "heading": "Ammunition Brands",
-        "body_text": "",
-        "columns_desktop": 3,
         "background_color": "cream",
-        "card_style": "bordered"
+        "logo_height": 50,
+        "grayscale": true
       }
     },
     "cta_hunting": {
