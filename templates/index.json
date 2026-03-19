@@ -78,7 +78,10 @@
         "heading": "Explore Our Collections",
         "body_text": "Everything you need for your next trip — on the water, in the field, or around town.",
         "columns_desktop": 4,
-        "text_color": "#334fb4",
+        "label_color": "#c4a24e",
+        "heading_color": "#2b4c5c",
+        "body_color": "#2c2c2c",
+        "card_title_color": "#ffffff",
         "background_color": "warm-white"
       }
     },
