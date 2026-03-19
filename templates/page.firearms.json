@@ -214,20 +214,6 @@
         "button_style": "primary",
         "text_alignment": "center"
       }
-    },
-    "cta_visit": {
-      "type": "pi-cta-banner",
-      "settings": {
-        "background_style": "marsh-green",
-        "overlay_opacity": 50,
-        "label": "Visit Us",
-        "heading": "Come See Our Full Selection",
-        "body_text": "Firearms, ammo, and expert advice — all under one roof. Stop in and we'll get you set up.",
-        "button_label": "Get Directions",
-        "button_link": "",
-        "button_style": "secondary",
-        "text_alignment": "center"
-      }
     }
   },
   "order": [
@@ -235,7 +221,6 @@
     "intro",
     "firearm_brands",
     "ammo_brands",
-    "cta_hunting",
-    "cta_visit"
+    "cta_hunting"
   ]
 }
