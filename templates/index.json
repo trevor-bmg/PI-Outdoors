@@ -139,6 +139,7 @@
         "hb_benelli": {
           "type": "brand",
           "settings": {
+            "logo": "shopify://shop_images/Benelli___Pawleys_Island_Outdoor.avif",
             "brand_name": "Benelli",
             "link": ""
           }
@@ -146,6 +147,7 @@
         "hb_browning": {
           "type": "brand",
           "settings": {
+            "logo": "shopify://shop_images/Browning_Logo___Pawleys_Island_Outdoor_j.avif",
             "brand_name": "Browning",
             "link": ""
           }
@@ -153,6 +155,7 @@
         "hb_franchi": {
           "type": "brand",
           "settings": {
+            "logo": "shopify://shop_images/Franchi___Pawleys_Island_Outdoor.avif",
             "brand_name": "Franchi",
             "link": ""
           }
@@ -160,6 +163,7 @@
         "hb_glock": {
           "type": "brand",
           "settings": {
+            "logo": "shopify://shop_images/Glock_Blue_Label___Pawleys_Island_Outdoo.avif",
             "brand_name": "Glock",
             "link": ""
           }
@@ -167,6 +171,7 @@
         "hb_ruger": {
           "type": "brand",
           "settings": {
+            "logo": "shopify://shop_images/Ruger___Pawleys_Island_Outdoors.avif",
             "brand_name": "Ruger",
             "link": ""
           }
@@ -174,6 +179,7 @@
         "hb_smith_wesson": {
           "type": "brand",
           "settings": {
+            "logo": "shopify://shop_images/Smith_Wesson___Pawleys_Island_Outdoors.avif",
             "brand_name": "Smith & Wesson",
             "link": ""
           }
@@ -181,6 +187,7 @@
         "hb_stoeger": {
           "type": "brand",
           "settings": {
+            "logo": "shopify://shop_images/Stoeger___Pawleys_Island_Outdoor.avif",
             "brand_name": "Stoeger",
             "link": ""
           }
@@ -188,6 +195,7 @@
         "hb_winchester": {
           "type": "brand",
           "settings": {
+            "logo": "shopify://shop_images/Winchester___Pawleys_Island_Outdoor.avif",
             "brand_name": "Winchester",
             "link": ""
           }
