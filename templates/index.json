@@ -133,6 +133,20 @@
         "text_alignment": "center"
       }
     },
+    "fishing_cta": {
+      "type": "pi-cta-banner",
+      "settings": {
+        "background_style": "deep-blue",
+        "overlay_opacity": 50,
+        "label": "Rods, Reels & Tackle",
+        "heading": "Fishing Gear for Every Water",
+        "body_text": "Inshore, offshore, freshwater — we stock top rods and reels from Shimano, Penn, Daiwa, G. Loomis, and St. Croix. Lures, tackle, and local knowledge included.",
+        "button_label": "See What We Carry",
+        "button_link": "shopify://pages/fishing",
+        "button_style": "primary",
+        "text_alignment": "center"
+      }
+    },
     "brands": {
       "type": "pi-brand-banner",
       "blocks": {
@@ -228,6 +242,7 @@
     "about_split",
     "boat_rentals_cta",
     "firearms_cta",
+    "fishing_cta",
     "brands",
     "newsletter"
   ]
