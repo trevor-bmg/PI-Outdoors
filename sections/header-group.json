@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "name": "t:sections.header.name",
   "type": "header",
@@ -5,15 +14,16 @@
     "pi-header": {
       "type": "pi-header",
       "settings": {
+        "logo": "shopify://shop_images/PI_Outdoors_Transparent.png",
+        "logo_width": 160,
         "menu": "main-menu",
         "show_utility_bar": true,
         "utility_menu": "",
         "utility_text": "",
-        "phone_number": "(843) 979-4045",
-        "location_link": "https://maps.google.com/?q=Pawleys+Island+Outdoors",
+        "phone_number": "",
+        "location_link": "",
         "enable_sticky": true,
-        "color_scheme": "deep-blue",
-        "logo_width": 160
+        "color_scheme": "deep-blue"
       }
     }
   },
