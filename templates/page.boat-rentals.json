@@ -1,43 +1,51 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "hero": {
       "type": "pi-hero",
       "settings": {
-        "heading": "Jon Boat Rentals",
+        "image_desktop": "shopify://shop_images/Hero_Desktop_e71e9278-8746-470c-b571-2ca0e101e8c0.jpg",
+        "image_mobile": "shopify://shop_images/Hero_Mobile_32ea1da5-1a52-4cd6-a2a8-86f17f36425d.jpg",
         "accent_text": "Explore the Lowcountry",
+        "heading": "Jon Boat Rentals",
         "body_text": "Get out on the water with our fleet of well-maintained aluminum jon boats. All safety equipment included.",
         "button_label": "",
+        "button_link": "",
+        "button_style": "primary",
         "text_alignment": "left",
         "min_height_desktop": "medium",
         "min_height_mobile": "small",
         "color_scheme": "dark",
-        "overlay_opacity": 45
+        "overlay_opacity": 100
       }
     },
     "fleet": {
       "type": "pi-split-content",
       "settings": {
-        "label": "The Fleet",
-        "heading": "14–15' Aluminum Jon Boats",
-        "body_text": "<p>Each boat is equipped with a 15 or 20 hp Yamaha outboard and all USCG-required safety equipment. Perfect for exploring the tidal creeks of Litchfield, Pawleys Island, and DeBordieu.</p><p>Whether you're fishing the flats, scouting for redfish, or just cruising the marsh, our boats are ready to go.</p>",
+        "image": "shopify://shop_images/Image_1.jpg",
         "image_position": "left",
         "image_ratio": "landscape",
+        "label": "The Fleet",
+        "heading": "14–15' Aluminum Jon Boats",
+        "accent_text": "",
+        "body_text": "<p>Each boat is equipped with a 15 or 20 hp Yamaha outboard and all USCG-required safety equipment. Perfect for exploring the tidal creeks of Litchfield, Pawleys Island, and DeBordieu.</p><p>Whether you're fishing the flats, scouting for redfish, or just cruising the marsh, our boats are ready to go.</p>",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "primary",
         "background_color": "warm-white",
         "vertical_padding": "large"
       }
     },
     "pricing": {
       "type": "pi-pricing-cards",
-      "settings": {
-        "label": "Pricing",
-        "heading": "Rental Rates",
-        "body_text": "<p>Reservations are recommended. Each additional day beyond your rental period is $100.</p>",
-        "footnote": "Prices subject to change. Completion of contract with refundable deposit and rental payment due at time of possession. Reservations are recommended.",
-        "button_label": "Contact Us to Reserve",
-        "button_link": "shopify:\/\/pages\/contact",
-        "button_style": "green",
-        "background_color": "cream"
-      },
       "blocks": {
         "tier_1": {
           "type": "tier",
@@ -67,17 +75,32 @@
           }
         }
       },
-      "block_order": ["tier_1", "tier_2", "tier_3"]
+      "block_order": [
+        "tier_1",
+        "tier_2",
+        "tier_3"
+      ],
+      "settings": {
+        "label": "Pricing",
+        "heading": "Rental Rates",
+        "body_text": "<p>Reservations are recommended. Each additional day beyond your rental period is $100.</p>",
+        "footnote": "Prices subject to change. Completion of contract with refundable deposit and rental payment due at time of possession. Reservations are recommended.",
+        "button_label": "Contact Us to Reserve",
+        "button_link": "shopify://pages/contact",
+        "button_style": "green",
+        "background_color": "cream"
+      }
     },
     "cta": {
       "type": "pi-cta-banner",
       "settings": {
         "background_style": "deep-blue",
+        "overlay_opacity": 50,
         "label": "Ready to Book?",
         "heading": "Give Us a Call or Stop By",
         "body_text": "We'll get you set up with a boat, a map of the local creeks, and some tips on where the fish are biting.",
         "button_label": "Contact Us",
-        "button_link": "shopify:\/\/pages\/contact",
+        "button_link": "shopify://pages/contact",
         "button_style": "primary",
         "text_alignment": "center"
       }
