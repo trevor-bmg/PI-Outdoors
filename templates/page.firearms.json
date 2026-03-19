@@ -194,11 +194,11 @@
       "settings": {
         "heading": "Ammunition Brands",
         "background_color": "cream",
-        "logo_height": 50,
+        "logo_height": 80,
         "scroll_speed": 30,
         "scroll_direction": "left",
         "pause_on_hover": true,
-        "grayscale": true
+        "grayscale": false
       }
     },
     "cta_hunting": {
