@@ -133,6 +133,131 @@
         "text_alignment": "center"
       }
     },
+    "hunting_brands": {
+      "type": "pi-brand-banner",
+      "blocks": {
+        "hb_benelli": {
+          "type": "brand",
+          "settings": {
+            "brand_name": "Benelli",
+            "link": ""
+          }
+        },
+        "hb_browning": {
+          "type": "brand",
+          "settings": {
+            "brand_name": "Browning",
+            "link": ""
+          }
+        },
+        "hb_franchi": {
+          "type": "brand",
+          "settings": {
+            "brand_name": "Franchi",
+            "link": ""
+          }
+        },
+        "hb_glock": {
+          "type": "brand",
+          "settings": {
+            "brand_name": "Glock",
+            "link": ""
+          }
+        },
+        "hb_ruger": {
+          "type": "brand",
+          "settings": {
+            "brand_name": "Ruger",
+            "link": ""
+          }
+        },
+        "hb_smith_wesson": {
+          "type": "brand",
+          "settings": {
+            "brand_name": "Smith & Wesson",
+            "link": ""
+          }
+        },
+        "hb_stoeger": {
+          "type": "brand",
+          "settings": {
+            "brand_name": "Stoeger",
+            "link": ""
+          }
+        },
+        "hb_winchester": {
+          "type": "brand",
+          "settings": {
+            "brand_name": "Winchester",
+            "link": ""
+          }
+        },
+        "hb_federal": {
+          "type": "brand",
+          "settings": {
+            "brand_name": "Federal",
+            "link": ""
+          }
+        },
+        "hb_hornady": {
+          "type": "brand",
+          "settings": {
+            "brand_name": "Hornady",
+            "link": ""
+          }
+        },
+        "hb_fiocchi": {
+          "type": "brand",
+          "settings": {
+            "brand_name": "Fiocchi",
+            "link": ""
+          }
+        },
+        "hb_cci": {
+          "type": "brand",
+          "settings": {
+            "brand_name": "CCI",
+            "link": ""
+          }
+        },
+        "hb_hevishot": {
+          "type": "brand",
+          "settings": {
+            "brand_name": "Hevi-Shot",
+            "link": ""
+          }
+        },
+        "hb_rio": {
+          "type": "brand",
+          "settings": {
+            "brand_name": "Rio",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "hb_benelli",
+        "hb_browning",
+        "hb_franchi",
+        "hb_glock",
+        "hb_ruger",
+        "hb_smith_wesson",
+        "hb_stoeger",
+        "hb_winchester",
+        "hb_federal",
+        "hb_hornady",
+        "hb_fiocchi",
+        "hb_cci",
+        "hb_hevishot",
+        "hb_rio"
+      ],
+      "settings": {
+        "heading": "Brands We Carry",
+        "background_color": "white",
+        "logo_height": 50,
+        "grayscale": true
+      }
+    },
     "fishing_cta": {
       "type": "pi-cta-banner",
       "settings": {
@@ -147,75 +272,131 @@
         "text_alignment": "center"
       }
     },
-    "brands": {
+    "fishing_brands": {
       "type": "pi-brand-banner",
       "blocks": {
-        "brand_1": {
+        "fb_shimano": {
           "type": "brand",
           "settings": {
             "brand_name": "Shimano",
             "link": ""
           }
         },
-        "brand_2": {
+        "fb_penn": {
           "type": "brand",
           "settings": {
             "brand_name": "Penn",
             "link": ""
           }
         },
-        "brand_3": {
+        "fb_daiwa": {
           "type": "brand",
           "settings": {
             "brand_name": "Daiwa",
             "link": ""
           }
         },
-        "brand_4": {
+        "fb_gloomis": {
           "type": "brand",
           "settings": {
             "brand_name": "G. Loomis",
             "link": ""
           }
         },
-        "brand_5": {
+        "fb_stcroix": {
           "type": "brand",
           "settings": {
             "brand_name": "St. Croix",
             "link": ""
           }
         },
-        "brand_6": {
+        "fb_crowder": {
           "type": "brand",
           "settings": {
-            "brand_name": "YETI",
+            "brand_name": "Crowder",
             "link": ""
           }
         },
-        "brand_7": {
+        "fb_lindgren_pittman": {
           "type": "brand",
           "settings": {
-            "brand_name": "Costa",
+            "brand_name": "Lindgren Pittman",
             "link": ""
           }
         },
-        "brand_8": {
+        "fb_berkley": {
           "type": "brand",
           "settings": {
-            "brand_name": "Browning",
+            "brand_name": "Berkley",
+            "link": ""
+          }
+        },
+        "fb_billy_bay": {
+          "type": "brand",
+          "settings": {
+            "brand_name": "Billy Bay",
+            "link": ""
+          }
+        },
+        "fb_bluewater_candy": {
+          "type": "brand",
+          "settings": {
+            "brand_name": "Blue Water Candy",
+            "link": ""
+          }
+        },
+        "fb_doa": {
+          "type": "brand",
+          "settings": {
+            "brand_name": "DOA",
+            "link": ""
+          }
+        },
+        "fb_fathom": {
+          "type": "brand",
+          "settings": {
+            "brand_name": "Fathom",
+            "link": ""
+          }
+        },
+        "fb_iland": {
+          "type": "brand",
+          "settings": {
+            "brand_name": "Iland Lures",
+            "link": ""
+          }
+        },
+        "fb_vudu": {
+          "type": "brand",
+          "settings": {
+            "brand_name": "Vudu",
+            "link": ""
+          }
+        },
+        "fb_zman": {
+          "type": "brand",
+          "settings": {
+            "brand_name": "Z-Man",
             "link": ""
           }
         }
       },
       "block_order": [
-        "brand_1",
-        "brand_2",
-        "brand_3",
-        "brand_4",
-        "brand_5",
-        "brand_6",
-        "brand_7",
-        "brand_8"
+        "fb_shimano",
+        "fb_penn",
+        "fb_daiwa",
+        "fb_gloomis",
+        "fb_stcroix",
+        "fb_crowder",
+        "fb_lindgren_pittman",
+        "fb_berkley",
+        "fb_billy_bay",
+        "fb_bluewater_candy",
+        "fb_doa",
+        "fb_fathom",
+        "fb_iland",
+        "fb_vudu",
+        "fb_zman"
       ],
       "settings": {
         "heading": "Brands We Carry",
@@ -242,8 +423,9 @@
     "about_split",
     "boat_rentals_cta",
     "firearms_cta",
+    "hunting_brands",
     "fishing_cta",
-    "brands",
+    "fishing_brands",
     "newsletter"
   ]
 }
