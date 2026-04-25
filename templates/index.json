@@ -102,6 +102,19 @@
         "vertical_padding": "large"
       }
     },
+    "local_conditions": {
+      "type": "pi-local-conditions",
+      "settings": {
+        "label": "On the Water",
+        "heading": "Local Tides & Weather",
+        "body_text": "<p>Plan your day with up-to-the-minute forecasts and tide times for the Lowcountry.</p>",
+        "tide_station_id": "8661070",
+        "tide_station_name": "Springmaid Pier",
+        "weather_lat": "33.44",
+        "weather_lon": "-79.12",
+        "background_color": "warm-white"
+      }
+    },
     "boat_rentals_cta": {
       "type": "pi-split-content",
       "settings": {
@@ -440,15 +453,25 @@
         "grayscale": false
       }
     },
-    "newsletter": {
-      "type": "pi-newsletter",
+    "feeds": {
+      "type": "pi-feeds",
       "settings": {
         "label": "Stay Connected",
-        "heading": "Get the Latest from PI Outdoors",
-        "body_text": "Fishing reports, new gear drops, local events, and the occasional tall tale. Sign up and stay in the loop.",
-        "background_color": "deep-blue",
-        "text_alignment": "center",
-        "layout": "stacked"
+        "heading": "Find Us & Follow Along",
+        "body_text": "<p>The latest from our shop, what locals are saying, and how to find us.</p>",
+        "show_instagram": true,
+        "instagram_title": "Instagram",
+        "instagram_link": "",
+        "instagram_embed": "",
+        "show_reviews": true,
+        "reviews_title": "Google Reviews",
+        "reviews_link": "",
+        "reviews_embed": "",
+        "show_map": true,
+        "map_title": "Find Us",
+        "map_directions_link": "",
+        "map_embed_src": "",
+        "background_color": "cream"
       }
     }
   },
@@ -456,11 +479,12 @@
     "hero",
     "collections",
     "about_split",
+    "local_conditions",
     "boat_rentals_cta",
     "firearms_cta",
     "hunting_brands",
     "fishing_cta",
     "fishing_brands",
-    "newsletter"
+    "feeds"
   ]
 }

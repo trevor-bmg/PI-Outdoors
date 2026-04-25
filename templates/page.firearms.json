@@ -214,6 +214,19 @@
         "button_style": "primary",
         "text_alignment": "center"
       }
+    },
+    "ffl_transfer": {
+      "type": "pi-ffl-form",
+      "settings": {
+        "label": "FFL Transfers",
+        "heading": "FFL Transfer Request",
+        "body_text": "<p>Buying a firearm from another dealer? They'll need to ship it to a licensed FFL holder for pickup — that's us. Fill out the form below and we'll coordinate the transfer with your dealer.</p>",
+        "show_resource_links": true,
+        "dnr_link": "",
+        "atf_link": "",
+        "anchor_id": "ffl-transfer-form",
+        "background_color": "warm-white"
+      }
     }
   },
   "order": [
@@ -221,6 +234,7 @@
     "intro",
     "firearm_brands",
     "ammo_brands",
-    "cta_hunting"
+    "cta_hunting",
+    "ffl_transfer"
   ]
 }

@@ -1,0 +1,247 @@
+{{ 'pi-base.css' | asset_url | stylesheet_tag }}
+{{ 'section-pi-feeds.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'pi-reveal.js' | asset_url }}" defer="defer"></script>
+
+{%- liquid
+  assign bg = section.settings.background_color
+  assign is_dark = false
+  if bg == 'deep-blue' or bg == 'midnight'
+    assign is_dark = true
+  endif
+-%}
+
+<section
+  class="pi-section pi-feeds pi-feeds--bg-{{ bg }}{% if is_dark %} pi-feeds--dark{% endif %}"
+  id="section-{{ section.id }}"
+>
+  <div class="pi-section__inner">
+
+    {%- if section.settings.label != blank -%}
+      <span class="pi-label pi-reveal">{{ section.settings.label }}</span>
+    {%- endif -%}
+
+    {%- if section.settings.heading != blank -%}
+      <h2 class="pi-heading pi-heading--h2 pi-reveal">{{ section.settings.heading }}</h2>
+    {%- endif -%}
+
+    {%- if section.settings.heading != blank or section.settings.label != blank -%}
+      <hr class="pi-divider pi-reveal">
+    {%- endif -%}
+
+    {%- if section.settings.body_text != blank -%}
+      <div class="pi-body pi-feeds__intro pi-reveal">{{ section.settings.body_text }}</div>
+    {%- endif -%}
+
+    <div class="pi-feeds__grid pi-stagger">
+
+      {%- comment -%} Instagram {%- endcomment -%}
+      {%- if section.settings.show_instagram -%}
+        <div class="pi-feeds__card pi-feeds__card--instagram pi-reveal">
+          <div class="pi-feeds__card-header">
+            <h3 class="pi-feeds__card-title">{{ section.settings.instagram_title | escape }}</h3>
+            {%- if section.settings.instagram_link != blank -%}
+              <a href="{{ section.settings.instagram_link }}" class="pi-feeds__card-link" target="_blank" rel="noopener">Follow</a>
+            {%- endif -%}
+          </div>
+          <div class="pi-feeds__embed pi-feeds__embed--instagram">
+            {%- if section.settings.instagram_embed != blank -%}
+              {{ section.settings.instagram_embed }}
+            {%- else -%}
+              <div class="pi-feeds__placeholder">
+                <p><strong>Instagram feed placeholder</strong></p>
+                <p>Paste your Elfsight (or other) Instagram embed code in the section settings.</p>
+              </div>
+            {%- endif -%}
+          </div>
+        </div>
+      {%- endif -%}
+
+      {%- comment -%} Google Reviews {%- endcomment -%}
+      {%- if section.settings.show_reviews -%}
+        <div class="pi-feeds__card pi-feeds__card--reviews pi-reveal">
+          <div class="pi-feeds__card-header">
+            <h3 class="pi-feeds__card-title">{{ section.settings.reviews_title | escape }}</h3>
+            {%- if section.settings.reviews_link != blank -%}
+              <a href="{{ section.settings.reviews_link }}" class="pi-feeds__card-link" target="_blank" rel="noopener">Read More</a>
+            {%- endif -%}
+          </div>
+          <div class="pi-feeds__embed pi-feeds__embed--reviews">
+            {%- if section.settings.reviews_embed != blank -%}
+              {{ section.settings.reviews_embed }}
+            {%- else -%}
+              <div class="pi-feeds__placeholder">
+                <p><strong>Google Reviews placeholder</strong></p>
+                <p>Paste your Elfsight (or other) Google Reviews embed code in the section settings.</p>
+              </div>
+            {%- endif -%}
+          </div>
+        </div>
+      {%- endif -%}
+
+      {%- comment -%} Map {%- endcomment -%}
+      {%- if section.settings.show_map -%}
+        <div class="pi-feeds__card pi-feeds__card--map pi-reveal">
+          <div class="pi-feeds__card-header">
+            <h3 class="pi-feeds__card-title">{{ section.settings.map_title | escape }}</h3>
+            {%- if section.settings.map_directions_link != blank -%}
+              <a href="{{ section.settings.map_directions_link }}" class="pi-feeds__card-link" target="_blank" rel="noopener">Directions</a>
+            {%- endif -%}
+          </div>
+          <div class="pi-feeds__embed pi-feeds__embed--map">
+            {%- if section.settings.map_embed_src != blank -%}
+              <iframe
+                src="{{ section.settings.map_embed_src }}"
+                title="{{ section.settings.map_title | escape }}"
+                loading="lazy"
+                allowfullscreen
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+            {%- else -%}
+              <div class="pi-feeds__placeholder">
+                <p><strong>Map placeholder</strong></p>
+                <p>Paste a Google Maps embed URL in the section settings.</p>
+              </div>
+            {%- endif -%}
+          </div>
+        </div>
+      {%- endif -%}
+
+    </div>
+
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "PI Feeds",
+  "tag": "section",
+  "class": "pi-feeds-section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "label",
+      "label": "Label",
+      "default": "Stay Connected"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Find Us & Follow Along"
+    },
+    {
+      "type": "richtext",
+      "id": "body_text",
+      "label": "Intro text"
+    },
+    {
+      "type": "header",
+      "content": "Instagram"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_instagram",
+      "label": "Show Instagram block",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "instagram_title",
+      "label": "Title",
+      "default": "Instagram"
+    },
+    {
+      "type": "url",
+      "id": "instagram_link",
+      "label": "Profile link"
+    },
+    {
+      "type": "html",
+      "id": "instagram_embed",
+      "label": "Embed code",
+      "info": "Paste your Elfsight (or other) Instagram widget embed code here."
+    },
+    {
+      "type": "header",
+      "content": "Google Reviews"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_reviews",
+      "label": "Show Reviews block",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "reviews_title",
+      "label": "Title",
+      "default": "Google Reviews"
+    },
+    {
+      "type": "url",
+      "id": "reviews_link",
+      "label": "Read more link"
+    },
+    {
+      "type": "html",
+      "id": "reviews_embed",
+      "label": "Embed code",
+      "info": "Paste your Elfsight (or other) Google Reviews widget embed code here."
+    },
+    {
+      "type": "header",
+      "content": "Map"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_map",
+      "label": "Show Map block",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "map_title",
+      "label": "Title",
+      "default": "Find Us"
+    },
+    {
+      "type": "url",
+      "id": "map_directions_link",
+      "label": "Directions link"
+    },
+    {
+      "type": "url",
+      "id": "map_embed_src",
+      "label": "Google Maps embed src URL",
+      "info": "On Google Maps → Share → Embed a map → copy the URL inside src=\"…\"."
+    },
+    {
+      "type": "header",
+      "content": "Section"
+    },
+    {
+      "type": "select",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "warm-white",
+      "options": [
+        { "value": "warm-white", "label": "Warm White" },
+        { "value": "white", "label": "White" },
+        { "value": "cream", "label": "Cream" },
+        { "value": "deep-blue", "label": "Deep Blue" },
+        { "value": "midnight", "label": "Midnight" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "PI Feeds",
+      "category": "PI Outdoors"
+    }
+  ]
+}
+{% endschema %}

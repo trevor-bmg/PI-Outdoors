@@ -1,0 +1,209 @@
+/* ============================================
+   PI Outdoors — Local Conditions
+   Tide + weather widget cards
+   ============================================ */
+
+.pi-local-conditions {
+  padding: var(--pi-section-padding-y) var(--pi-section-padding-x);
+}
+
+.pi-local-conditions--bg-warm-white { background: var(--pi-warm-white); }
+.pi-local-conditions--bg-white      { background: var(--pi-white); }
+.pi-local-conditions--bg-cream      { background: var(--pi-cream); }
+.pi-local-conditions--bg-deep-blue  { background: var(--pi-deep-blue); }
+.pi-local-conditions--bg-midnight   { background: var(--pi-midnight); }
+
+.pi-local-conditions--dark,
+.pi-local-conditions--dark .pi-heading,
+.pi-local-conditions--dark .pi-body {
+  color: var(--pi-cream);
+}
+
+.pi-local-conditions__intro {
+  margin-bottom: var(--pi-space-lg);
+}
+
+.pi-local-conditions__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--pi-space-md);
+}
+
+@media (min-width: 768px) {
+  .pi-local-conditions__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.pi-local-conditions__card {
+  background: var(--pi-white);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: var(--pi-radius-md);
+  padding: var(--pi-space-md);
+  box-shadow: var(--pi-shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: var(--pi-space-sm);
+}
+
+.pi-local-conditions--dark .pi-local-conditions__card {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.12);
+  color: var(--pi-cream);
+}
+
+.pi-local-conditions__card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: var(--pi-space-xs);
+  border-bottom: 1px solid var(--pi-gold);
+  padding-bottom: var(--pi-space-xs);
+}
+
+.pi-local-conditions__card-title {
+  font-family: var(--pi-font-heading);
+  font-size: 22px;
+  font-weight: 700;
+  margin: 0;
+  color: var(--pi-deep-blue);
+}
+
+.pi-local-conditions--dark .pi-local-conditions__card-title {
+  color: var(--pi-gold-light);
+}
+
+.pi-local-conditions__card-meta {
+  font-family: var(--pi-font-body);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--pi-storm);
+}
+
+.pi-local-conditions__loading,
+.pi-local-conditions__error {
+  font-family: var(--pi-font-body);
+  font-size: 14px;
+  color: var(--pi-storm);
+  font-style: italic;
+}
+
+/* ─── Weather card ─── */
+.pi-local-conditions__weather-row {
+  display: flex;
+  align-items: center;
+  gap: var(--pi-space-sm);
+}
+
+.pi-local-conditions__weather-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: var(--pi-radius-sm);
+  background: rgba(43, 76, 92, 0.04);
+}
+
+.pi-local-conditions__weather-temp {
+  font-family: var(--pi-font-heading);
+  font-size: 42px;
+  font-weight: 700;
+  color: var(--pi-deep-blue);
+  line-height: 1;
+}
+
+.pi-local-conditions--dark .pi-local-conditions__weather-temp {
+  color: var(--pi-cream);
+}
+
+.pi-local-conditions__weather-short {
+  font-family: var(--pi-font-body);
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--pi-charcoal);
+  margin: 0;
+}
+
+.pi-local-conditions--dark .pi-local-conditions__weather-short {
+  color: var(--pi-cream);
+}
+
+.pi-local-conditions__weather-detail {
+  font-family: var(--pi-font-body);
+  font-size: 14px;
+  color: var(--pi-storm);
+  margin: 0;
+}
+
+/* ─── Tides card ─── */
+.pi-local-conditions__tide-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: var(--pi-space-xs);
+}
+
+.pi-local-conditions__tide-item {
+  display: grid;
+  grid-template-columns: 70px 1fr auto;
+  align-items: center;
+  gap: var(--pi-space-sm);
+  padding: 10px 12px;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: var(--pi-radius-sm);
+  background: rgba(43, 76, 92, 0.02);
+}
+
+.pi-local-conditions--dark .pi-local-conditions__tide-item {
+  background: rgba(255, 255, 255, 0.03);
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+.pi-local-conditions__tide-item--high {
+  border-left: 3px solid var(--pi-deep-blue);
+}
+
+.pi-local-conditions__tide-item--low {
+  border-left: 3px solid var(--pi-gold);
+}
+
+.pi-local-conditions__tide-label {
+  font-family: var(--pi-font-body);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--pi-storm);
+}
+
+.pi-local-conditions__tide-time {
+  font-family: var(--pi-font-heading);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--pi-deep-blue);
+}
+
+.pi-local-conditions--dark .pi-local-conditions__tide-time {
+  color: var(--pi-cream);
+}
+
+.pi-local-conditions__tide-height {
+  font-family: var(--pi-font-body);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--pi-charcoal);
+}
+
+.pi-local-conditions--dark .pi-local-conditions__tide-height {
+  color: var(--pi-gold-light);
+}
+
+.pi-local-conditions__attribution {
+  font-family: var(--pi-font-body);
+  font-size: 11px;
+  color: var(--pi-storm);
+  margin: 0;
+  text-align: right;
+}

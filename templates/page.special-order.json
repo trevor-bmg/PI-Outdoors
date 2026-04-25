@@ -1,0 +1,67 @@
+{
+  "wrapper": "div",
+  "sections": {
+    "hero": {
+      "type": "pi-hero",
+      "settings": {
+        "accent_text": "Can't find it on the floor?",
+        "heading": "Special Orders",
+        "body_text": "If we don't have it in stock, we can usually get it. Rods, reels, tackle, hunting gear — let us know what you're after.",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "primary",
+        "text_alignment": "left",
+        "min_height_desktop": "medium",
+        "min_height_mobile": "small",
+        "color_scheme": "dark",
+        "overlay_opacity": 50
+      }
+    },
+    "intro": {
+      "type": "pi-rich-text",
+      "settings": {
+        "label": "How It Works",
+        "heading": "Tell Us What You Need",
+        "accent_text": "",
+        "body_text": "<p>Submit a request below with as much detail as you can — brand, model, specs, quantity. We'll check availability and pricing and follow up with next steps. Most special orders ship to the store within 1–2 weeks.</p>",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "primary",
+        "text_alignment": "center",
+        "content_width": "medium",
+        "background_color": "warm-white",
+        "vertical_padding": "medium"
+      }
+    },
+    "form": {
+      "type": "pi-special-order-form",
+      "settings": {
+        "label": "Special Order",
+        "heading": "Request a Special Order",
+        "body_text": "<p>Looking for something specific? Tell us what you need and we'll see if we can get it.</p>",
+        "anchor_id": "special-order-form",
+        "background_color": "cream"
+      }
+    },
+    "cta": {
+      "type": "pi-cta-banner",
+      "settings": {
+        "background_style": "deep-blue",
+        "overlay_opacity": 50,
+        "label": "Questions?",
+        "heading": "Give Us a Call",
+        "body_text": "Not sure exactly what you need? We're happy to talk it through.",
+        "button_label": "Contact Us",
+        "button_link": "shopify://pages/contact",
+        "button_style": "primary",
+        "text_alignment": "center"
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "intro",
+    "form",
+    "cta"
+  ]
+}

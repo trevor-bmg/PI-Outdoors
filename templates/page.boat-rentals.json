@@ -62,7 +62,7 @@
             "title": "3 Days",
             "price": "$495",
             "description": "Delivery available (3-day minimum)\nCustomers welcome to pick up & trailer\nCompletion of contract required\nRefundable deposit due at pickup",
-            "featured": true
+            "featured": false
           }
         },
         "tier_3": {
@@ -83,12 +83,22 @@
       "settings": {
         "label": "Pricing",
         "heading": "Rental Rates",
-        "body_text": "<p>Reservations are recommended. Each additional day beyond your rental period is $100.</p>",
-        "footnote": "Prices subject to change. Completion of contract with refundable deposit and rental payment due at time of possession. Reservations are recommended.",
-        "button_label": "Contact Us to Reserve",
-        "button_link": "shopify://pages/contact",
+        "body_text": "<p>Reservations are recommended. Each additional day beyond your rental period is $100.</p><p><strong>Delivery available:</strong> $30 to nearest boat landing or $75 to your dock — one-time fee, both ways. <strong>3-day minimum on all deliveries.</strong> No deliveries to DeBordieu. Deliveries occur 8 a.m.–4 p.m.; pickups before 5 p.m.</p>",
+        "footnote": "Prices subject to change. Completion of contract with refundable deposit and rental payment due at time of possession. Refundable deposit varies by dock type: $1,000 fixed dock, $500 floating dock, $500 no dock or trailering.",
+        "button_label": "Reserve a Boat",
+        "button_link": "#reservation-form",
         "button_style": "green",
         "background_color": "cream"
+      }
+    },
+    "reservation_form": {
+      "type": "pi-rental-form",
+      "settings": {
+        "label": "Reserve a Boat",
+        "heading": "Jon Boat Reservation Request",
+        "body_text": "<p>Fill out the form below to request a reservation. We'll follow up by phone or email to confirm your dates and details. 3-day minimum on all deliveries.</p>",
+        "anchor_id": "reservation-form",
+        "background_color": "warm-white"
       }
     },
     "cta": {
@@ -96,7 +106,7 @@
       "settings": {
         "background_style": "deep-blue",
         "overlay_opacity": 50,
-        "label": "Ready to Book?",
+        "label": "Questions?",
         "heading": "Give Us a Call or Stop By",
         "body_text": "We'll get you set up with a boat, a map of the local creeks, and some tips on where the fish are biting.",
         "button_label": "Contact Us",
@@ -110,6 +120,7 @@
     "hero",
     "fleet",
     "pricing",
+    "reservation_form",
     "cta"
   ]
 }

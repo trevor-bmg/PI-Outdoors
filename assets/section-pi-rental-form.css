@@ -1,0 +1,254 @@
+/* ============================================
+   PI Outdoors — Rental / FFL / Special Order Form
+   Shared styles for native Shopify contact-form
+   sections branded for PI Outdoors.
+   ============================================ */
+
+.pi-rental-form-section {
+  padding: var(--pi-section-padding-y) var(--pi-section-padding-x);
+}
+
+.pi-rental-form-section--bg-warm-white { background: var(--pi-warm-white); }
+.pi-rental-form-section--bg-white      { background: var(--pi-white); }
+.pi-rental-form-section--bg-cream      { background: var(--pi-cream); }
+.pi-rental-form-section--bg-deep-blue  { background: var(--pi-deep-blue); }
+.pi-rental-form-section--bg-midnight   { background: var(--pi-midnight); }
+
+.pi-rental-form-section--dark,
+.pi-rental-form-section--dark .pi-heading,
+.pi-rental-form-section--dark .pi-body,
+.pi-rental-form-section--dark .pi-rental-form__legend,
+.pi-rental-form-section--dark .pi-rental-form__hint,
+.pi-rental-form-section--dark label {
+  color: var(--pi-cream);
+}
+
+.pi-rental-form__intro {
+  margin-bottom: var(--pi-space-lg);
+}
+
+.pi-rental-form__resources {
+  background: rgba(196, 162, 78, 0.08);
+  border-left: 3px solid var(--pi-gold);
+  padding: var(--pi-space-sm) var(--pi-space-md);
+  border-radius: var(--pi-radius-sm);
+  margin-bottom: var(--pi-space-lg);
+  font-family: var(--pi-font-body);
+  font-size: 15px;
+  color: var(--pi-charcoal);
+}
+
+.pi-rental-form__resources ul {
+  margin: var(--pi-space-xs) 0 0 1.25rem;
+  padding: 0;
+}
+
+.pi-rental-form__resources a {
+  color: var(--pi-deep-blue);
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+.pi-rental-form-section--dark .pi-rental-form__resources {
+  background: rgba(196, 162, 78, 0.12);
+  color: var(--pi-cream);
+}
+
+.pi-rental-form-section--dark .pi-rental-form__resources a {
+  color: var(--pi-gold-light);
+}
+
+.pi-rental-form {
+  background: var(--pi-white);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: var(--pi-radius-md);
+  padding: var(--pi-space-lg);
+  box-shadow: var(--pi-shadow-md);
+}
+
+.pi-rental-form-section--dark .pi-rental-form {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+.pi-rental-form__grid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--pi-space-lg);
+}
+
+.pi-rental-form__fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--pi-space-sm);
+}
+
+.pi-rental-form__legend {
+  font-family: var(--pi-font-body);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--pi-deep-blue);
+  border-bottom: 1px solid var(--pi-gold);
+  padding-bottom: var(--pi-space-xs);
+  margin-bottom: var(--pi-space-xs);
+  width: 100%;
+}
+
+.pi-rental-form__row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--pi-space-sm);
+}
+
+@media (min-width: 600px) {
+  .pi-rental-form__row {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.pi-rental-form__field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.pi-rental-form__field label {
+  font-family: var(--pi-font-body);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--pi-charcoal);
+}
+
+.pi-rental-form__field input[type="text"],
+.pi-rental-form__field input[type="tel"],
+.pi-rental-form__field input[type="email"],
+.pi-rental-form__field input[type="date"],
+.pi-rental-form__field input[type="number"],
+.pi-rental-form__field select,
+.pi-rental-form__field textarea {
+  width: 100%;
+  padding: 10px 12px;
+  font-family: var(--pi-font-body);
+  font-size: 16px;
+  color: var(--pi-charcoal);
+  background: var(--pi-white);
+  border: 1px solid rgba(0, 0, 0, 0.18);
+  border-radius: var(--pi-radius-sm);
+  transition: border-color var(--pi-duration) var(--pi-ease),
+              box-shadow var(--pi-duration) var(--pi-ease);
+}
+
+.pi-rental-form__field input:focus,
+.pi-rental-form__field select:focus,
+.pi-rental-form__field textarea:focus {
+  outline: none;
+  border-color: var(--pi-deep-blue);
+  box-shadow: 0 0 0 3px rgba(43, 76, 92, 0.15);
+}
+
+.pi-rental-form__field textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.pi-rental-form__hint {
+  font-family: var(--pi-font-body);
+  font-size: 13px;
+  color: var(--pi-storm);
+}
+
+.pi-rental-form__radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--pi-space-xs);
+}
+
+.pi-rental-form__radio {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: var(--pi-radius-sm);
+  cursor: pointer;
+  font-family: var(--pi-font-body);
+  font-size: 15px;
+  color: var(--pi-charcoal);
+  transition: border-color var(--pi-duration) var(--pi-ease),
+              background var(--pi-duration) var(--pi-ease);
+}
+
+.pi-rental-form__radio:hover {
+  border-color: var(--pi-deep-blue);
+}
+
+.pi-rental-form__radio input[type="radio"] {
+  accent-color: var(--pi-deep-blue);
+  margin: 0;
+}
+
+.pi-rental-form__radio:has(input[type="radio"]:checked) {
+  border-color: var(--pi-deep-blue);
+  background: rgba(43, 76, 92, 0.04);
+}
+
+.pi-rental-form__submit {
+  margin-top: var(--pi-space-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--pi-space-xs);
+  align-items: flex-start;
+}
+
+.pi-rental-form__disclaimer {
+  font-family: var(--pi-font-body);
+  font-size: 13px;
+  color: var(--pi-storm);
+  margin: 0;
+}
+
+.pi-rental-form__success {
+  background: rgba(90, 122, 94, 0.08);
+  border: 1px solid var(--pi-marsh-green);
+  border-radius: var(--pi-radius-sm);
+  padding: var(--pi-space-md);
+  color: var(--pi-charcoal);
+}
+
+.pi-rental-form__success-heading {
+  font-family: var(--pi-font-heading);
+  font-size: 22px;
+  font-weight: 700;
+  margin: 0 0 var(--pi-space-xs);
+  color: var(--pi-deep-blue);
+}
+
+.pi-rental-form__error {
+  background: rgba(180, 50, 50, 0.06);
+  border: 1px solid rgba(180, 50, 50, 0.4);
+  border-radius: var(--pi-radius-sm);
+  padding: var(--pi-space-sm) var(--pi-space-md);
+  margin-bottom: var(--pi-space-md);
+  color: #8a2727;
+}
+
+.pi-rental-form__error ul {
+  margin: 4px 0 0 1.25rem;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

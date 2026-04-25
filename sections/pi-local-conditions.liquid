@@ -1,0 +1,272 @@
+{{ 'pi-base.css' | asset_url | stylesheet_tag }}
+{{ 'section-pi-local-conditions.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'pi-reveal.js' | asset_url }}" defer="defer"></script>
+
+{%- liquid
+  assign bg = section.settings.background_color
+  assign is_dark = false
+  if bg == 'deep-blue' or bg == 'midnight'
+    assign is_dark = true
+  endif
+
+  assign station_id = section.settings.tide_station_id | default: '8661070'
+  assign station_name = section.settings.tide_station_name | default: 'Springmaid Pier'
+  assign weather_lat = section.settings.weather_lat | default: '33.44'
+  assign weather_lon = section.settings.weather_lon | default: '-79.12'
+-%}
+
+<section
+  class="pi-section pi-local-conditions pi-local-conditions--bg-{{ bg }}{% if is_dark %} pi-local-conditions--dark{% endif %}"
+  id="section-{{ section.id }}"
+  data-pi-local-conditions
+  data-station-id="{{ station_id }}"
+  data-station-name="{{ station_name | escape }}"
+  data-weather-lat="{{ weather_lat }}"
+  data-weather-lon="{{ weather_lon }}"
+>
+  <div class="pi-section__inner">
+
+    {%- if section.settings.label != blank -%}
+      <span class="pi-label pi-reveal">{{ section.settings.label }}</span>
+    {%- endif -%}
+
+    {%- if section.settings.heading != blank -%}
+      <h2 class="pi-heading pi-heading--h2 pi-reveal">{{ section.settings.heading }}</h2>
+    {%- endif -%}
+
+    {%- if section.settings.heading != blank or section.settings.label != blank -%}
+      <hr class="pi-divider pi-reveal">
+    {%- endif -%}
+
+    {%- if section.settings.body_text != blank -%}
+      <div class="pi-body pi-local-conditions__intro pi-reveal">{{ section.settings.body_text }}</div>
+    {%- endif -%}
+
+    <div class="pi-local-conditions__grid">
+
+      {%- comment -%} Weather card {%- endcomment -%}
+      <div class="pi-local-conditions__card pi-local-conditions__card--weather pi-reveal" data-pi-weather>
+        <div class="pi-local-conditions__card-header">
+          <h3 class="pi-local-conditions__card-title">Current Weather</h3>
+          <span class="pi-local-conditions__card-meta" data-pi-weather-location>Pawleys Island, SC</span>
+        </div>
+        <div class="pi-local-conditions__card-body" data-pi-weather-body>
+          <div class="pi-local-conditions__loading">Loading…</div>
+        </div>
+      </div>
+
+      {%- comment -%} Tides card {%- endcomment -%}
+      <div class="pi-local-conditions__card pi-local-conditions__card--tides pi-reveal" data-pi-tides>
+        <div class="pi-local-conditions__card-header">
+          <h3 class="pi-local-conditions__card-title">Today's Tides</h3>
+          <span class="pi-local-conditions__card-meta" data-pi-tide-station>{{ station_name }}</span>
+        </div>
+        <div class="pi-local-conditions__card-body" data-pi-tides-body>
+          <div class="pi-local-conditions__loading">Loading…</div>
+        </div>
+        <p class="pi-local-conditions__attribution">
+          Tide data: NOAA Tides &amp; Currents
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<script>
+(function () {
+  var root = document.querySelector('#section-{{ section.id }}[data-pi-local-conditions]');
+  if (!root) return;
+
+  var stationId = root.getAttribute('data-station-id');
+  var weatherLat = root.getAttribute('data-weather-lat');
+  var weatherLon = root.getAttribute('data-weather-lon');
+
+  /* ──────── Tides ──────── */
+  function pad(n) { return n < 10 ? '0' + n : '' + n; }
+  function todayStr() {
+    var d = new Date();
+    return d.getFullYear() + pad(d.getMonth() + 1) + pad(d.getDate());
+  }
+  function fmtTime(iso) {
+    var d = new Date(iso.replace(' ', 'T'));
+    var h = d.getHours();
+    var m = d.getMinutes();
+    var ampm = h >= 12 ? 'PM' : 'AM';
+    h = h % 12;
+    if (h === 0) h = 12;
+    return h + ':' + pad(m) + ' ' + ampm;
+  }
+
+  function renderTides(predictions) {
+    var body = root.querySelector('[data-pi-tides-body]');
+    if (!predictions || !predictions.length) {
+      body.innerHTML = '<p class="pi-local-conditions__error">Tide data unavailable.</p>';
+      return;
+    }
+    var html = '<ul class="pi-local-conditions__tide-list">';
+    predictions.forEach(function (p) {
+      var label = p.type === 'H' ? 'High' : 'Low';
+      html += '<li class="pi-local-conditions__tide-item pi-local-conditions__tide-item--' +
+        (p.type === 'H' ? 'high' : 'low') + '">' +
+        '<span class="pi-local-conditions__tide-label">' + label + '</span>' +
+        '<span class="pi-local-conditions__tide-time">' + fmtTime(p.t) + '</span>' +
+        '<span class="pi-local-conditions__tide-height">' + parseFloat(p.v).toFixed(1) + ' ft</span>' +
+        '</li>';
+    });
+    html += '</ul>';
+    body.innerHTML = html;
+  }
+
+  function loadTides() {
+    var url = 'https://api.tidesandcurrents.noaa.gov/api/prod/datagetter' +
+      '?date=today&station=' + encodeURIComponent(stationId) +
+      '&product=predictions&datum=MLLW&time_zone=lst_ldt&units=english' +
+      '&interval=hilo&format=json';
+    fetch(url)
+      .then(function (r) { return r.ok ? r.json() : Promise.reject(); })
+      .then(function (data) { renderTides(data.predictions); })
+      .catch(function () {
+        var body = root.querySelector('[data-pi-tides-body]');
+        body.innerHTML = '<p class="pi-local-conditions__error">Tide data unavailable. Check NOAA directly.</p>';
+      });
+  }
+
+  /* ──────── Weather (NWS) ──────── */
+  function renderWeather(period) {
+    var body = root.querySelector('[data-pi-weather-body]');
+    if (!period) {
+      body.innerHTML = '<p class="pi-local-conditions__error">Weather data unavailable.</p>';
+      return;
+    }
+    var iconHtml = period.icon
+      ? '<img class="pi-local-conditions__weather-icon" src="' + period.icon + '" alt="" loading="lazy">'
+      : '';
+    body.innerHTML =
+      '<div class="pi-local-conditions__weather-row">' +
+        iconHtml +
+        '<div class="pi-local-conditions__weather-temp">' +
+          period.temperature + '°' + period.temperatureUnit +
+        '</div>' +
+      '</div>' +
+      '<p class="pi-local-conditions__weather-short">' + period.shortForecast + '</p>' +
+      '<p class="pi-local-conditions__weather-detail">' +
+        'Wind: ' + (period.windSpeed || '—') +
+        (period.windDirection ? ' ' + period.windDirection : '') +
+      '</p>';
+  }
+
+  function loadWeather() {
+    fetch('https://api.weather.gov/points/' + weatherLat + ',' + weatherLon, {
+      headers: { 'Accept': 'application/geo+json' }
+    })
+      .then(function (r) { return r.ok ? r.json() : Promise.reject(); })
+      .then(function (data) {
+        var forecastUrl = data.properties && data.properties.forecast;
+        if (!forecastUrl) return Promise.reject();
+        return fetch(forecastUrl);
+      })
+      .then(function (r) { return r.ok ? r.json() : Promise.reject(); })
+      .then(function (data) {
+        var periods = (data.properties && data.properties.periods) || [];
+        renderWeather(periods[0]);
+      })
+      .catch(function () {
+        var body = root.querySelector('[data-pi-weather-body]');
+        body.innerHTML = '<p class="pi-local-conditions__error">Weather data unavailable.</p>';
+      });
+  }
+
+  loadTides();
+  loadWeather();
+})();
+</script>
+
+{% schema %}
+{
+  "name": "PI Local Conditions",
+  "tag": "section",
+  "class": "pi-local-conditions-section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "label",
+      "label": "Label",
+      "default": "On the Water"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Local Tides & Weather"
+    },
+    {
+      "type": "richtext",
+      "id": "body_text",
+      "label": "Intro text",
+      "default": "<p>Plan your day with up-to-the-minute forecasts and tide times for the Lowcountry.</p>"
+    },
+    {
+      "type": "header",
+      "content": "Tide Station"
+    },
+    {
+      "type": "text",
+      "id": "tide_station_id",
+      "label": "NOAA station ID",
+      "info": "Default: 8661070 (Springmaid Pier — closest active station to Pawleys Island).",
+      "default": "8661070"
+    },
+    {
+      "type": "text",
+      "id": "tide_station_name",
+      "label": "Station display name",
+      "default": "Springmaid Pier"
+    },
+    {
+      "type": "header",
+      "content": "Weather Location"
+    },
+    {
+      "type": "text",
+      "id": "weather_lat",
+      "label": "Latitude",
+      "default": "33.44"
+    },
+    {
+      "type": "text",
+      "id": "weather_lon",
+      "label": "Longitude",
+      "default": "-79.12"
+    },
+    {
+      "type": "header",
+      "content": "Section"
+    },
+    {
+      "type": "select",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "warm-white",
+      "options": [
+        { "value": "warm-white", "label": "Warm White" },
+        { "value": "white", "label": "White" },
+        { "value": "cream", "label": "Cream" },
+        { "value": "deep-blue", "label": "Deep Blue" },
+        { "value": "midnight", "label": "Midnight" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "PI Local Conditions",
+      "category": "PI Outdoors"
+    }
+  ]
+}
+{% endschema %}

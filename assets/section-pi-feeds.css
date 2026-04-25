@@ -1,0 +1,140 @@
+/* ============================================
+   PI Outdoors — Feeds (Instagram / Reviews / Map)
+   ============================================ */
+
+.pi-feeds {
+  padding: var(--pi-section-padding-y) var(--pi-section-padding-x);
+}
+
+.pi-feeds--bg-warm-white { background: var(--pi-warm-white); }
+.pi-feeds--bg-white      { background: var(--pi-white); }
+.pi-feeds--bg-cream      { background: var(--pi-cream); }
+.pi-feeds--bg-deep-blue  { background: var(--pi-deep-blue); }
+.pi-feeds--bg-midnight   { background: var(--pi-midnight); }
+
+.pi-feeds--dark,
+.pi-feeds--dark .pi-heading,
+.pi-feeds--dark .pi-body {
+  color: var(--pi-cream);
+}
+
+.pi-feeds__intro {
+  margin-bottom: var(--pi-space-lg);
+}
+
+.pi-feeds__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--pi-space-md);
+}
+
+@media (min-width: 768px) {
+  .pi-feeds__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.pi-feeds__card {
+  background: var(--pi-white);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: var(--pi-radius-md);
+  padding: var(--pi-space-md);
+  box-shadow: var(--pi-shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: var(--pi-space-sm);
+  min-height: 420px;
+}
+
+.pi-feeds--dark .pi-feeds__card {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.12);
+  color: var(--pi-cream);
+}
+
+.pi-feeds__card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: var(--pi-space-xs);
+  border-bottom: 1px solid var(--pi-gold);
+  padding-bottom: var(--pi-space-xs);
+}
+
+.pi-feeds__card-title {
+  font-family: var(--pi-font-heading);
+  font-size: 22px;
+  font-weight: 700;
+  margin: 0;
+  color: var(--pi-deep-blue);
+}
+
+.pi-feeds--dark .pi-feeds__card-title {
+  color: var(--pi-gold-light);
+}
+
+.pi-feeds__card-link {
+  font-family: var(--pi-font-body);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--pi-gold-dark);
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 1px;
+  transition: color var(--pi-duration) var(--pi-ease);
+}
+
+.pi-feeds__card-link:hover {
+  color: var(--pi-deep-blue);
+}
+
+.pi-feeds--dark .pi-feeds__card-link {
+  color: var(--pi-gold-light);
+}
+
+.pi-feeds__embed {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 320px;
+}
+
+.pi-feeds__embed > * {
+  width: 100%;
+}
+
+.pi-feeds__embed--map iframe {
+  flex: 1;
+  width: 100%;
+  border: 0;
+  border-radius: var(--pi-radius-sm);
+  min-height: 320px;
+}
+
+.pi-feeds__placeholder {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--pi-space-xs);
+  text-align: center;
+  background: rgba(43, 76, 92, 0.03);
+  border: 1px dashed rgba(43, 76, 92, 0.2);
+  border-radius: var(--pi-radius-sm);
+  padding: var(--pi-space-md);
+  font-family: var(--pi-font-body);
+  font-size: 14px;
+  color: var(--pi-storm);
+}
+
+.pi-feeds--dark .pi-feeds__placeholder {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.pi-feeds__placeholder p {
+  margin: 0;
+}
