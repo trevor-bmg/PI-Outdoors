@@ -10,7 +10,7 @@
   endif
 
   assign station_id = section.settings.tide_station_id | default: '8661070'
-  assign station_name = section.settings.tide_station_name | default: 'Springmaid Pier'
+  assign station_name = section.settings.tide_station_name | default: 'Pawleys Island'
   assign weather_lat = section.settings.weather_lat | default: '33.44'
   assign weather_lon = section.settings.weather_lon | default: '-79.12'
 -%}
@@ -226,7 +226,7 @@
       "type": "text",
       "id": "tide_station_name",
       "label": "Station display name",
-      "default": "Springmaid Pier"
+      "default": "Pawleys Island"
     },
     {
       "type": "header",

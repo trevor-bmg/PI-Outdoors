@@ -1,0 +1,178 @@
+{
+  "sections": {
+    "hero": {
+      "type": "pi-hero",
+      "settings": {
+        "image_desktop": "",
+        "image_mobile": "",
+        "accent_text": "More than a tackle shop",
+        "heading": "Services",
+        "body_text": "Reel spooling, boat outfitting, bait, DNR licenses, and more — everything you need to get out on the water or in the field.",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "primary",
+        "text_alignment": "left",
+        "min_height_desktop": "medium",
+        "min_height_mobile": "small",
+        "color_scheme": "dark",
+        "overlay_opacity": 100
+      }
+    },
+    "intro": {
+      "type": "pi-rich-text",
+      "settings": {
+        "label": "What We Do",
+        "heading": "Local Knowledge, Hands-On Service",
+        "accent_text": "Stop in and we'll get you set up.",
+        "body_text": "<p>We've been outfitting hunters, anglers, and boaters in the Lowcountry since 2006. Beyond the gear on our shelves, we offer a full slate of in-store services to keep you on the water and in the woods.</p>",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "primary",
+        "text_alignment": "center",
+        "content_width": "wide",
+        "background_color": "warm-white",
+        "vertical_padding": "medium"
+      }
+    },
+    "services_grid": {
+      "type": "pi-multi-column",
+      "blocks": {
+        "svc_spooling": {
+          "type": "column",
+          "settings": {
+            "image": "",
+            "image_ratio": "4-5",
+            "heading": "Reel Spooling",
+            "body_text": "Bring your reels in and we'll spool them with the right line for the job — mono, braid, or fluorocarbon. Quick turnaround.",
+            "button_label": "Stop In",
+            "button_link": "shopify://pages/contact"
+          }
+        },
+        "svc_outfitting": {
+          "type": "column",
+          "settings": {
+            "image": "",
+            "image_ratio": "4-5",
+            "heading": "Boat Outfitting",
+            "body_text": "Rod holders, rigging, electronics mounts, full outfit packages — we'll set your boat up the way you fish. Reference document available on request.",
+            "button_label": "Get a Quote",
+            "button_link": "shopify://pages/contact"
+          }
+        },
+        "svc_outriggers": {
+          "type": "column",
+          "settings": {
+            "image": "",
+            "image_ratio": "4-5",
+            "heading": "Outriggers",
+            "body_text": "Outrigger sales, install, and repair. We carry the brands offshore guys actually use and can spec a setup for your boat.",
+            "button_label": "Ask About Outriggers",
+            "button_link": "shopify://pages/contact"
+          }
+        },
+        "svc_dnr": {
+          "type": "column",
+          "settings": {
+            "image": "",
+            "image_ratio": "4-5",
+            "heading": "DNR Licenses",
+            "body_text": "Sell SC hunting and fishing licenses in store. Need to renew on the go? Use the SCDNR Go Outdoors app or visit their website.",
+            "button_label": "SCDNR Website",
+            "button_link": "https://www.dnr.sc.gov/"
+          }
+        },
+        "svc_storage": {
+          "type": "column",
+          "settings": {
+            "image": "",
+            "image_ratio": "4-5",
+            "heading": "Boat Storage",
+            "body_text": "Need a place to keep your boat? Sandpiper Storage offers boat and RV storage for bigger rigs — owned and operated by family.",
+            "button_label": "Sandpiper Storage",
+            "button_link": "https://sandpiperstorage.net/"
+          }
+        },
+        "svc_special_order": {
+          "type": "column",
+          "settings": {
+            "image": "",
+            "image_ratio": "4-5",
+            "heading": "Special Orders",
+            "body_text": "Looking for something we don't have on the shelf? We can order it. Submit a request and we'll get back to you with availability and pricing.",
+            "button_label": "Submit a Request",
+            "button_link": "shopify://pages/special-order"
+          }
+        }
+      },
+      "block_order": [
+        "svc_spooling",
+        "svc_outfitting",
+        "svc_outriggers",
+        "svc_dnr",
+        "svc_storage",
+        "svc_special_order"
+      ],
+      "settings": {
+        "label": "In-Store Services",
+        "heading": "What We Offer",
+        "body_text": "",
+        "columns_desktop": 3,
+        "background_color": "warm-white",
+        "card_style": "bordered"
+      }
+    },
+    "bait": {
+      "type": "pi-split-content",
+      "settings": {
+        "image": "",
+        "image_position": "left",
+        "image_ratio": "portrait",
+        "label": "Bait Shop",
+        "heading": "Live, Frozen & Walk-In Cooler",
+        "accent_text": "Fresh daily.",
+        "body_text": "<p><strong>Live Bait</strong><br>Mud minnows — $TBD<br>Shrimp — $TBD<br>Finger mullet — $TBD</p><p><strong>Frozen Bait</strong><br>Squid — $TBD<br>Cigar minnows — $TBD<br>Mullet — $TBD<br>Ballyhoo — $TBD</p><p><strong>Walk-In Cooler</strong><br>Stocked daily with fresh, frozen, and live selections. Stop in and ask — what's available depends on the season and the bite.</p>",
+        "button_label": "Call for Today's Bait",
+        "button_link": "shopify://pages/contact",
+        "button_style": "green",
+        "background_color": "cream",
+        "vertical_padding": "large"
+      }
+    },
+    "fishing_report": {
+      "type": "pi-cta-banner",
+      "settings": {
+        "background_style": "deep-blue",
+        "overlay_opacity": 50,
+        "label": "On the Water",
+        "heading": "Winyah Bay Fishing Reports",
+        "body_text": "Want to know what's biting before you head out? FishingBooker aggregates daily Winyah Bay reports from local guides.",
+        "button_label": "See Latest Reports",
+        "button_link": "https://fishingbooker.com/reports/destination/us/winyah-bay",
+        "button_style": "primary",
+        "text_alignment": "center"
+      }
+    },
+    "cta": {
+      "type": "pi-cta-banner",
+      "settings": {
+        "background_style": "midnight",
+        "overlay_opacity": 50,
+        "label": "Questions?",
+        "heading": "Stop In or Give Us a Call",
+        "body_text": "We're happy to talk through any service, look at your gear, or special order what you need.",
+        "button_label": "Contact Us",
+        "button_link": "shopify://pages/contact",
+        "button_style": "primary",
+        "text_alignment": "center"
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "intro",
+    "services_grid",
+    "bait",
+    "fishing_report",
+    "cta"
+  ]
+}

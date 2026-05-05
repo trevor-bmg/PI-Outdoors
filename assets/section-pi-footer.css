@@ -22,7 +22,7 @@
 
 @media (min-width: 750px) {
   .pi-footer__grid {
-    grid-template-columns: 1.4fr 1fr 1fr 1.4fr;
+    grid-template-columns: 1.4fr 1fr 1fr 1fr 1.2fr;
     gap: var(--pi-space-lg);
   }
 }

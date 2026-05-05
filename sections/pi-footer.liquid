@@ -81,7 +81,30 @@
         </details>
       </div>
 
-      {%- comment -%} Column 4 — Social {%- endcomment -%}
+      {%- comment -%} Column 4 — Menu 3 (Helpful Links) {%- endcomment -%}
+      {%- if section.settings.menu_3 != blank -%}
+        <div class="pi-footer__col pi-footer__col--menu">
+          <details class="pi-footer__accordion" open>
+            <summary class="pi-footer__heading">
+              {{ section.settings.menu_3_title | escape }}
+              <span class="pi-footer__accordion-icon" aria-hidden="true">
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M2 4.5L6 8.5L10 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+            </summary>
+            <ul class="pi-footer__links" role="list">
+              {%- for link in section.settings.menu_3.links -%}
+                <li>
+                  <a href="{{ link.url }}" class="pi-footer__link" target="_blank" rel="noopener">{{ link.title | escape }}</a>
+                </li>
+              {%- endfor -%}
+            </ul>
+          </details>
+        </div>
+      {%- endif -%}
+
+      {%- comment -%} Column 5 — Social {%- endcomment -%}
       <div class="pi-footer__col pi-footer__col--social">
         {%- if section.settings.show_social and has_social_icons -%}
           <h2 class="pi-footer__heading pi-footer__heading--static">
@@ -244,6 +267,18 @@
       "id": "menu_2",
       "label": "Menu 2",
       "default": "footer-visit"
+    },
+    {
+      "type": "text",
+      "id": "menu_3_title",
+      "label": "Menu 3 heading",
+      "default": "Helpful Links"
+    },
+    {
+      "type": "link_list",
+      "id": "menu_3",
+      "label": "Menu 3",
+      "info": "External partner & resource links (e.g. SCDNR, ATF, local realtors). Opens in new tab."
     },
     {
       "type": "header",
