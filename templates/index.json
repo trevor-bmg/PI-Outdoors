@@ -121,7 +121,7 @@
     "boat_rentals_cta": {
       "type": "pi-split-content",
       "settings": {
-        "image": "shopify://shop_images/Homepage_image_6.jpg",
+        "image": "shopify://shop_images/Get_Out_on_The_Water.jpg",
         "image_position": "right",
         "image_ratio": "portrait",
         "label": "Boat Rentals",
