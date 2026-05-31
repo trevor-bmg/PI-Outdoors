@@ -88,6 +88,7 @@
     "about_split": {
       "type": "pi-split-content",
       "settings": {
+        "image": "shopify://shop_images/PI_Outdoors_-_Store_Image.jpg",
         "image_position": "left",
         "image_ratio": "landscape",
         "label": "Our Story",
