@@ -4,6 +4,12 @@
    stacked on mobile. Inherits footer color scheme.
    ============================================ */
 
+/* Let the conditions block use the full footer width so the two
+   square cards have room, even if Dawn places it in a narrow column. */
+.footer-block:has(.footer-conditions) {
+  grid-column: 1 / -1;
+}
+
 .footer-conditions {
   display: grid;
   grid-template-columns: 1fr;
