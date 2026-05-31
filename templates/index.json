@@ -12,8 +12,8 @@
     "hero": {
       "type": "pi-hero",
       "settings": {
-        "image_desktop": "shopify://shop_images/Hero_Desktop.jpg",
-        "image_mobile": "shopify://shop_images/Hero_Mobile.jpg",
+        "image_desktop": "shopify://shop_images/Hero_Desktop_f8a588b0-1056-4399-9084-46d9ae896be8.jpg",
+        "image_mobile": "shopify://shop_images/Hero_Mobile_5ed16859-8c9e-4e6b-9138-ae658421092a.jpg",
         "accent_text": "",
         "heading": "Your Next Adventure Starts Here",
         "body_text": "Hunting, fishing, and everything in between — family-owned and operated since 2006.",
