@@ -5,9 +5,16 @@
    ============================================ */
 
 /* Let the conditions block use the full footer width so the two
-   square cards have room, even if Dawn places it in a narrow column. */
+   square cards have room, even if Dawn places it in a narrow column,
+   and center its heading + content on every breakpoint (Dawn only
+   centers footer blocks when they're the sole block). */
 .footer-block:has(.footer-conditions) {
   grid-column: 1 / -1;
+  text-align: center;
+}
+
+.footer-block:has(.footer-conditions) .footer-block__heading {
+  text-align: center;
 }
 
 .footer-conditions {
@@ -62,7 +69,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   gap: 0.6rem;
+  width: 100%;
+  text-align: center;
   color: rgb(var(--color-foreground));
 }
 
