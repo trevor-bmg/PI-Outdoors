@@ -14,6 +14,13 @@
     "footer": {
       "type": "footer",
       "blocks": {
+        "link_list_RaLMVW": {
+          "type": "link_list",
+          "settings": {
+            "heading": "Menu",
+            "menu": "main-menu"
+          }
+        },
         "conditions_mRLknJ": {
           "type": "conditions",
           "settings": {
@@ -26,6 +33,7 @@
         }
       },
       "block_order": [
+        "link_list_RaLMVW",
         "conditions_mRLknJ"
       ],
       "settings": {
