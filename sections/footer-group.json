@@ -13,7 +13,26 @@
   "sections": {
     "footer": {
       "type": "footer",
-      "settings": {}
+      "settings": {
+        "logo_width": 120,
+        "tagline": "Your local outfitter for hunting, fishing, and everything in between.",
+        "menu_1_title": "Shop",
+        "menu_1": "main-menu",
+        "menu_2_title": "Visit",
+        "menu_2": "footer",
+        "menu_3_title": "Helpful Links",
+        "menu_3": "",
+        "social_heading": "Follow Us",
+        "show_social": true,
+        "show_conditions": true,
+        "conditions_station_id": "8661070",
+        "conditions_station_name": "Pawleys Island",
+        "conditions_lat": "33.44",
+        "conditions_lon": "-79.12",
+        "copyright_text": "Pawleys Island Outdoors",
+        "credit_text": "Website by Paragon Agency",
+        "credit_link": ""
+      }
     }
   },
   "order": [
