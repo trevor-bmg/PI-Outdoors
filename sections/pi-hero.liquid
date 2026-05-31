@@ -6,8 +6,13 @@
   assign desktop_height = section.settings.min_height_desktop | default: 'medium'
   assign mobile_height = section.settings.min_height_mobile | default: 'medium'
   assign color_scheme = section.settings.color_scheme | default: 'dark'
-  assign text_alignment = section.settings.text_alignment | default: 'left'
   assign overlay_opacity = section.settings.overlay_opacity | default: 40
+
+  assign dx = section.settings.desktop_content_x | default: 'left'
+  assign dy = section.settings.desktop_content_y | default: 'middle'
+  assign mx = section.settings.mobile_content_x | default: 'left'
+  assign my = section.settings.mobile_content_y | default: 'middle'
+
   assign fetch_priority = 'auto'
   if section.index == 1
     assign fetch_priority = 'high'
@@ -45,7 +50,7 @@
 
 <section
   id="Hero-{{ section.id }}"
-  class="pi-hero pi-hero--mobile-{{ mobile_height }} pi-hero--desktop-{{ desktop_height }}{% if color_scheme == 'light' %} pi-hero--light{% endif %}"
+  class="pi-hero pi-hero--mobile-{{ mobile_height }} pi-hero--desktop-{{ desktop_height }} pi-hero--desktop-x-{{ dx }} pi-hero--desktop-y-{{ dy }} pi-hero--mobile-x-{{ mx }} pi-hero--mobile-y-{{ my }}{% if color_scheme == 'light' %} pi-hero--light{% endif %}"
 >
   {%- comment -%} Background Images — <picture> for art direction {%- endcomment -%}
   <div class="pi-hero__media">
@@ -109,29 +114,31 @@
   </div>
 
   {%- comment -%} Text Content {%- endcomment -%}
-  <div class="pi-hero__content pi-hero__content--{{ text_alignment }}">
-    {%- if section.settings.accent_text != blank -%}
-      <span class="pi-hero__accent">{{ section.settings.accent_text }}</span>
-    {%- endif -%}
+  <div class="pi-hero__inner">
+    <div class="pi-hero__content">
+      {%- if section.settings.accent_text != blank -%}
+        <span class="pi-hero__accent">{{ section.settings.accent_text }}</span>
+      {%- endif -%}
 
-    {%- if section.settings.heading != blank -%}
-      <h1 class="pi-hero__heading pi-heading--hero">{{ section.settings.heading }}</h1>
-    {%- endif -%}
+      {%- if section.settings.heading != blank -%}
+        <h1 class="pi-hero__heading pi-heading--hero">{{ section.settings.heading }}</h1>
+      {%- endif -%}
 
-    {%- if section.settings.body_text != blank -%}
-      <p class="pi-hero__body">{{ section.settings.body_text }}</p>
-    {%- endif -%}
+      {%- if section.settings.body_text != blank -%}
+        <p class="pi-hero__body">{{ section.settings.body_text }}</p>
+      {%- endif -%}
 
-    {%- if section.settings.button_label != blank -%}
-      <div class="pi-hero__cta">
-        <a
-          href="{{ section.settings.button_link | default: '#' }}"
-          class="pi-btn pi-btn--{{ section.settings.button_style | default: 'primary' }}"
-        >
-          {{ section.settings.button_label }}
-        </a>
-      </div>
-    {%- endif -%}
+      {%- if section.settings.button_label != blank -%}
+        <div class="pi-hero__cta">
+          <a
+            href="{{ section.settings.button_link | default: '#' }}"
+            class="pi-btn pi-btn--{{ section.settings.button_style | default: 'primary' }}"
+          >
+            {{ section.settings.button_label }}
+          </a>
+        </div>
+      {%- endif -%}
+    </div>
   </div>
 </section>
 
@@ -209,17 +216,59 @@
     },
     {
       "type": "header",
-      "content": "Layout"
+      "content": "Desktop text placement"
     },
     {
       "type": "select",
-      "id": "text_alignment",
-      "label": "Text alignment",
+      "id": "desktop_content_x",
+      "label": "Horizontal position",
       "default": "left",
       "options": [
         { "value": "left", "label": "Left" },
-        { "value": "center", "label": "Center" }
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
       ]
+    },
+    {
+      "type": "select",
+      "id": "desktop_content_y",
+      "label": "Vertical position",
+      "default": "middle",
+      "options": [
+        { "value": "top", "label": "Top" },
+        { "value": "middle", "label": "Middle" },
+        { "value": "bottom", "label": "Bottom" }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "Mobile text placement"
+    },
+    {
+      "type": "select",
+      "id": "mobile_content_x",
+      "label": "Horizontal position",
+      "default": "left",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "mobile_content_y",
+      "label": "Vertical position",
+      "default": "middle",
+      "options": [
+        { "value": "top", "label": "Top" },
+        { "value": "middle", "label": "Middle" },
+        { "value": "bottom", "label": "Bottom" }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "Height"
     },
     {
       "type": "select",
@@ -277,7 +326,10 @@
         "accent_text": "Pawleys Island, SC",
         "button_label": "Shop Now",
         "button_style": "primary",
-        "text_alignment": "left",
+        "desktop_content_x": "left",
+        "desktop_content_y": "middle",
+        "mobile_content_x": "left",
+        "mobile_content_y": "middle",
         "min_height_desktop": "large",
         "min_height_mobile": "medium",
         "color_scheme": "dark",
