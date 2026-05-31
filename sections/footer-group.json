@@ -13,11 +13,26 @@
   "sections": {
     "footer": {
       "type": "footer",
+      "blocks": {
+        "conditions_mRLknJ": {
+          "type": "conditions",
+          "settings": {
+            "heading": "Local Conditions",
+            "location_name": "Pawleys Island",
+            "station_id": "8661070",
+            "latitude": "33.44",
+            "longitude": "-79.12"
+          }
+        }
+      },
+      "block_order": [
+        "conditions_mRLknJ"
+      ],
       "settings": {
-        "color_scheme": "scheme-1",
+        "color_scheme": "",
         "newsletter_enable": false,
         "newsletter_heading": "",
-        "enable_follow_on_shop": false,
+        "enable_follow_on_shop": true,
         "show_social": true,
         "enable_country_selector": true,
         "enable_language_selector": true,
