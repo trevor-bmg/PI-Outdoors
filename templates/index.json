@@ -21,7 +21,7 @@
         "button_link": "shopify://collections/all",
         "button_style": "primary",
         "desktop_content_x": "left",
-        "desktop_content_y": "middle",
+        "desktop_content_y": "top",
         "mobile_content_x": "left",
         "mobile_content_y": "top",
         "min_height_desktop": "large",
