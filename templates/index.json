@@ -64,7 +64,7 @@
           "type": "collection",
           "settings": {
             "collection": "",
-            "custom_image": "shopify://shop_images/Homepage_Image_3.jpg",
+            "custom_image": "shopify://shop_images/Clothing.jpg",
             "custom_title": "Clothing",
             "overlay_opacity": 30
           }
