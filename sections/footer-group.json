@@ -11,12 +11,12 @@
   "name": "t:sections.footer.name",
   "type": "footer",
   "sections": {
-    "pi-footer": {
-      "type": "pi-footer",
+    "footer": {
+      "type": "footer",
       "settings": {}
     }
   },
   "order": [
-    "pi-footer"
+    "footer"
   ]
 }
