@@ -13,7 +13,7 @@
       "type": "pi-hero",
       "settings": {
         "image_desktop": "shopify://shop_images/Boat_Rentals_Hero_Desktop.jpg",
-        "image_mobile": "shopify://shop_images/Hero_Mobile_32ea1da5-1a52-4cd6-a2a8-86f17f36425d.jpg",
+        "image_mobile": "shopify://shop_images/Boat_Rentals_Hero_Mobile_fad851cd-11b2-4484-8f1a-323c6533ef88.jpg",
         "accent_text": "Explore the Lowcountry",
         "heading": "Jon Boat Rentals",
         "body_text": "Get out on the water with our fleet of well-maintained aluminum jon boats. All safety equipment included.",
@@ -23,9 +23,9 @@
         "desktop_content_x": "left",
         "desktop_content_y": "top",
         "mobile_content_x": "left",
-        "mobile_content_y": "middle",
+        "mobile_content_y": "top",
         "min_height_desktop": "medium",
-        "min_height_mobile": "small",
+        "min_height_mobile": "large",
         "color_scheme": "dark",
         "overlay_opacity": 100
       }
