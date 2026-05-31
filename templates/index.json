@@ -22,7 +22,7 @@
         "button_style": "primary",
         "text_alignment": "left",
         "min_height_desktop": "large",
-        "min_height_mobile": "medium",
+        "min_height_mobile": "large",
         "color_scheme": "dark",
         "overlay_opacity": 100
       }
