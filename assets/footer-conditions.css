@@ -1,0 +1,81 @@
+/* ============================================
+   PI Outdoors — Footer "Tides & Weather" block
+   Self-contained; sits inside a Dawn footer block
+   column and inherits the footer color scheme.
+   ============================================ */
+
+.footer-conditions {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+
+.footer-conditions__item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.footer-conditions__label {
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  color: #c4a24e;
+}
+
+.footer-conditions__value {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.4rem 0.8rem;
+  color: rgb(var(--color-foreground));
+}
+
+.footer-conditions__loading,
+.footer-conditions__error {
+  font-size: 1.4rem;
+  opacity: 0.7;
+}
+
+/* Weather */
+.footer-conditions__icon {
+  width: 2.8rem;
+  height: 2.8rem;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+}
+
+.footer-conditions__temp {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.footer-conditions__short {
+  font-size: 1.4rem;
+  opacity: 0.85;
+}
+
+/* Tides */
+.footer-conditions__tide {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 1.4rem;
+  white-space: nowrap;
+}
+
+.footer-conditions__arrow {
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.footer-conditions__tide--high .footer-conditions__arrow {
+  color: #5a7a5e;
+}
+
+.footer-conditions__tide--low .footer-conditions__arrow {
+  opacity: 0.6;
+}
