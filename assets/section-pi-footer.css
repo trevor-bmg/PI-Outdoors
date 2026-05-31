@@ -229,6 +229,112 @@
   display: block;
 }
 
+/* ─── Local Conditions Snapshot ─── */
+.pi-footer__conditions {
+  max-width: var(--pi-max-width);
+  margin: var(--pi-space-xl) auto 0;
+  padding: 0 var(--pi-section-padding-x);
+}
+
+.pi-footer__conditions-inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--pi-space-md);
+  padding-top: var(--pi-space-md);
+  border-top: 1px solid rgba(196, 162, 78, 0.25);
+}
+
+@media (min-width: 750px) {
+  .pi-footer__conditions-inner {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--pi-space-lg);
+  }
+}
+
+.pi-footer__cond-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+@media (min-width: 750px) {
+  .pi-footer__cond-block--tides {
+    align-items: flex-end;
+  }
+}
+
+.pi-footer__cond-label {
+  font-family: var(--pi-font-body);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--pi-gold);
+}
+
+.pi-footer__cond-value {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem 0.75rem;
+}
+
+.pi-footer__cond-loading,
+.pi-footer__cond-error {
+  font-family: var(--pi-font-body);
+  font-size: 14px;
+  color: var(--pi-storm);
+}
+
+/* Weather */
+.pi-footer__cond-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: block;
+  object-fit: cover;
+}
+
+.pi-footer__cond-temp {
+  font-family: var(--pi-font-heading);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--pi-cream);
+  line-height: 1;
+}
+
+.pi-footer__cond-short {
+  font-family: var(--pi-font-body);
+  font-size: 14px;
+  color: var(--pi-storm);
+}
+
+/* Tides */
+.pi-footer__tide-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-family: var(--pi-font-body);
+  font-size: 13px;
+  color: var(--pi-cream);
+  white-space: nowrap;
+}
+
+.pi-footer__tide-arrow {
+  font-size: 10px;
+  line-height: 1;
+}
+
+.pi-footer__tide-pill--high .pi-footer__tide-arrow {
+  color: var(--pi-marsh-green);
+}
+
+.pi-footer__tide-pill--low .pi-footer__tide-arrow {
+  color: var(--pi-storm);
+}
+
 /* ─── Divider ─── */
 .pi-footer__divider-wrap {
   max-width: var(--pi-max-width);

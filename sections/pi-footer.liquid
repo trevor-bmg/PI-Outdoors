@@ -6,6 +6,11 @@
   if settings.social_facebook_link != blank or settings.social_instagram_link != blank or settings.social_youtube_link != blank or settings.social_tiktok_link != blank or settings.social_twitter_link != blank or settings.social_pinterest_link != blank
     assign has_social_icons = true
   endif
+
+  assign cond_station_id = section.settings.conditions_station_id | default: '8661070'
+  assign cond_station_name = section.settings.conditions_station_name | default: 'Pawleys Island'
+  assign cond_lat = section.settings.conditions_lat | default: '33.44'
+  assign cond_lon = section.settings.conditions_lon | default: '-79.12'
 -%}
 
 <footer class="pi-footer" role="contentinfo">
@@ -180,6 +185,37 @@
     </div>
   </div>
 
+  {%- comment -%} ── Local Conditions Snapshot ── {%- endcomment -%}
+  {%- if section.settings.show_conditions -%}
+    <div
+      class="pi-footer__conditions"
+      data-pi-footer-conditions
+      data-station-id="{{ cond_station_id }}"
+      data-weather-lat="{{ cond_lat }}"
+      data-weather-lon="{{ cond_lon }}"
+    >
+      <div class="pi-footer__conditions-inner">
+
+        {%- comment -%} Weather {%- endcomment -%}
+        <div class="pi-footer__cond-block pi-footer__cond-block--weather" data-pi-footer-weather>
+          <span class="pi-footer__cond-label">Now in {{ cond_station_name | escape }}</span>
+          <div class="pi-footer__cond-value" data-pi-footer-weather-body>
+            <span class="pi-footer__cond-loading">Loading…</span>
+          </div>
+        </div>
+
+        {%- comment -%} Tides {%- endcomment -%}
+        <div class="pi-footer__cond-block pi-footer__cond-block--tides" data-pi-footer-tides>
+          <span class="pi-footer__cond-label">Today's Tides</span>
+          <div class="pi-footer__cond-value" data-pi-footer-tides-body>
+            <span class="pi-footer__cond-loading">Loading…</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  {%- endif -%}
+
   {%- comment -%} ── Divider ── {%- endcomment -%}
   <div class="pi-footer__divider-wrap">
     <hr class="pi-footer__divider">
@@ -205,6 +241,103 @@
     </div>
   </div>
 </footer>
+
+{%- if section.settings.show_conditions -%}
+<script>
+(function () {
+  var root = document.querySelector('[data-pi-footer-conditions]');
+  if (!root) return;
+
+  var stationId = root.getAttribute('data-station-id');
+  var weatherLat = root.getAttribute('data-weather-lat');
+  var weatherLon = root.getAttribute('data-weather-lon');
+
+  function pad(n) { return n < 10 ? '0' + n : '' + n; }
+  function fmtTime(iso) {
+    var d = new Date(iso.replace(' ', 'T'));
+    var h = d.getHours();
+    var m = d.getMinutes();
+    var ampm = h >= 12 ? 'PM' : 'AM';
+    h = h % 12;
+    if (h === 0) h = 12;
+    return h + ':' + pad(m) + ' ' + ampm;
+  }
+
+  /* ──────── Tides ──────── */
+  function renderTides(predictions) {
+    var body = root.querySelector('[data-pi-footer-tides-body]');
+    if (!predictions || !predictions.length) {
+      body.innerHTML = '<span class="pi-footer__cond-error">Unavailable</span>';
+      return;
+    }
+    var html = '';
+    predictions.forEach(function (p) {
+      var isHigh = p.type === 'H';
+      html += '<span class="pi-footer__tide-pill pi-footer__tide-pill--' +
+        (isHigh ? 'high' : 'low') + '">' +
+        '<span class="pi-footer__tide-arrow" aria-hidden="true">' + (isHigh ? '▲' : '▼') + '</span>' +
+        (isHigh ? 'High' : 'Low') + ' ' + fmtTime(p.t) +
+        '</span>';
+    });
+    body.innerHTML = html;
+  }
+
+  function loadTides() {
+    var url = 'https://api.tidesandcurrents.noaa.gov/api/prod/datagetter' +
+      '?date=today&station=' + encodeURIComponent(stationId) +
+      '&product=predictions&datum=MLLW&time_zone=lst_ldt&units=english' +
+      '&interval=hilo&format=json';
+    fetch(url)
+      .then(function (r) { return r.ok ? r.json() : Promise.reject(); })
+      .then(function (data) { renderTides(data.predictions); })
+      .catch(function () {
+        var body = root.querySelector('[data-pi-footer-tides-body]');
+        body.innerHTML = '<span class="pi-footer__cond-error">Unavailable</span>';
+      });
+  }
+
+  /* ──────── Weather (NWS) ──────── */
+  function renderWeather(period) {
+    var body = root.querySelector('[data-pi-footer-weather-body]');
+    if (!period) {
+      body.innerHTML = '<span class="pi-footer__cond-error">Unavailable</span>';
+      return;
+    }
+    var iconHtml = period.icon
+      ? '<img class="pi-footer__cond-icon" src="' + period.icon + '" alt="" loading="lazy">'
+      : '';
+    body.innerHTML =
+      iconHtml +
+      '<span class="pi-footer__cond-temp">' + period.temperature + '°' + period.temperatureUnit + '</span>' +
+      '<span class="pi-footer__cond-short">' + period.shortForecast + '</span>';
+  }
+
+  function loadWeather() {
+    fetch('https://api.weather.gov/points/' + weatherLat + ',' + weatherLon, {
+      headers: { 'Accept': 'application/geo+json' }
+    })
+      .then(function (r) { return r.ok ? r.json() : Promise.reject(); })
+      .then(function (data) {
+        var forecastUrl = data.properties && data.properties.forecast;
+        if (!forecastUrl) return Promise.reject();
+        return fetch(forecastUrl);
+      })
+      .then(function (r) { return r.ok ? r.json() : Promise.reject(); })
+      .then(function (data) {
+        var periods = (data.properties && data.properties.periods) || [];
+        renderWeather(periods[0]);
+      })
+      .catch(function () {
+        var body = root.querySelector('[data-pi-footer-weather-body]');
+        body.innerHTML = '<span class="pi-footer__cond-error">Unavailable</span>';
+      });
+  }
+
+  loadTides();
+  loadWeather();
+})();
+</script>
+{%- endif -%}
 
 {% schema %}
 {
@@ -296,6 +429,42 @@
       "label": "Show social media icons",
       "info": "Configure social links in theme settings.",
       "default": true
+    },
+    {
+      "type": "header",
+      "content": "Local Conditions Snapshot",
+      "info": "Live tides & weather strip above the footer divider. Uses NOAA & National Weather Service data."
+    },
+    {
+      "type": "checkbox",
+      "id": "show_conditions",
+      "label": "Show tides & weather snapshot",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "conditions_station_id",
+      "label": "NOAA tide station ID",
+      "info": "Default: 8661070 (Springmaid Pier — closest active station to Pawleys Island).",
+      "default": "8661070"
+    },
+    {
+      "type": "text",
+      "id": "conditions_station_name",
+      "label": "Location display name",
+      "default": "Pawleys Island"
+    },
+    {
+      "type": "text",
+      "id": "conditions_lat",
+      "label": "Weather latitude",
+      "default": "33.44"
+    },
+    {
+      "type": "text",
+      "id": "conditions_lon",
+      "label": "Weather longitude",
+      "default": "-79.12"
     },
     {
       "type": "header",
