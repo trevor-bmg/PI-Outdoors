@@ -101,8 +101,21 @@
   min-height: 320px;
 }
 
+.pi-feeds__embed {
+  overflow-x: clip;
+}
+
 .pi-feeds__embed > * {
   width: 100%;
+  max-width: 100%;
+}
+
+/* Third-party embeds (e.g. Instagram) ship hardcoded min/max widths
+   that can overflow a narrow card — force them to fit the container. */
+.pi-feeds__embed iframe,
+.pi-feeds__embed .instagram-media {
+  max-width: 100% !important;
+  min-width: 0 !important;
 }
 
 .pi-feeds__embed--map iframe {

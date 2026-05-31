@@ -64,6 +64,16 @@
   --pi-duration-slow: 0.6s;
 }
 
+/* ─── Horizontal overflow guard ─────────────────────────────
+   Prevents any stray wide element (e.g. third-party embeds) from
+   creating a horizontal scrollbar. `clip` does not create a scroll
+   container, so sticky/fixed positioning still works. */
+html,
+body {
+  overflow-x: clip;
+  max-width: 100%;
+}
+
 /* ─── Scroll Fade-In Animation ─── */
 .pi-reveal {
   opacity: 0;
