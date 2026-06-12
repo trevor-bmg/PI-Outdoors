@@ -14,6 +14,7 @@
       "type": "pi-hero",
       "settings": {
         "image_desktop": "shopify://shop_images/DSC00145.jpg",
+        "image_mobile": "shopify://shop_images/DSC00150_1.jpg",
         "accent_text": "Can't find it on the floor?",
         "heading": "Special Orders",
         "body_text": "If we don't have it in stock, we can usually get it. Rods, reels, tackle, hunting gear — let us know what you're after.",
