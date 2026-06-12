@@ -46,9 +46,9 @@
           "type": "collection",
           "settings": {
             "collection": "",
-            "custom_image": "shopify://shop_images/Homepage_Image_1.jpg",
+            "custom_image": "shopify://shop_images/IMG_4916-ig-portrait-1080-1350.jpg",
             "custom_title": "Hunting",
-            "overlay_opacity": 30
+            "overlay_opacity": 70
           }
         },
         "boating": {
