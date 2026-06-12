@@ -1,16 +1,29 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "wrapper": "div",
   "sections": {
     "hero": {
       "type": "pi-hero",
       "settings": {
+        "image_desktop": "shopify://shop_images/DSC00145.jpg",
         "accent_text": "Can't find it on the floor?",
         "heading": "Special Orders",
         "body_text": "If we don't have it in stock, we can usually get it. Rods, reels, tackle, hunting gear — let us know what you're after.",
         "button_label": "",
         "button_link": "",
         "button_style": "primary",
-        "text_alignment": "left",
+        "desktop_content_x": "left",
+        "desktop_content_y": "middle",
+        "mobile_content_x": "left",
+        "mobile_content_y": "middle",
         "min_height_desktop": "medium",
         "min_height_mobile": "small",
         "color_scheme": "dark",
