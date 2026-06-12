@@ -1,17 +1,29 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "hero": {
       "type": "pi-hero",
       "settings": {
-        "image_desktop": "",
-        "image_mobile": "",
+        "image_desktop": "shopify://shop_images/DSC00155.jpg",
+        "image_mobile": "shopify://shop_images/DSC00132.jpg",
         "accent_text": "More than a tackle shop",
         "heading": "Services",
         "body_text": "Reel spooling, boat outfitting, bait, DNR licenses, and more — everything you need to get out on the water or in the field.",
         "button_label": "",
         "button_link": "",
         "button_style": "primary",
-        "text_alignment": "left",
+        "desktop_content_x": "left",
+        "desktop_content_y": "middle",
+        "mobile_content_x": "left",
+        "mobile_content_y": "middle",
         "min_height_desktop": "medium",
         "min_height_mobile": "small",
         "color_scheme": "dark",
@@ -40,7 +52,6 @@
         "svc_spooling": {
           "type": "column",
           "settings": {
-            "image": "",
             "image_ratio": "4-5",
             "heading": "Reel Spooling",
             "body_text": "Bring your reels in and we'll spool them with the right line for the job — mono, braid, or fluorocarbon. Quick turnaround.",
@@ -51,7 +62,6 @@
         "svc_outfitting": {
           "type": "column",
           "settings": {
-            "image": "",
             "image_ratio": "4-5",
             "heading": "Boat Outfitting",
             "body_text": "Rod holders, rigging, electronics mounts, full outfit packages — we'll set your boat up the way you fish. Reference document available on request.",
@@ -62,7 +72,6 @@
         "svc_outriggers": {
           "type": "column",
           "settings": {
-            "image": "",
             "image_ratio": "4-5",
             "heading": "Outriggers",
             "body_text": "Outrigger sales, install, and repair. We carry the brands offshore guys actually use and can spec a setup for your boat.",
@@ -73,7 +82,6 @@
         "svc_dnr": {
           "type": "column",
           "settings": {
-            "image": "",
             "image_ratio": "4-5",
             "heading": "DNR Licenses",
             "body_text": "Sell SC hunting and fishing licenses in store. Need to renew on the go? Use the SCDNR Go Outdoors app or visit their website.",
@@ -84,7 +92,6 @@
         "svc_storage": {
           "type": "column",
           "settings": {
-            "image": "",
             "image_ratio": "4-5",
             "heading": "Boat Storage",
             "body_text": "Need a place to keep your boat? Sandpiper Storage offers boat and RV storage for bigger rigs — owned and operated by family.",
@@ -95,7 +102,6 @@
         "svc_special_order": {
           "type": "column",
           "settings": {
-            "image": "",
             "image_ratio": "4-5",
             "heading": "Special Orders",
             "body_text": "Looking for something we don't have on the shelf? We can order it. Submit a request and we'll get back to you with availability and pricing.",
@@ -124,7 +130,6 @@
     "bait": {
       "type": "pi-split-content",
       "settings": {
-        "image": "",
         "image_position": "left",
         "image_ratio": "portrait",
         "label": "Bait Shop",

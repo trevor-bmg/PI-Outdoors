@@ -1,13 +1,28 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "hero": {
       "type": "pi-hero",
       "settings": {
-        "heading": "Local Guides & Charters",
+        "image_desktop": "shopify://shop_images/DSC00940_1.jpg",
         "accent_text": "Trusted by locals",
+        "heading": "Local Guides & Charters",
         "body_text": "Looking for a guide who knows the water? Here are some of the best in the Lowcountry — recommended by the team at Pawleys Island Outdoors.",
         "button_label": "",
-        "text_alignment": "left",
+        "button_link": "",
+        "button_style": "primary",
+        "desktop_content_x": "left",
+        "desktop_content_y": "middle",
+        "mobile_content_x": "left",
+        "mobile_content_y": "middle",
         "min_height_desktop": "small",
         "min_height_mobile": "small",
         "color_scheme": "dark",
@@ -19,7 +34,11 @@
       "settings": {
         "label": "Recommended",
         "heading": "Guides We Trust",
-        "body_text": "<p>We get asked all the time — who should I fish with? These are the captains and guides we send our own friends and family to. They know the Lowcountry waters inside and out.<\/p><p>Want to be listed here? Stop by the shop or give us a call.<\/p>",
+        "accent_text": "",
+        "body_text": "<p>We get asked all the time — who should I fish with? These are the captains and guides we send our own friends and family to. They know the Lowcountry waters inside and out.</p><p>Want to be listed here? Stop by the shop or give us a call.</p>",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "primary",
         "text_alignment": "center",
         "content_width": "medium",
         "background_color": "warm-white",
@@ -28,50 +47,62 @@
     },
     "guides": {
       "type": "pi-multi-column",
-      "settings": {
-        "label": "Local Guides",
-        "heading": "Fishing & Hunting Guides",
-        "columns_desktop": 3,
-        "background_color": "warm-white",
-        "card_style": "bordered"
-      },
       "blocks": {
         "guide_1": {
           "type": "column",
           "settings": {
+            "image_ratio": "4-5",
             "heading": "Captain [Name]",
             "body_text": "Inshore fishing charters — redfish, flounder, trout. Departing from Pawleys Island.",
-            "button_label": "Learn More"
+            "button_label": "Learn More",
+            "button_link": ""
           }
         },
         "guide_2": {
           "type": "column",
           "settings": {
+            "image_ratio": "4-5",
             "heading": "Captain [Name]",
             "body_text": "Offshore and nearshore charters — king mackerel, cobia, sharks. Georgetown area.",
-            "button_label": "Learn More"
+            "button_label": "Learn More",
+            "button_link": ""
           }
         },
         "guide_3": {
           "type": "column",
           "settings": {
+            "image_ratio": "4-5",
             "heading": "[Name] Guide Service",
             "body_text": "Duck and deer hunting guides. Lowcountry waterfowl and whitetail specialists.",
-            "button_label": "Learn More"
+            "button_label": "Learn More",
+            "button_link": ""
           }
         }
       },
-      "block_order": ["guide_1", "guide_2", "guide_3"]
+      "block_order": [
+        "guide_1",
+        "guide_2",
+        "guide_3"
+      ],
+      "settings": {
+        "label": "Local Guides",
+        "heading": "Fishing & Hunting Guides",
+        "body_text": "",
+        "columns_desktop": 3,
+        "background_color": "warm-white",
+        "card_style": "bordered"
+      }
     },
     "cta": {
       "type": "pi-cta-banner",
       "settings": {
         "background_style": "deep-blue",
+        "overlay_opacity": 50,
         "label": "Need Gear?",
         "heading": "We'll Get You Set Up Before Your Trip",
         "body_text": "Stop by Pawleys Island Outdoors before you head out. We'll make sure you have everything you need.",
         "button_label": "Shop Fishing",
-        "button_link": "shopify:\/\/collections\/fishing",
+        "button_link": "shopify://collections/fishing",
         "button_style": "primary",
         "text_alignment": "center"
       }
