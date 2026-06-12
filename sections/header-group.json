@@ -14,7 +14,7 @@
     "pi-header": {
       "type": "pi-header",
       "settings": {
-        "logo": "shopify://shop_images/PI_Outdoors_Transparent.png",
+        "logo": "shopify://shop_images/PI_Outdoors_Logo_1.png",
         "logo_width": 160,
         "menu": "main-menu",
         "show_utility_bar": true,
