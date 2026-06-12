@@ -12,7 +12,7 @@
     "hero": {
       "type": "pi-hero",
       "settings": {
-        "image_desktop": "shopify://shop_images/Hero_Desktop_1144ed76-e316-4615-bdc9-7c85a8075500.jpg",
+        "image_desktop": "shopify://shop_images/DSC00094_2_1.jpg",
         "image_mobile": "shopify://shop_images/Hero_Mobile_2ff90f62-5cab-4ea2-ac4c-24a471c6d7f6.jpg",
         "accent_text": "In-store only",
         "heading": "Firearms & Ammunition",
@@ -20,7 +20,10 @@
         "button_label": "",
         "button_link": "",
         "button_style": "primary",
-        "text_alignment": "left",
+        "desktop_content_x": "left",
+        "desktop_content_y": "middle",
+        "mobile_content_x": "left",
+        "mobile_content_y": "middle",
         "min_height_desktop": "medium",
         "min_height_mobile": "medium",
         "color_scheme": "dark",
