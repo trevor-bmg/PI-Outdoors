@@ -130,12 +130,13 @@
     "bait": {
       "type": "pi-split-content",
       "settings": {
+        "image": "shopify://shop_images/DSC00105_1_1.jpg",
         "image_position": "left",
         "image_ratio": "portrait",
         "label": "Bait Shop",
         "heading": "Live, Frozen & Walk-In Cooler",
         "accent_text": "Fresh daily.",
-        "body_text": "<p><strong>Live Bait</strong><br>Mud minnows — $TBD<br>Shrimp — $TBD<br>Finger mullet — $TBD</p><p><strong>Frozen Bait</strong><br>Squid — $TBD<br>Cigar minnows — $TBD<br>Mullet — $TBD<br>Ballyhoo — $TBD</p><p><strong>Walk-In Cooler</strong><br>Stocked daily with fresh, frozen, and live selections. Stop in and ask — what's available depends on the season and the bite.</p>",
+        "body_text": "<p><strong>Live Bait</strong><br/>Mud minnows — $TBD<br/>Shrimp — $TBD<br/>Finger mullet — $TBD</p><p><strong>Frozen Bait</strong><br/>Squid — $TBD<br/>Cigar minnows — $TBD<br/>Mullet — $TBD<br/>Ballyhoo — $TBD</p><p><strong>Walk-In Cooler</strong><br/>Stocked daily with fresh, frozen, and live selections. Stop in and ask — what's available depends on the season and the bite.</p>",
         "button_label": "Call for Today's Bait",
         "button_link": "shopify://pages/contact",
         "button_style": "green",
