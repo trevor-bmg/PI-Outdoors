@@ -167,15 +167,17 @@
                     </div>
                   {%- when 'conditions' -%}
                     {%- liquid
-                      assign c_station = block.settings.station_id | default: '8661070'
+                      assign c_station = block.settings.station_id | default: '8662006'
                       assign c_name = block.settings.location_name | default: 'Pawleys Island'
+                      assign c_tide_name = block.settings.station_name | default: 'Pawleys Island Pier'
+                      assign c_station_2 = block.settings.station_id_2
+                      assign c_tide_name_2 = block.settings.station_name_2
                       assign c_lat = block.settings.latitude | default: '33.44'
                       assign c_lon = block.settings.longitude | default: '-79.12'
                     -%}
                     <div
                       class="footer-block__details-content footer-conditions"
                       data-pi-footer-conditions
-                      data-station-id="{{ c_station }}"
                       data-weather-lat="{{ c_lat }}"
                       data-weather-lon="{{ c_lon }}"
                     >
@@ -187,8 +189,21 @@
                       </div>
                       <div class="footer-conditions__item footer-conditions__item--tides">
                         <span class="footer-conditions__label">Today's Tides</span>
-                        <div class="footer-conditions__value" data-pi-footer-tides-body>
-                          <span class="footer-conditions__loading">Loading…</span>
+                        <div class="footer-conditions__tide-stations">
+                          <div class="footer-conditions__tide-station">
+                            <span class="footer-conditions__station-name">{{ c_tide_name | escape }}</span>
+                            <div class="footer-conditions__value" data-pi-footer-tides-body data-station-id="{{ c_station }}">
+                              <span class="footer-conditions__loading">Loading…</span>
+                            </div>
+                          </div>
+                          {%- if c_station_2 != blank -%}
+                            <div class="footer-conditions__tide-station">
+                              <span class="footer-conditions__station-name">{{ c_tide_name_2 | escape }}</span>
+                              <div class="footer-conditions__value" data-pi-footer-tides-body data-station-id="{{ c_station_2 }}">
+                                <span class="footer-conditions__loading">Loading…</span>
+                              </div>
+                            </div>
+                          {%- endif -%}
                         </div>
                       </div>
                     </div>
@@ -377,8 +392,7 @@
     return h + ':' + pad(m) + ' ' + ampm;
   }
 
-  function loadTides(root, stationId) {
-    var body = root.querySelector('[data-pi-footer-tides-body]');
+  function loadTides(body, stationId) {
     var url = 'https://api.tidesandcurrents.noaa.gov/api/prod/datagetter' +
       '?date=today&station=' + encodeURIComponent(stationId) +
       '&product=predictions&datum=MLLW&time_zone=lst_ldt&units=english' +
@@ -425,7 +439,11 @@
   }
 
   Array.prototype.forEach.call(roots, function (root) {
-    loadTides(root, root.getAttribute('data-station-id'));
+    var tideBodies = root.querySelectorAll('[data-pi-footer-tides-body]');
+    Array.prototype.forEach.call(tideBodies, function (body) {
+      var sid = body.getAttribute('data-station-id');
+      if (sid) loadTides(body, sid);
+    });
     loadWeather(root, root.getAttribute('data-weather-lat'), root.getAttribute('data-weather-lon'));
   });
 })();
@@ -547,15 +565,34 @@
         {
           "type": "text",
           "id": "location_name",
-          "label": "Location display name",
+          "label": "Weather location display name",
           "default": "Pawleys Island"
         },
         {
           "type": "text",
           "id": "station_id",
           "label": "NOAA tide station ID",
-          "info": "Default: 8661070 (Springmaid Pier — closest active station to Pawleys Island).",
-          "default": "8661070"
+          "info": "Default: 8662006 (Pawleys Island Pier, ocean-side).",
+          "default": "8662006"
+        },
+        {
+          "type": "text",
+          "id": "station_name",
+          "label": "Tide station display name",
+          "default": "Pawleys Island Pier"
+        },
+        {
+          "type": "text",
+          "id": "station_id_2",
+          "label": "Second NOAA tide station ID (optional)",
+          "info": "Add a second tide column. Default: 8661947 (Midway Inlet North). Leave blank to show one station only.",
+          "default": "8661947"
+        },
+        {
+          "type": "text",
+          "id": "station_name_2",
+          "label": "Second tide station display name",
+          "default": "Midway Inlet North"
         },
         {
           "type": "text",

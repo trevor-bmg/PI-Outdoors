@@ -26,7 +26,10 @@
           "settings": {
             "heading": "Local Conditions",
             "location_name": "Pawleys Island",
-            "station_id": "8661070",
+            "station_id": "8662006",
+            "station_name": "Pawleys Island Pier",
+            "station_id_2": "8661947",
+            "station_name_2": "Midway Inlet North",
             "latitude": "33.44",
             "longitude": "-79.12"
           }
