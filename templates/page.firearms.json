@@ -225,8 +225,8 @@
         "heading": "FFL Transfer Request",
         "body_text": "<p>Buying a firearm from another dealer? They'll need to ship it to a licensed FFL holder for pickup — that's us. Fill out the form below and we'll coordinate the transfer with your dealer.</p>",
         "show_resource_links": true,
-        "dnr_link": "",
-        "atf_link": "",
+        "dnr_link": "https://www.dnr.sc.gov/",
+        "atf_link": "https://www.atf.gov/firearms",
         "anchor_id": "ffl-transfer-form",
         "background_color": "warm-white"
       }

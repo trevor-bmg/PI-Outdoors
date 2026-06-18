@@ -58,6 +58,40 @@
   color: var(--pi-gold-light);
 }
 
+.pi-rental-form__upload {
+  background: rgba(196, 162, 78, 0.08);
+  border-left: 3px solid var(--pi-gold);
+  padding: var(--pi-space-sm) var(--pi-space-md);
+  border-radius: var(--pi-radius-sm);
+  font-family: var(--pi-font-body);
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--pi-charcoal);
+}
+
+.pi-rental-form__upload p {
+  margin: 0 0 var(--pi-space-xs);
+}
+
+.pi-rental-form__upload p:last-child {
+  margin-bottom: 0;
+}
+
+.pi-rental-form__upload a {
+  color: var(--pi-deep-blue);
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+.pi-rental-form-section--dark .pi-rental-form__upload {
+  background: rgba(196, 162, 78, 0.12);
+  color: var(--pi-cream);
+}
+
+.pi-rental-form-section--dark .pi-rental-form__upload a {
+  color: var(--pi-gold-light);
+}
+
 .pi-rental-form {
   background: var(--pi-white);
   border: 1px solid rgba(0, 0, 0, 0.08);
@@ -210,6 +244,26 @@
   font-size: 13px;
   color: var(--pi-storm);
   margin: 0;
+}
+
+.pi-rental-form__disclaimer--callout {
+  width: 100%;
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--pi-charcoal);
+  background: rgba(196, 162, 78, 0.14);
+  border-left: 4px solid var(--pi-gold);
+  border-radius: var(--pi-radius-sm);
+  padding: var(--pi-space-sm) var(--pi-space-md);
+}
+
+.pi-rental-form__disclaimer--callout strong {
+  font-weight: 700;
+}
+
+.pi-rental-form-section--dark .pi-rental-form__disclaimer--callout {
+  color: var(--pi-cream);
+  background: rgba(196, 162, 78, 0.18);
 }
 
 .pi-rental-form__success {

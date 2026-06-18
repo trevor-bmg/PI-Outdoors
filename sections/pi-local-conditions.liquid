@@ -9,8 +9,10 @@
     assign is_dark = true
   endif
 
-  assign station_id = section.settings.tide_station_id | default: '8661070'
-  assign station_name = section.settings.tide_station_name | default: 'Pawleys Island'
+  assign station_id = section.settings.tide_station_id | default: '8662006'
+  assign station_name = section.settings.tide_station_name | default: 'Pawleys Island Pier'
+  assign station_id_2 = section.settings.tide_station_id_2
+  assign station_name_2 = section.settings.tide_station_name_2
   assign weather_lat = section.settings.weather_lat | default: '33.44'
   assign weather_lon = section.settings.weather_lon | default: '-79.12'
 -%}
@@ -19,8 +21,6 @@
   class="pi-section pi-local-conditions pi-local-conditions--bg-{{ bg }}{% if is_dark %} pi-local-conditions--dark{% endif %}"
   id="section-{{ section.id }}"
   data-pi-local-conditions
-  data-station-id="{{ station_id }}"
-  data-station-name="{{ station_name | escape }}"
   data-weather-lat="{{ weather_lat }}"
   data-weather-lon="{{ weather_lon }}"
 >
@@ -55,11 +55,11 @@
         </div>
       </div>
 
-      {%- comment -%} Tides card {%- endcomment -%}
-      <div class="pi-local-conditions__card pi-local-conditions__card--tides pi-reveal" data-pi-tides>
+      {%- comment -%} Tides card — primary station {%- endcomment -%}
+      <div class="pi-local-conditions__card pi-local-conditions__card--tides pi-reveal" data-pi-tides data-station-id="{{ station_id }}">
         <div class="pi-local-conditions__card-header">
           <h3 class="pi-local-conditions__card-title">Today's Tides</h3>
-          <span class="pi-local-conditions__card-meta" data-pi-tide-station>{{ station_name }}</span>
+          <span class="pi-local-conditions__card-meta">{{ station_name }}</span>
         </div>
         <div class="pi-local-conditions__card-body" data-pi-tides-body>
           <div class="pi-local-conditions__loading">Loading…</div>
@@ -68,6 +68,22 @@
           Tide data: NOAA Tides &amp; Currents
         </p>
       </div>
+
+      {%- comment -%} Tides card — second station (optional) {%- endcomment -%}
+      {%- if station_id_2 != blank -%}
+        <div class="pi-local-conditions__card pi-local-conditions__card--tides pi-reveal" data-pi-tides data-station-id="{{ station_id_2 }}">
+          <div class="pi-local-conditions__card-header">
+            <h3 class="pi-local-conditions__card-title">Today's Tides</h3>
+            <span class="pi-local-conditions__card-meta">{{ station_name_2 }}</span>
+          </div>
+          <div class="pi-local-conditions__card-body" data-pi-tides-body>
+            <div class="pi-local-conditions__loading">Loading…</div>
+          </div>
+          <p class="pi-local-conditions__attribution">
+            Tide data: NOAA Tides &amp; Currents
+          </p>
+        </div>
+      {%- endif -%}
 
     </div>
 
@@ -79,7 +95,6 @@
   var root = document.querySelector('#section-{{ section.id }}[data-pi-local-conditions]');
   if (!root) return;
 
-  var stationId = root.getAttribute('data-station-id');
   var weatherLat = root.getAttribute('data-weather-lat');
   var weatherLon = root.getAttribute('data-weather-lon');
 
@@ -99,8 +114,7 @@
     return h + ':' + pad(m) + ' ' + ampm;
   }
 
-  function renderTides(predictions) {
-    var body = root.querySelector('[data-pi-tides-body]');
+  function renderTides(predictions, body) {
     if (!predictions || !predictions.length) {
       body.innerHTML = '<p class="pi-local-conditions__error">Tide data unavailable.</p>';
       return;
@@ -119,18 +133,26 @@
     body.innerHTML = html;
   }
 
-  function loadTides() {
+  function loadTides(stationId, body) {
     var url = 'https://api.tidesandcurrents.noaa.gov/api/prod/datagetter' +
       '?date=today&station=' + encodeURIComponent(stationId) +
       '&product=predictions&datum=MLLW&time_zone=lst_ldt&units=english' +
       '&interval=hilo&format=json';
     fetch(url)
       .then(function (r) { return r.ok ? r.json() : Promise.reject(); })
-      .then(function (data) { renderTides(data.predictions); })
+      .then(function (data) { renderTides(data.predictions, body); })
       .catch(function () {
-        var body = root.querySelector('[data-pi-tides-body]');
         body.innerHTML = '<p class="pi-local-conditions__error">Tide data unavailable. Check NOAA directly.</p>';
       });
+  }
+
+  function loadAllTides() {
+    var cards = root.querySelectorAll('[data-pi-tides]');
+    cards.forEach(function (card) {
+      var sid = card.getAttribute('data-station-id');
+      var body = card.querySelector('[data-pi-tides-body]');
+      if (sid && body) loadTides(sid, body);
+    });
   }
 
   /* ──────── Weather (NWS) ──────── */
@@ -178,7 +200,7 @@
       });
   }
 
-  loadTides();
+  loadAllTides();
   loadWeather();
 })();
 </script>
@@ -219,14 +241,27 @@
       "type": "text",
       "id": "tide_station_id",
       "label": "NOAA station ID",
-      "info": "Default: 8661070 (Springmaid Pier — closest active station to Pawleys Island).",
-      "default": "8661070"
+      "info": "Default: 8662006 (Pawleys Island Pier, ocean-side). Alt: 8661947 (Midway Inlet North — inlet/creek tides).",
+      "default": "8662006"
     },
     {
       "type": "text",
       "id": "tide_station_name",
       "label": "Station display name",
-      "default": "Pawleys Island"
+      "default": "Pawleys Island Pier"
+    },
+    {
+      "type": "text",
+      "id": "tide_station_id_2",
+      "label": "Second NOAA station ID (optional)",
+      "info": "Add a second tide card. Default: 8661947 (Midway Inlet North — inlet/creek tides). Leave blank to show one station only.",
+      "default": "8661947"
+    },
+    {
+      "type": "text",
+      "id": "tide_station_name_2",
+      "label": "Second station display name",
+      "default": "Midway Inlet North"
     },
     {
       "type": "header",

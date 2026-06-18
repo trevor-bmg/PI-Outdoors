@@ -122,18 +122,6 @@
                 <span>Dock delivery — $100</span>
               </label>
             </div>
-
-            <div class="pi-rental-form__field" data-rf-landing hidden>
-              <label for="rf-landing">Boat landing</label>
-              <select id="rf-landing" name="contact[Boat Landing]">
-                <option value="">Select a landing…</option>
-                <option value="Dawson">Dawson</option>
-                <option value="Crocker">Crocker</option>
-                <option value="Pritchard">Pritchard</option>
-                <option value="Sundial">Sundial</option>
-                <option value="Inlet Point">Inlet Point</option>
-              </select>
-            </div>
           </div>
 
           {%- comment -%} Dock type (deposit) {%- endcomment -%}
@@ -184,8 +172,8 @@
 
         <div class="pi-rental-form__submit">
           <button type="submit" class="pi-btn pi-btn--primary">Submit Reservation Request</button>
-          <p class="pi-rental-form__disclaimer">
-            Submitting this form sends a request — it does not confirm a reservation. We'll follow up by phone or email.
+          <p class="pi-rental-form__disclaimer pi-rental-form__disclaimer--callout">
+            <strong>Submitting this form sends a request — it does not confirm a reservation.</strong> We'll follow up by phone or email to confirm your dates, deposit, and details.
           </p>
         </div>
 
@@ -194,35 +182,6 @@
 
   </div>
 </section>
-
-<script>
-  (function () {
-    var section = document.getElementById('{{ section.settings.anchor_id | default: 'reservation-form' }}');
-    if (!section) return;
-    var landingWrap = section.querySelector('[data-rf-landing]');
-    var landingSelect = landingWrap ? landingWrap.querySelector('select') : null;
-    var radios = section.querySelectorAll('[data-rf-delivery-option]');
-
-    function update() {
-      var selected = section.querySelector('[data-rf-delivery-option]:checked');
-      var isLanding = selected && selected.getAttribute('data-rf-delivery-option') === 'landing';
-      if (!landingWrap) return;
-      if (isLanding) {
-        landingWrap.hidden = false;
-        if (landingSelect) landingSelect.required = true;
-      } else {
-        landingWrap.hidden = true;
-        if (landingSelect) {
-          landingSelect.required = false;
-          landingSelect.value = '';
-        }
-      }
-    }
-
-    radios.forEach(function (r) { r.addEventListener('change', update); });
-    update();
-  })();
-</script>
 
 {% schema %}
 {

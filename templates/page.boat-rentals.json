@@ -86,8 +86,8 @@
       "settings": {
         "label": "Pricing",
         "heading": "Rental Rates",
-        "body_text": "<p>Reservations are recommended. Each additional day beyond your rental period is $100.</p><p><strong>Delivery available:</strong> $50 to nearest boat landing or $100 to your dock — one-time fee, both ways. </p><p><strong>3-day minimum on all deliveries.</strong> No deliveries to DeBordieu. Deliveries occur 8 a.m.–4 p.m.; pickups before 5 p.m.</p>",
-        "footnote": "Prices subject to change. Completion of contract with refundable deposit and rental payment due at time of possession. Refundable deposit varies by dock type: $1,000 fixed dock, $500 floating dock, $500 no dock or trailering.",
+        "body_text": "<p><strong>Refundable deposit required at pickup:</strong> $1,000 fixed dock · $500 floating dock · $500 no dock or trailering. Fully returned once the boat is checked back in.</p><p>Reservations are recommended. Each additional day beyond your rental period is $100.</p><p><strong>Delivery available:</strong> $50 to nearest boat landing or $100 to your dock — one-time fee, both ways. </p><p><strong>3-day minimum on all deliveries.</strong> No deliveries to DeBordieu. Deliveries occur 8 a.m.–4 p.m.; pickups before 5 p.m.</p>",
+        "footnote": "Prices subject to change. Completion of contract, refundable deposit, and rental payment all due at time of possession.",
         "button_label": "Reserve a Boat",
         "button_link": "#reservation-form",
         "button_style": "green",
