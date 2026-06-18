@@ -113,8 +113,6 @@
         "body_text": "<p>Plan your day with up-to-the-minute forecasts and tide times for the Lowcountry.</p>",
         "tide_station_id": "8662006",
         "tide_station_name": "Pawleys Island Pier",
-        "tide_station_id_2": "8661947",
-        "tide_station_name_2": "Midway Inlet North",
         "weather_lat": "33.44",
         "weather_lon": "-79.12",
         "background_color": "warm-white"

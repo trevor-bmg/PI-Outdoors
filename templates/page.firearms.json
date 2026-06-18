@@ -224,6 +224,7 @@
         "label": "FFL Transfers",
         "heading": "FFL Transfer Request",
         "body_text": "<p>Buying a firearm from another dealer? They'll need to ship it to a licensed FFL holder for pickup — that's us. Fill out the form below and we'll coordinate the transfer with your dealer.</p>",
+        "ffl_email": "pawleysislandoutdoors@gmail.com",
         "show_resource_links": true,
         "dnr_link": "https://www.dnr.sc.gov/",
         "atf_link": "https://www.atf.gov/firearms",
