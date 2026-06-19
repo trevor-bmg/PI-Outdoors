@@ -1,0 +1,147 @@
+{{ 'pi-base.css' | asset_url | stylesheet_tag }}
+{{ 'section-pi-bait-prices.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'pi-reveal.js' | asset_url }}" defer="defer"></script>
+
+{%- liquid
+  assign bg = section.settings.background_color
+  assign is_dark = false
+  if bg == 'deep-blue' or bg == 'midnight'
+    assign is_dark = true
+  endif
+-%}
+
+<section
+  class="pi-section pi-bait-prices pi-bait-prices--bg-{{ bg }}{% if is_dark %} pi-bait-prices--dark{% endif %}"
+  id="section-{{ section.id }}"
+>
+  <div class="pi-section__inner pi-section__inner--narrow">
+
+    {%- if section.settings.label != blank -%}
+      <span class="pi-label pi-reveal">{{ section.settings.label }}</span>
+    {%- endif -%}
+
+    {%- if section.settings.heading != blank -%}
+      <h2 class="pi-heading pi-heading--h2 pi-reveal">{{ section.settings.heading }}</h2>
+    {%- endif -%}
+
+    {%- if section.settings.heading != blank or section.settings.label != blank -%}
+      <hr class="pi-divider pi-reveal">
+    {%- endif -%}
+
+    {%- if section.settings.body_text != blank -%}
+      <div class="pi-body pi-bait-prices__intro pi-reveal">{{ section.settings.body_text }}</div>
+    {%- endif -%}
+
+    {%- assign rows = section.settings.rows | newline_to_br | split: '<br />' -%}
+    <div class="pi-bait-prices__table-wrap pi-reveal">
+      <table class="pi-bait-prices__table">
+        <thead>
+          <tr>
+            <th scope="col">Item</th>
+            <th scope="col">Size</th>
+            <th scope="col" class="pi-bait-prices__num">Per Unit</th>
+            <th scope="col" class="pi-bait-prices__num">Per Case</th>
+          </tr>
+        </thead>
+        <tbody>
+          {%- for row in rows -%}
+            {%- assign r = row | strip -%}
+            {%- if r == blank -%}
+              {%- continue -%}
+            {%- endif -%}
+            {%- assign cols = r | split: '|' -%}
+            {%- if cols.size < 2 -%}
+              <tr class="pi-bait-prices__group">
+                <th colspan="4" scope="colgroup">{{ cols[0] | strip }}</th>
+              </tr>
+            {%- else -%}
+              <tr>
+                <td data-label="Item">{{ cols[0] | strip }}</td>
+                <td data-label="Size">{{ cols[1] | strip }}</td>
+                <td data-label="Per Unit" class="pi-bait-prices__num">{{ cols[2] | strip }}</td>
+                <td data-label="Per Case" class="pi-bait-prices__num">{{ cols[3] | strip }}</td>
+              </tr>
+            {%- endif -%}
+          {%- endfor -%}
+        </tbody>
+      </table>
+    </div>
+
+    {%- if section.settings.footnote != blank -%}
+      <p class="pi-bait-prices__footnote pi-reveal">{{ section.settings.footnote }}</p>
+    {%- endif -%}
+
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "PI Bait Prices",
+  "tag": "section",
+  "class": "pi-bait-prices-section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "label",
+      "label": "Label",
+      "default": "Bait Shop"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Bait Price List"
+    },
+    {
+      "type": "richtext",
+      "id": "body_text",
+      "label": "Intro text",
+      "default": "<p>Current bait selection and pricing. Availability changes daily with the season and the bite — call ahead for what's in the cooler.</p>"
+    },
+    {
+      "type": "header",
+      "content": "Price Rows"
+    },
+    {
+      "type": "textarea",
+      "id": "rows",
+      "label": "Rows",
+      "info": "One item per line: Item | Size | Per Unit | Per Case. A line with no | becomes a group heading.",
+      "default": "Head on Shrimp (Cup) | 8 oz | $1.13 | $36.00"
+    },
+    {
+      "type": "text",
+      "id": "footnote",
+      "label": "Footnote",
+      "default": "Prices subject to change. Ask in store for current availability."
+    },
+    {
+      "type": "header",
+      "content": "Section"
+    },
+    {
+      "type": "select",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "warm-white",
+      "options": [
+        { "value": "warm-white", "label": "Warm White" },
+        { "value": "white", "label": "White" },
+        { "value": "cream", "label": "Cream" },
+        { "value": "deep-blue", "label": "Deep Blue" },
+        { "value": "midnight", "label": "Midnight" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "PI Bait Prices",
+      "category": "PI Outdoors"
+    }
+  ]
+}
+{% endschema %}

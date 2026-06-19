@@ -136,12 +136,23 @@
         "label": "Bait Shop",
         "heading": "Live, Frozen & Walk-In Cooler",
         "accent_text": "Fresh daily.",
-        "body_text": "<p><strong>Live Bait</strong><br/>Mud minnows — $TBD<br/>Shrimp — $TBD<br/>Finger mullet — $TBD</p><p><strong>Frozen Bait</strong><br/>Squid — $TBD<br/>Cigar minnows — $TBD<br/>Mullet — $TBD<br/>Ballyhoo — $TBD</p><p><strong>Walk-In Cooler</strong><br/>Stocked daily with fresh, frozen, and live selections. Stop in and ask — what's available depends on the season and the bite.</p>",
+        "body_text": "<p><strong>Live Bait</strong><br/>Mud minnows, shrimp, and finger mullet — stocked daily when available.</p><p><strong>Frozen Bait</strong><br/>Squid, cigar minnows, mullet, ballyhoo, chum, and more.</p><p><strong>Walk-In Cooler</strong><br/>Stocked daily with fresh, frozen, and live selections. What's available depends on the season and the bite.</p><p>Full bait pricing is listed below.</p>",
         "button_label": "Call for Today's Bait",
         "button_link": "shopify://pages/contact",
         "button_style": "green",
         "background_color": "cream",
         "vertical_padding": "large"
+      }
+    },
+    "bait_prices": {
+      "type": "pi-bait-prices",
+      "settings": {
+        "label": "Bait Shop",
+        "heading": "Bait Price List",
+        "body_text": "<p>Our current bait selection. Availability changes daily with the season and the bite — call ahead for what's in the cooler.</p>",
+        "rows": "Shrimp & Squid\nHead on Shrimp (Cup) | 8 oz | $1.13 | $36.00\nHeadless Shrimp (Cup) | 8 oz | $3.25 | $104.00\nHeadless Shrimp (5 lb box, 50–60 ct) | 5 lb | $5.60 | $28.00\nCut Squid (Cup) | 8 oz | $2.25 | $72.00\nScented Squid Strips | 8 oz | $2.75 | $88.00\nSquid Box (KB) | 5 lb | $15.95 | $95.70\nEast Coast Squid Box (Lund's) | 5 lb | $3.75 | $90.00\nWest Coast Squid Box (Lund's) | 5 lb | $17.25 | $103.50\nWest Coast Squid Box (Oromar) | 1 lb | $4.50 | $108.00\nWest Coast Squid Box (Oromar) | 5 lb | $18.95 | $113.70\nChum, Clams & Cut Bait\nMenhaden |  |$3.25 | $9.75\nSand Fleas (Cup) | 8 oz | $3.25 | $104.00\nShucked Clams |  |$3.25 | $97.50\nCrab Bait (Chicken Necks) | 1 lb | $2.25 | $31.50\nWhole Shad |  |$3.00 | $60.00\nLivers (Cup) | 8 oz | $2.00 | $64.00\nMullet, Minnows & Ballyhoo\nCut Mullet (Cup) | 8 oz | $2.50 | $80.00\nFinger Mullet | 12 pk | $3.25 | $97.50\nCigar Minnows | 40 oz | $8.25 | $57.75\nCigar Minnows (Box) | 5 lb | $16.25 | $162.50\nBoxed Chum | 5 lb | $7.50 | $45.00\nSmall Ballyhoo | 12 pk | $8.25 | $82.50\nMedium Ballyhoo | 12 pk | $8.50 | $68.00\nLarge Ballyhoo | 6 pk | $5.16 | $77.40\nMullet (1 pack) | 1 pk | $3.50 | $105.00\nMullet (2 & 3 pack) |  |$3.00 | $60.00\nTeaser Ballyhoo Small |  |$14.70 | $147.00\nBallyhoo Medium |  |$14.28 | $171.36\nBallyhoo Large |  |$15.40 | $138.60\nBallyhoo Rigged Small |  |$21.00 | $252.00\nBallyhoo Rigged Medium |  |$26.88 | $322.56\nDredge Mullet (8–9\") | 8–9\" | $4.90 | $49.00\nDredge Mullet (9–10\") | 9–10\" | $4.90 | $24.50\nCash Sale — Case Pricing\nBoston Mackerel | 5 lb box (10/case) | $13.50 | $135.00\nCigar Minnows | 5 lb box (10/case) | $16.50 | $165.00\nBag Shrimp | 8 oz bag (40/case) | $2.85 | $114.00\nSquid Strips | 5 lb box (10/case) | $17.50 | $175.00",
+        "footnote": "Transcribed from supplier sheet (Black Water Outfitters). Prices subject to change — ask in store for current availability.",
+        "background_color": "warm-white"
       }
     },
     "fishing_report": {
@@ -178,6 +189,7 @@
     "intro",
     "services_grid",
     "bait",
+    "bait_prices",
     "fishing_report",
     "cta"
   ]

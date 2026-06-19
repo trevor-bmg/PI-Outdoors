@@ -1,0 +1,173 @@
+/* ============================================
+   PI Outdoors — Bait Price List
+   Editable table; deep-blue header, zebra rows.
+   Stacks into labeled cards on mobile.
+   ============================================ */
+
+.pi-bait-prices--bg-warm-white { background-color: var(--pi-warm-white); }
+.pi-bait-prices--bg-white      { background-color: var(--pi-white); }
+.pi-bait-prices--bg-cream      { background-color: var(--pi-cream); }
+.pi-bait-prices--bg-deep-blue  { background-color: var(--pi-deep-blue); }
+.pi-bait-prices--bg-midnight   { background-color: var(--pi-midnight); }
+
+.pi-bait-prices__intro {
+  margin-bottom: var(--pi-space-md);
+}
+
+.pi-bait-prices__table-wrap {
+  width: 100%;
+  overflow-x: auto;
+  border-radius: var(--pi-radius-md);
+  border: 1px solid rgba(43, 76, 92, 0.15);
+}
+
+.pi-bait-prices--dark .pi-bait-prices__table-wrap {
+  border-color: rgba(242, 232, 213, 0.18);
+}
+
+.pi-bait-prices__table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--pi-font-body);
+  font-size: 1rem;
+  color: var(--pi-charcoal);
+  background: var(--pi-white);
+}
+
+.pi-bait-prices--dark .pi-bait-prices__table {
+  background: transparent;
+  color: var(--pi-cream);
+}
+
+.pi-bait-prices__table thead th {
+  background: var(--pi-deep-blue);
+  color: var(--pi-cream);
+  font-family: var(--pi-font-body);
+  font-weight: 600;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-align: left;
+  padding: 0.85rem 1rem;
+  white-space: nowrap;
+}
+
+.pi-bait-prices__table tbody td,
+.pi-bait-prices__table tbody th {
+  padding: 0.7rem 1rem;
+  border-top: 1px solid rgba(43, 76, 92, 0.12);
+  text-align: left;
+  vertical-align: top;
+}
+
+.pi-bait-prices--dark .pi-bait-prices__table tbody td,
+.pi-bait-prices--dark .pi-bait-prices__table tbody th {
+  border-top-color: rgba(242, 232, 213, 0.14);
+}
+
+.pi-bait-prices__table tbody tr:nth-child(even) td {
+  background: rgba(43, 76, 92, 0.035);
+}
+
+.pi-bait-prices--dark .pi-bait-prices__table tbody tr:nth-child(even) td {
+  background: rgba(242, 232, 213, 0.05);
+}
+
+.pi-bait-prices__num {
+  text-align: right !important;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Group heading row */
+.pi-bait-prices__group th {
+  background: rgba(196, 162, 78, 0.16);
+  color: var(--pi-deep-blue);
+  font-family: var(--pi-font-heading);
+  font-weight: 700;
+  font-size: 1.05rem;
+  padding: 0.7rem 1rem;
+  border-top: 2px solid var(--pi-gold);
+}
+
+.pi-bait-prices--dark .pi-bait-prices__group th {
+  color: var(--pi-cream);
+  background: rgba(196, 162, 78, 0.2);
+}
+
+.pi-bait-prices__footnote {
+  margin-top: var(--pi-space-sm);
+  font-size: 0.85rem;
+  color: var(--pi-storm);
+}
+
+.pi-bait-prices--dark .pi-bait-prices__footnote {
+  color: var(--pi-sand);
+}
+
+/* ─── Mobile: stack each row into a labeled card ─── */
+@media screen and (max-width: 600px) {
+  .pi-bait-prices__table-wrap {
+    overflow-x: visible;
+    border: none;
+  }
+
+  .pi-bait-prices__table thead {
+    display: none;
+  }
+
+  .pi-bait-prices__table,
+  .pi-bait-prices__table tbody,
+  .pi-bait-prices__table tr,
+  .pi-bait-prices__table td {
+    display: block;
+    width: 100%;
+  }
+
+  .pi-bait-prices__table tbody tr:not(.pi-bait-prices__group) {
+    border: 1px solid rgba(43, 76, 92, 0.15);
+    border-radius: var(--pi-radius-sm);
+    margin-bottom: 0.8rem;
+    padding: 0.4rem 0.2rem;
+    background: var(--pi-white);
+  }
+
+  .pi-bait-prices--dark .pi-bait-prices__table tbody tr:not(.pi-bait-prices__group) {
+    background: rgba(242, 232, 213, 0.04);
+    border-color: rgba(242, 232, 213, 0.18);
+  }
+
+  .pi-bait-prices__table tbody td {
+    border: none;
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.35rem 0.9rem;
+    text-align: right;
+  }
+
+  .pi-bait-prices__table tbody tr:nth-child(even) td {
+    background: transparent;
+  }
+
+  .pi-bait-prices__table tbody td::before {
+    content: attr(data-label);
+    font-weight: 600;
+    color: var(--pi-storm);
+    text-align: left;
+  }
+
+  .pi-bait-prices--dark .pi-bait-prices__table tbody td::before {
+    color: var(--pi-sand);
+  }
+
+  .pi-bait-prices__num {
+    text-align: right !important;
+  }
+
+  /* Hide empty unit/case cells' duplicate dashes cleanly on mobile */
+  .pi-bait-prices__group th {
+    border-radius: var(--pi-radius-sm);
+    margin-bottom: 0.4rem;
+  }
+}
