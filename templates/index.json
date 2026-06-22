@@ -458,6 +458,20 @@
     },
     "feeds": {
       "type": "pi-feeds",
+      "blocks": {
+        "review_scott_paden": {
+          "type": "review",
+          "settings": {
+            "rating": "5",
+            "body": "Awesome guys! Wonderful customer service! We just moved here and bought a boat. Very new to saltwater fishing. They welcomed us with open arms! Geared us up, gave us some spots to go and told us how to do it! Very thankful for these guys and their friendship!",
+            "author": "Scott Paden",
+            "date_text": "October 2025"
+          }
+        }
+      },
+      "block_order": [
+        "review_scott_paden"
+      ],
       "settings": {
         "label": "Stay Connected",
         "heading": "Find Us & Follow Along",
