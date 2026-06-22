@@ -38,9 +38,7 @@
         <thead>
           <tr>
             <th scope="col">Item</th>
-            <th scope="col">Size</th>
-            <th scope="col" class="pi-bait-prices__num">Per Unit</th>
-            <th scope="col" class="pi-bait-prices__num">Per Case</th>
+            <th scope="col" class="pi-bait-prices__num">Price</th>
           </tr>
         </thead>
         <tbody>
@@ -52,14 +50,12 @@
             {%- assign cols = r | split: '|' -%}
             {%- if cols.size < 2 -%}
               <tr class="pi-bait-prices__group">
-                <th colspan="4" scope="colgroup">{{ cols[0] | strip }}</th>
+                <th colspan="2" scope="colgroup">{{ cols[0] | strip }}</th>
               </tr>
             {%- else -%}
               <tr>
                 <td data-label="Item">{{ cols[0] | strip }}</td>
-                <td data-label="Size">{{ cols[1] | strip }}</td>
-                <td data-label="Per Unit" class="pi-bait-prices__num">{{ cols[2] | strip }}</td>
-                <td data-label="Per Case" class="pi-bait-prices__num">{{ cols[3] | strip }}</td>
+                <td data-label="Price" class="pi-bait-prices__num">{{ cols[1] | strip }}</td>
               </tr>
             {%- endif -%}
           {%- endfor -%}
@@ -110,8 +106,8 @@
       "type": "textarea",
       "id": "rows",
       "label": "Rows",
-      "info": "One item per line: Item | Size | Per Unit | Per Case. A line with no | becomes a group heading.",
-      "default": "Head on Shrimp (Cup) | 8 oz | $1.13 | $36.00"
+      "info": "One item per line: Item | Price. A line with no | becomes a group heading.",
+      "default": "Mud Minnows (dozen) | $5.99"
     },
     {
       "type": "text",
