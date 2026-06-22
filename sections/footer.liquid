@@ -172,6 +172,8 @@
                       assign c_tide_name = block.settings.station_name | default: 'Pawleys Island Pier'
                       assign c_station_2 = block.settings.station_id_2
                       assign c_tide_name_2 = block.settings.station_name_2
+                      assign c_station_3 = block.settings.station_id_3
+                      assign c_tide_name_3 = block.settings.station_name_3
                       assign c_lat = block.settings.latitude | default: '33.44'
                       assign c_lon = block.settings.longitude | default: '-79.12'
                     -%}
@@ -200,6 +202,14 @@
                             <div class="footer-conditions__tide-station">
                               <span class="footer-conditions__station-name">{{ c_tide_name_2 | escape }}</span>
                               <div class="footer-conditions__value" data-pi-footer-tides-body data-station-id="{{ c_station_2 }}">
+                                <span class="footer-conditions__loading">Loading…</span>
+                              </div>
+                            </div>
+                          {%- endif -%}
+                          {%- if c_station_3 != blank -%}
+                            <div class="footer-conditions__tide-station">
+                              <span class="footer-conditions__station-name">{{ c_tide_name_3 | escape }}</span>
+                              <div class="footer-conditions__value" data-pi-footer-tides-body data-station-id="{{ c_station_3 }}">
                                 <span class="footer-conditions__loading">Loading…</span>
                               </div>
                             </div>
@@ -593,6 +603,19 @@
           "id": "station_name_2",
           "label": "Second tide station display name",
           "default": "Midway Inlet North"
+        },
+        {
+          "type": "text",
+          "id": "station_id_3",
+          "label": "Third NOAA tide station ID (optional)",
+          "info": "Add a third tide column. Default: 8662071 (Pawleys Inlet, Wards Dock). Leave blank to omit.",
+          "default": "8662071"
+        },
+        {
+          "type": "text",
+          "id": "station_name_3",
+          "label": "Third tide station display name",
+          "default": "Wards Dock"
         },
         {
           "type": "text",
