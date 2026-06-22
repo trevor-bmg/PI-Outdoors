@@ -115,6 +115,8 @@
         "tide_station_name": "Pawleys Island Pier",
         "tide_station_id_2": "8661947",
         "tide_station_name_2": "Midway Inlet North",
+        "tide_station_id_3": "8662071",
+        "tide_station_name_3": "Wards Dock",
         "weather_lat": "33.44",
         "weather_lon": "-79.12",
         "background_color": "warm-white"

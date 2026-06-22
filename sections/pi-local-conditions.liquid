@@ -13,6 +13,8 @@
   assign station_name = section.settings.tide_station_name | default: 'Pawleys Island Pier'
   assign station_id_2 = section.settings.tide_station_id_2
   assign station_name_2 = section.settings.tide_station_name_2
+  assign station_id_3 = section.settings.tide_station_id_3
+  assign station_name_3 = section.settings.tide_station_name_3
   assign weather_lat = section.settings.weather_lat | default: '33.44'
   assign weather_lon = section.settings.weather_lon | default: '-79.12'
 -%}
@@ -75,6 +77,22 @@
           <div class="pi-local-conditions__card-header">
             <h3 class="pi-local-conditions__card-title">Today's Tides</h3>
             <span class="pi-local-conditions__card-meta">{{ station_name_2 }}</span>
+          </div>
+          <div class="pi-local-conditions__card-body" data-pi-tides-body>
+            <div class="pi-local-conditions__loading">Loading…</div>
+          </div>
+          <p class="pi-local-conditions__attribution">
+            Tide data: NOAA Tides &amp; Currents
+          </p>
+        </div>
+      {%- endif -%}
+
+      {%- comment -%} Tides card — third station (optional) {%- endcomment -%}
+      {%- if station_id_3 != blank -%}
+        <div class="pi-local-conditions__card pi-local-conditions__card--tides pi-reveal" data-pi-tides data-station-id="{{ station_id_3 }}">
+          <div class="pi-local-conditions__card-header">
+            <h3 class="pi-local-conditions__card-title">Today's Tides</h3>
+            <span class="pi-local-conditions__card-meta">{{ station_name_3 }}</span>
           </div>
           <div class="pi-local-conditions__card-body" data-pi-tides-body>
             <div class="pi-local-conditions__loading">Loading…</div>
@@ -262,6 +280,19 @@
       "id": "tide_station_name_2",
       "label": "Second station display name",
       "default": "Midway Inlet North"
+    },
+    {
+      "type": "text",
+      "id": "tide_station_id_3",
+      "label": "Third NOAA station ID (optional)",
+      "info": "Add a third tide card. Default: 8662071 (Pawleys Inlet, Wards Dock). Leave blank to omit.",
+      "default": "8662071"
+    },
+    {
+      "type": "text",
+      "id": "tide_station_name_3",
+      "label": "Third station display name",
+      "default": "Wards Dock"
     },
     {
       "type": "header",
