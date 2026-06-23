@@ -27,8 +27,27 @@
 
 @media screen and (min-width: 750px) {
   .footer-conditions {
-    grid-template-columns: repeat(2, minmax(0, 22rem));
+    /* Weather stays compact; tides gets room for its stations in a row */
+    grid-template-columns: minmax(0, 20rem) minmax(0, 42rem);
+    align-items: stretch;
     gap: 2rem;
+  }
+
+  /* Tides card grows to content height and matches the weather card */
+  .footer-conditions__item--tides {
+    aspect-ratio: auto;
+  }
+
+  /* Lay the stations out horizontally, side by side */
+  .footer-conditions__tide-stations {
+    flex-wrap: nowrap;
+    align-items: stretch;
+    gap: 1.6rem;
+  }
+
+  .footer-conditions__tide-station {
+    flex: 1 1 0;
+    justify-content: flex-start;
   }
 }
 
