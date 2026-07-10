@@ -106,7 +106,7 @@
             "heading": "Special Orders",
             "body_text": "Looking for something we don't have on the shelf? We can order it. Submit a request and we'll get back to you with availability and pricing.",
             "button_label": "Submit a Request",
-            "button_link": "shopify://pages/special-order"
+            "button_link": "shopify://pages/special-order-pickup"
           }
         }
       },
