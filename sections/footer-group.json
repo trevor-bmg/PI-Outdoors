@@ -14,6 +14,13 @@
     "footer": {
       "type": "footer",
       "blocks": {
+        "text_contact": {
+          "type": "text",
+          "settings": {
+            "heading": "Visit Us",
+            "subtext": "<p>9790 Ocean Hwy<br/>Pawleys Island, SC 29585<br/>Phone: <a href=\"tel:+18439794666\">(843) 979-4666</a><br/>Fax: (843) 979-4668</p>"
+          }
+        },
         "link_list_RaLMVW": {
           "type": "link_list",
           "settings": {
@@ -38,6 +45,7 @@
         }
       },
       "block_order": [
+        "text_contact",
         "link_list_RaLMVW",
         "conditions_mRLknJ"
       ],
