@@ -107,6 +107,12 @@
   height: auto;
 }
 
+@media screen and (max-width: 989px) {
+  .pi-header__logo-img {
+    width: 140px;
+  }
+}
+
 .pi-header__logo-text {
   font-family: var(--pi-font-heading);
   font-size: 24px;
