@@ -86,7 +86,7 @@
       "settings": {
         "label": "Pricing",
         "heading": "Rental Rates",
-        "body_text": "<p><strong>Refundable deposit required at pickup:</strong> $1,000 fixed dock · $500 floating dock · $500 no dock or trailering. Fully returned once the boat is checked back in.</p><p>Reservations are recommended. Each additional day beyond your rental period is $100.</p><p><strong>Delivery available:</strong> $50 to nearest boat landing or $100 to your dock — one-time fee, both ways. </p><p><strong>3-day minimum on all deliveries.</strong> No deliveries to DeBordieu. Deliveries occur 8 a.m.–4 p.m.; pickups before 5 p.m.</p>",
+        "body_text": "<p><strong>Refundable deposit required at pickup:</strong> $1,000 fixed dock · $500 floating dock · $500 no dock or trailering. Fully returned once the boat is checked back in.</p><p>Reservations are recommended. Each additional day beyond your rental period is $100.</p><p><strong>Delivery available:</strong> $50 to nearest boat landing or $100 to your dock — one-time fee, both ways.</p><p><strong>Dock delivery runs May 1 through August 1.</strong> Outside those dates, we can meet you at the landing or you can pick up at the shop.</p><p><strong>3-day minimum on all deliveries.</strong> No deliveries to DeBordieu. Deliveries occur 8 a.m.–4 p.m.; pickups before 5 p.m.</p>",
         "footnote": "Prices subject to change. Completion of contract, refundable deposit, and rental payment all due at time of possession.",
         "button_label": "Reserve a Boat",
         "button_link": "#reservation-form",
@@ -99,7 +99,7 @@
       "settings": {
         "label": "Reserve a Boat",
         "heading": "Jon Boat Reservation Request",
-        "body_text": "<p>Fill out the form below to request a reservation. We'll follow up by phone or email to confirm your dates and details. 3-day minimum on all deliveries.</p>",
+        "body_text": "<p>Fill out the form below to request a reservation. We'll follow up by phone or email to confirm your dates and details. 3-day minimum on all deliveries. Dock delivery is available May 1 through August 1.</p>",
         "anchor_id": "reservation-form",
         "background_color": "warm-white"
       }
